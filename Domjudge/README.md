@@ -6,6 +6,13 @@
 service domjudge-judgehost status
 ```
 
+### Domjudge-judgehost error by cache
+- Clear cache
+```bash
+/usr/share/domjudge/webapp/bin/console -e prod cache:clear
+```
+
+
 ### MySQL Error
 - To get problem status
   - Failure to launch
