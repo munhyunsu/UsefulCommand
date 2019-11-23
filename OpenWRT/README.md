@@ -1,6 +1,7 @@
 # OpenWRT
 
 ## Debrick Archer C7 using UART
+- Warning! Check the flash memory 16 Megabytes
 
 ### Requirements
 ```bash
