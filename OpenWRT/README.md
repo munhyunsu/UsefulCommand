@@ -9,7 +9,9 @@ apt-get install gtkterm
 ```
 
 ### Steps
-0. Connect TFTP server (192.168.1.100)
+0. Connect TFTP server
+
+  - Connect eth1 to TFTP server (192.168.1.100)
 
 1. Connect UART to home router
 
