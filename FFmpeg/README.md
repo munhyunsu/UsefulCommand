@@ -32,4 +32,7 @@
     ffmpeg -i FILENAME -ss 00:00:00 -t 00:01:00 -c copy out.mp4
     ```
 
-
+## Fix bad frames
+  ```bash
+  ffmpeg -i INPUT.mp4 -force_key_frames "expr:(t,n_forced*3)" fixed.mp4
+  ```
