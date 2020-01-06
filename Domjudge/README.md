@@ -6,12 +6,11 @@
 service domjudge-judgehost status
 ```
 
-### Domjudge-judgehost error by cache
+### Domjudge-judgehost error by cache and Latest Dom-live image
 - Clear cache
 ```bash
 /usr/share/domjudge/webapp/bin/console -e prod cache:clear
 ```
-
 
 ### MySQL Error
 - To get problem status
