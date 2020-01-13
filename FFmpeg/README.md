@@ -36,3 +36,9 @@
   ```bash
   ffmpeg -i INPUT.mp4 -force_key_frames "expr:(t,n_forced*3)" fixed.mp4
   ```
+
+## Merge video and audio from two files
+  - video channel 0 index from 0 index source and audio channel 0 index from 1 index source
+  ```bash
+  ffmpeg -i A.mp4 -i B.mp3 -c:v copy -map 0:v:0 -map 1:a:0 output.mp4
+  ```
