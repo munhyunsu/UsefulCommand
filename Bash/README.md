@@ -27,3 +27,7 @@
   rename 's/\ //' ./*
   ```
 
+## Count files in subdirectory
+```bash
+find -maxdepth 1 -type d | sort | while read -r dir; do n=$(find "$dir" -type f | wc -l); printf "%4d : %s\n" $n "$dir"; done
+```
