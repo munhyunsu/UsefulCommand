@@ -9,3 +9,8 @@
   gpg> key 1
   gpg> expire
   ```
+
+## Restart GPG agent
+  ```bash
+  gpg-connect-agent RELOADAGNET BYE
+  ```
