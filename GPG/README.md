@@ -13,6 +13,13 @@
     gpg> expire
     ```
 
+## Github renew GPG key
+  1. update the expiration
+
+  2. delete the expired key in Github account settings
+
+  3. upload the new key to Github
+
 ## Restart GPG agent
   ```bash
   gpg-connect-agent RELOADAGNET BYE
