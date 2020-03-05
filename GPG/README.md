@@ -20,7 +20,3 @@
 
   3. upload the new key to Github
 
-## Restart GPG agent
-  ```bash
-  gpg-connect-agent RELOADAGNET BYE
-  ```
