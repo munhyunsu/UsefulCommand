@@ -20,3 +20,15 @@
 
   3. upload the new key to Github
 
+## Backup and restore gpg keys
+  1. Identify private key
+  
+  2. Export private key
+
+  3. Import private key
+
+  ```bash
+  gpg --list-secret-keys
+  gpg --export-secret-keys ID > secret-keys.gpg
+  gpg --import secret-keys.gpg
+  ```
