@@ -13,12 +13,14 @@
     gpg> expire
     ```
 
+
 ## Github renew GPG key
   1. update the expiration
 
   2. delete the expired key in Github account settings
 
   3. upload the new key to Github
+
 
 ## Backup and restore gpg keys
   1. Identify private key
@@ -32,3 +34,23 @@
   gpg --export-secret-keys ID > secret-keys.gpg
   gpg --import secret-keys.gpg
   ```
+
+## Encrypt and decrypt file or directory
+  - Files
+  ```bash
+  gpg --encrypt --output FILE.gpg -r RECIPIENT SRCFILE
+  ```
+
+  ```bash
+  gpg --decrypt ECRYPTEDFILE
+  ```
+
+  - Directories
+  ```bash
+  gpg-zip --encrypt --output FILEZIP.gpg -r RECIPIENT SRCDIR
+  ```
+
+  ```bash
+  gpg-zip --decrypt ENCRYPTEDDIR
+  ```
+
