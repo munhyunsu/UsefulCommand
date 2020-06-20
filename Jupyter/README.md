@@ -1,6 +1,6 @@
 # Jupyter Notebook
 
-## Setup Jupyter Remote Server
+## Setup Jupyter Lab Remote Server
 ### Setup Remote SSH Server and Authentication
 1. Install and Update Default Packages using Software Manager
 1. Install Essential Packages
@@ -60,43 +60,45 @@ sudo make install
 ### Install Node Version Manager
 1. Install Node Version Manager from [github](https://github.com/nvm-sh/nvm)
 
-## Manage kernel
-
-### Add Python3 Kernel
-1. Install ipykernel
+### Setup Jupyter Server
+1. Create Virtual Environment
 ```bash
-pip3 install ipykernel
+/opt/Python38/bin/python3 -m venv ./venv
+source ./venv/bin/activate
+pip3 install --upgrade -r requirements.txt
 ```
-
-2. Add kernel
+1. Configure Jupyter Remote Server
+  1. Create Jupyter Configuration File
+  ```bash
+  jupyter notebook --generate-config
+  ```
+  1. Create Jupyter Password (As of notebook 5.x)
+  ```bash
+  jupyter notebook password
+  ```
+  1. Generate Jupyter Server Certificate ([Ref](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html))
+  ```bash
+  openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mykey.key -out mycert.pem
+  ```
+  1. Configure ~/.jupyter/jupyter_notebook_config.py
+  ```
+  c.NotebookApp.password = 'HASHINjupyter_notebook_config.json'
+  c.NotebookApp.certfile = '.../mycert.pem'
+  c.NotebookApp.keyfile = '.../mykey.key'
+  c.NotebookApp.ip = '*'
+  c.NotebookApp.default_url = '/lab?reset'
+  c.NotebookApp.port = 8080
+  ```
+  1. Create Jupyter Lab Kernel
+  ```bash
+  python3 -m ipykernel install --user --name user-kernel --display-name 'UserKernel'
+  ```
+    - As a later, it can be removed by
+    ```bash
+    jupyter kernelspec list
+    jupyter kernelspec remove KERNELNAME
+    ```
+1. **RUN Jupyter Lab Remote Server**
 ```bash
-python3 -m ipykernel install --user --name some-name --display-name 'Some'
-```
-
-### Remove kernel
-1. List kernels
-```bash
-jupyter kernelspec list
-```
-
-2. Remove kernel
-```bash
-jupyter kernelspec remove <kernel_name>
-```
-
-### Jupyter lab configuration
-
-1. create config file
-```bash
-jupyter notebook --generate-config
-```
-
-2. generate password hash
-```bash
-jupyter notebook password
-```
-
-3. clean workspace everytime
-```
-c.NotebookApp.default_url = '/lab?reset
+jupyter lab --no-browser
 ```
