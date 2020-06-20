@@ -3,13 +3,11 @@
 ## Setup Jupyter Lab Remote Server
 ### Setup Remote SSH Server and Authentication
 1. Install and Update Default Packages using Software Manager
-
-1. Install Essential Packages
+2. Install Essential Packages
 ```bash
 sudo apt-get install build-essential vim git openssh-server openssh-client
 ```
-
-1. Configure Useful Software
+3. Configure Useful Software
   - VIM
   ```
   set number "Indicate Line Number
@@ -29,16 +27,14 @@ sudo apt-get install build-essential vim git openssh-server openssh-client
   autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
   set colorcolumn=80
   ```
-
-1. Generate RSA Key Pair
+4. Generate RSA Key Pair
   ```bash
   ssh-keygen -t rsa -b 4096
   cd ~/.ssh
   cat id_rsa.pub >> authorized_keys
   ```
   - Copy Private Key using Something like USB
-
-1. Configure Security Option
+5. Configure Security Option
   - /etc/ssh/sshd_config
   ```
   PubkeyAuthentication yes
@@ -51,13 +47,11 @@ sudo apt-get install build-essential vim git openssh-server openssh-client
 ```bash
 sudo apt-get install libbz2-dev libcurses-ocaml-dev libdbm-deep-perl libgdbm-dev liblzma-dev libsqlite3-dev libssl-dev libreadline-dev zlib1g-dev libtk-img-dev libffi-dev
 ```
-
-1. Download Python 3 Source Code from [Python.org](https://www.python.org/) and untar
+2. Download Python 3 Source Code from [Python.org](https://www.python.org/) and untar
 ```bash
 tar -xvf Python*.tar.gz
 ```
-
-1. Configure and Compile Python 3
+3. Configure and Compile Python 3
 ```bash
 configure --prefix=/opt/Python38/ --enable-optimizations
 sudo make install
@@ -73,24 +67,20 @@ sudo make install
 source ./venv/bin/activate
 pip3 install --upgrade -r requirements.txt
 ```
-
 1. Configure Jupyter Remote Server
   1. Create Jupyter Configuration File
   ```bash
   jupyter notebook --generate-config
   ```
-
-  1. Create Jupyter Password (As of notebook 5.x)
+  2. Create Jupyter Password (As of notebook 5.x)
   ```bash
   jupyter notebook password
   ```
-
-  1. Generate Jupyter Server Certificate ([Ref](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html))
+  3. Generate Jupyter Server Certificate ([Ref](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html))
   ```bash
   openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mykey.key -out mycert.pem
   ```
-
-  1. Configure ~/.jupyter/jupyter_notebook_config.py
+  4. Configure ~/.jupyter/jupyter_notebook_config.py
   ```
   c.NotebookApp.password = 'HASHINjupyter_notebook_config.json'
   c.NotebookApp.certfile = '.../mycert.pem'
@@ -99,8 +89,7 @@ pip3 install --upgrade -r requirements.txt
   c.NotebookApp.default_url = '/lab?reset'
   c.NotebookApp.port = 8080
   ```
-
-  1. Create Jupyter Lab Kernel
+  5. Create Jupyter Lab Kernel
   ```bash
   python3 -m ipykernel install --user --name user-kernel --display-name 'UserKernel'
   ```
@@ -109,8 +98,7 @@ pip3 install --upgrade -r requirements.txt
     jupyter kernelspec list
     jupyter kernelspec remove KERNELNAME
     ```
-    
-1. **RUN Jupyter Lab Remote Server**
+3. **RUN Jupyter Lab Remote Server**
 ```bash
 jupyter lab --no-browser
 ```
