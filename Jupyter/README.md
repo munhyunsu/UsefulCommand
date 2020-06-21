@@ -102,3 +102,11 @@ pip3 install --upgrade -r requirements.txt
 ```bash
 jupyter lab --no-browser
 ```
+
+## Setup HTTPS Jupyter Server on Google Cloud Platform
+
+### Launch Google VM Instance
+
+### Buy Domain Name
+
+### Configure Cloud DNS
