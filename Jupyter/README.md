@@ -67,7 +67,7 @@ sudo make install
 source ./venv/bin/activate
 pip3 install --upgrade -r requirements.txt
 ```
-1. Configure Jupyter Remote Server
+2. Configure Jupyter Remote Server
     1. Create Jupyter Configuration File
     ```bash
     jupyter notebook --generate-config
