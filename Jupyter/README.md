@@ -110,3 +110,14 @@ jupyter lab --no-browser
 ### Buy Domain Name
 
 ### Configure Cloud DNS
+
+
+## Appends
+
+### Use SQLite3 Latest Version
+1. Download SQLite3 Binary from [Official Website](https://www.sqlite.org/download.html)
+
+2. Install Shared Library
+```bash
+sudo apt-get install libc6:i386 zlib1g:i386
+```
