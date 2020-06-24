@@ -5,10 +5,10 @@
 1. Install and Update Default Packages using Software Manager
 2. Install Essential Packages
 ```bash
-sudo apt-get install build-essential vim git openssh-server openssh-client
+sudo apt-get install build-essential vim git tmux openssh-server openssh-client
 ```
 3. Configure Useful Software
-    - VIM
+    - VIM (~/.vimrc)
     ```
     set number "Indicate Line Number
     set tabstop=4 "Tab Size Setting
@@ -19,13 +19,11 @@ sudo apt-get install build-essential vim git openssh-server openssh-client
     syntax on "Highlight Syntax
     autocmd FileType make setlocal noexpandtab " Back to tab from space
     autocmd FileType automake setlocal noexpandtab " Back to tab from space
-    autocmd FileType markdown setlocal tabstop=2 shiftwidth=2 " Back to tab from space
-    autocmd FileType html setlocal tabstop=2 shiftwidth=2 colorcolumn=0 " Back to tab from space
-    autocmd FileType css setlocal tabstop=2 shiftwidth=2 colorcolumn=0 " Back to tab from space
-    autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 colorcolumn=0 " Back to tab from space
-    autocmd FileType tex setlocal colorcolumn=0 " Back to color column
-    autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
     set colorcolumn=80
+    ```
+    - Tmux (~/.tmux.conf)
+    ```
+    set -g mouse on
     ```
 4. Generate RSA Key Pair
 ```bash
@@ -116,8 +114,26 @@ jupyter lab --no-browser
 
 ### Use SQLite3 Latest Version
 1. Download SQLite3 Binary from [Official Website](https://www.sqlite.org/download.html)
+```bash
+mv ./* ~/.local/bin/
+```
 
 2. Install Shared Library
 ```bash
 sudo apt-get install libc6:i386 zlib1g:i386
+```
+
+### Download Latest Bitcoin Core
+1. Download Bitcoin Core from [Official Website](https://bitcoin.org/)
+
+2. Untar and move directory
+```bash
+mv bitcoin-* ~/.local/share/Bitcoin
+```
+
+3. Symbolic link to bitcoin Binary
+```bash
+cd ~/.local/bin
+ln -s ../share/bitcoin/bin/bitcoind
+ln -s ../share/bitcoin/bin/bitcoin-cli
 ```
