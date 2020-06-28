@@ -8,6 +8,10 @@
 sudo apt-get install build-essential vim git tmux openssh-server openssh-client
 ```
 3. Configure Useful Software
+    - Bash (~/.bashrc)
+    ```
+    force_color_prompt=yes
+    ```
     - VIM (~/.vimrc)
     ```
     set number "Indicate Line Number
