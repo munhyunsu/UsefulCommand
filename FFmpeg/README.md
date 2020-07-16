@@ -486,17 +486,65 @@
     
     ```
 
+1. OMX_Core
+    ```bash
+    https://sourceforge.net/projects/omxil/files/omxil/Bellagio%200.9.3/libomxil-bellagio-0.9.3.tar.gz/download
+    tar -xvf libomxil-bellagio-0.9.3.tar.gz
+    cd libomxil-bellagio-0.9.3
+    cd libomxil-bellagio-0.9.3/include
+    sudo cp *.h /opt/ffmpeg/include/
+    ```
+
+1. libcdio
+    ```bash
+    wget https://ftp.gnu.org/gnu/help2man/help2man-1.47.16.tar.xz
+    tar -xvf help2man-1.47.16.tar.xz
+    cd help2man-1.47.16
+    ./configure --prefix="/opt/ffmpeg"
+    make
+    wget http://git.savannah.gnu.org/cgit/libcdio.git/snapshot/libcdio-release-2.1.0.tar.gz
+    tar -xvf libcdio-release-2.1.0.tar.gz
+    cd libcdio-release-2.1.0
+    ./configure --prefix="/opt/ffmpeg"
+    !edit src/Makefile-l989 uncomments
+    make
+    wget -O libcdio-10.2+2.0.1.tar.gz https://github.com/rocky/libcdio-paranoia/archive/release-10.2+2.0.1.tar.gz
+    tar -xvf libcdio-10.2+2.0.1.tar.gz
+    cd libcdio-paranoia-release-10.2-2.0.1
+    ./autogen.sh
+    ./configure --prefix="/opt/ffmpeg"
+    make
+    ```
+
+1. nv-codec-headers
+    ```bash
+    wget -O nv-codec-headers-10.0.26.0.tar.gz https://github.com/FFmpeg/nv-codec-headers/archive/n10.0.26.0.tar.gz
+    tar -xvf nv-codec-headers-10.0.26.0.tar.gz
+    cd nv-codec-headers-n10.0.26.0/
+    !edit Makefile-l1 PREFIX
+    ```
+
+
 1. FFmpeg
     ```bash
     wget https://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2
     tar xjvf ffmpeg-snapshot.tar.bz2
     cd ffmpeg
+    ```
+    - FFmpeg guide version
+    ```bash
     ./configure --prefix="/opt/ffmpeg" --pkg-config-flags="--static" --extra-cflags="-I/opt/ffmpeg/include" --extra-ldflags="-L/opt/ffmpeg/lib" --extra-libs="-lpthread -lm" --enable-gpl --enable-gnutls --enable-libaom --enable-libass --enable-libfdk-aac --enable-libfreetype --enable-libmp3lame --enable-libopus --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265 --enable-libpulse --enable-nonfree
-    make
+    ```
+    
+    - Ubuntu FFmpeg configuration version
+        - It deprecated libavresample
+
+    ```bash
+    ./configure --prefix="/opt/ffmpeg" --pkg-config-flags="--static" --extra-cflags="-I/opt/ffmpeg/include" --extra-ldflags="-L/opt/ffmpeg/lib" --extra-libs="-lpthread -lm -lasound" --enable-gpl --disable-stripping --enable-avresample --disable-filter=resample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librsvg --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-nvenc --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared --enable-version3 --disable-doc --disable-programs --enable-libaribb24 --enable-liblensfun --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libtesseract --enable-libvo_amrwbenc
     ```
     
     ```bash
-    ./configure --prefix="/opt/ffmpeg" --pkg-config-flags="--static" --extra-cflags="-I/opt/ffmpeg/include" --extra-ldflags="-L/opt/ffmpeg/lib" --extra-libs="-lpthread -lm -lasound" --enable-gpl --disable-stripping --enable-avresample --disable-filter=resample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librsvg --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-nvenc --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared --enable-version3 --disable-doc --disable-programs --enable-libaribb24 --enable-liblensfun --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libtesseract --enable-libvo_amrwbenc
+    make
     ```
 
 ## Concat videos
