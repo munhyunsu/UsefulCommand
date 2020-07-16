@@ -8,7 +8,7 @@
 ### Custom compile
 1. Install dependencies and Set environment variables
     ```bash
-    apt install autoconf automake build-essential cmake git-core libass-dev libfreetype6-dev libgnutls28-dev libsdl2-dev libtool libva-dev libvdpau-dev libvorbis-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev pkg-config texinfo wget yasm zlib1g-dev libunistring-dev autogen
+    apt install autoconf automake build-essential cmake git-core libass-dev libfreetype6-dev libgnutls28-dev libsdl2-dev libtool libva-dev libvdpau-dev libvorbis-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev pkg-config texinfo wget yasm zlib1g-dev libunistring-dev autogen zlib1g-dev libcunit1-dev libcunit1-dev libportaudio-ocaml-dev libflac-dev librsvg2-dev libssh-dev
     export PATH="/opt/ffmpeg/bin:/opt/Python27/bin:${PATH}"
     export PKG_CONFIG_PATH="/opt/ffmpeg/lib/pkgconfig:${PKG_CONFIG_PATH}"
     ```
@@ -217,6 +217,163 @@
     LD_LIBRARY_PATH=/opt/ffmpeg/lib/ C_INCLUDE_PATH=/opt/ffmpeg/include/ make
     ```
 
+1. libcodec2
+    ```bash
+    wget -O libcodec2-0.9.2.tar.gz https://github.com/drowe67/codec2/archive/v0.9.2.tar.gz
+    tar -xvf libcodec2-0.9.2.tar.gz
+    cd codec2-0.9.2
+    mkdir build
+    cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
+    make
+    ```
+
+1. libdc1394-2
+    ```bash
+    https://sourceforge.net/projects/libdc1394/files/libdc1394-2/2.2.6/libdc1394-2.2.6.tar.gz/download
+    tar -xvf libdc1394-2.2.6.tar.gz
+    cd libdc1394-2.2.6/
+    ./configure --prefix="/opt/ffmpeg"
+    make
+    ```
+
+1. libflite
+    ```bash
+    wget http://www.festvox.org/flite/packed/flite-2.1/flite-2.1-release.tar.bz2
+    tar -xvf flite-2.1-release.tar.bz2
+    cd flite-2.1-release
+    ./configure --prefix="/opt/ffmpeg"
+    make
+    ```
+
+1. libgme
+    ```bash
+    git clone https://github.com/mcfiredrill/libgme.git
+    cd libgme
+    mkdir build
+    cd build
+    cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
+    make
+    ```
+    
+1. libgsm
+    ```bash
+    https://github.com/timothytylee/libgsm
+    tar -xvf gsm-1.0.19.tar.gz
+    cd gsm-1.0-pl19
+    !edit-l74 INSTALL_ROOT=/opt/ffmpeg
+    !edit-l76 GSM_INSTALL_INC=$(GSM_INSTALL_ROOT)/include
+    make
+    ```
+
+1. lensfun
+    ```bash
+    wget -O lensfun-0.3.95.tar.gz https://github.com/lensfun/lensfun/archive/v0.3.95.tar.gz
+    tar -xvf lensfun-0.3.95.tar.gz
+    cd lensfun-0.3.95
+    mkdir build
+    cd build
+    cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
+    make
+    ```
+
+1. libmysofa
+    ```bash
+    wget -O libmysofa-1.1.tar.gz https://github.com/hoene/libmysofa/archive/v1.1.tar.gz
+    tar -xvf libmysofa-1.1.tar.gz
+    cd libmysofa-1.1
+    cd build
+    cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
+    make
+    ```
+
+1. libopencore_amrnb
+    ```bash
+    https://sourceforge.net/projects/opencore-amr/files/opencore-amr/opencore-amr-0.1.5.tar.gz/download
+    tar -xvf opencore-amr-0.1.5.tar.gz
+    cd opencore-amr-0.1.5
+    ./configure --prefix="/opt/ffmpeg"
+    make
+    ```
+
+1. OpenJPEG
+    ```bash
+    wget -O openjpeg-2.3.1.tar.gz https://github.com/uclouvain/openjpeg/archive/v2.3.1.tar.gz
+    tar -xvf openjpeg-2.3.1.tar.gz
+    cd openjpeg-2.3.1
+    mkdir build
+    cd build
+    cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
+    make
+    ```
+
+1. libopenmpt
+    ```bash
+    wget https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.5.0+release.autotools.tar.gz
+    tar -xvf libopenmpt-0.5.0+release.autotools.tar.gz
+    cd libopenmpt-0.5.0+release.autotools
+    ./configure --prefix="/opt/ffmpeg"
+    make
+    ```
+    
+1. rubberband
+    ```bash
+    wget http://www.mega-nerd.com/libsamplerate/libsamplerate-0.1.9.tar.gz
+    tar -xvf libsamplerate-0.1.9.tar.gz
+    cd libsamplerate-0.1.9
+    ./configure --prefix="/opt/ffmpeg"
+    make
+    wget http://www.fftw.org/fftw-3.3.8.tar.gz
+    tar -xvf fftw-3.3.8.tar.gz
+    cd fftw-3.3.8
+    ./configure --prefix="/opt/ffmpeg" --enable-shared
+    make
+    wget https://code.soundsoftware.ac.uk/attachments/download/2588/vamp-plugin-sdk-2.9.0.tar.gz
+    tar -xvf vamp-plugin-sdk-2.9.0.tar.gz
+    cd vamp-plugin-sdk-2.9.0
+    ./configure --prefix="/opt/ffmpeg"
+    make
+    wget https://breakfastquay.com/files/releases/rubberband-1.8.2.tar.bz2
+    tar -xvf rubberband-1.8.2.tar.bz2
+    cd rubberband-1.8.2
+    !edit Makefile https://github.com/breakfastquay/rubberband/issues/17
+    make
+    ```
+
+1. shine
+    ```bash
+    wget https://github.com/toots/shine/releases/download/3.1.1/shine-3.1.1.tar.gz
+    tar -xvf shine-3.1.1.tar.gz
+    cd shine-3.1.1
+    ./configure --prefix="/opt/ffmpeg"
+    make
+    ```
+
+1. libsoxr
+    ```bash
+    https://sourceforge.net/projects/soxr/files/soxr-0.1.3-Source.tar.xz/download
+    tar -xvf soxr-0.1.3-Source.tar.xz
+    cd soxr-0.1.3-Source
+    mkdir build
+    cd build
+    cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
+    make
+    ```
+
+1. tesseract
+    ```bash
+    wget http://www.leptonica.org/source/leptonica-1.79.0.tar.gz
+    tar -xvf leptonica-1.79.0.tar.gz
+    cd leptonica-1.79.0
+    ./configure --prefix="/opt/ffmpeg"
+    make
+    
+    wget -O tesseract-4.1.1.tar.gz https://github.com/tesseract-ocr/tesseract/archive/4.1.1.tar.gz
+    tar -xvf tesseract-4.1.1.tar.gz
+    cd tesseract-4.1.1
+    ./configure --prefix="/opt/ffmpeg"
+    ```
+
+
 1. FFmpeg
     ```bash
     wget https://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2
@@ -227,7 +384,7 @@
     ```
     
     ```bash
-    ./configure --prefix="/opt/ffmpeg" --pkg-config-flags="--static" --extra-cflags="-I/opt/ffmpeg/include" --extra-ldflags="-L/opt/ffmpeg/lib" --extra-libs="-lpthread -lm" --enable-gpl --disable-stripping --enable-avresample --disable-filter=resample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librsvg --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-nvenc --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared --enable-version3 --disable-doc --disable-programs --enable-libaribb24 --enable-liblensfun --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libtesseract --enable-libvo_amrwbenc
+    ./configure --prefix="/opt/ffmpeg" --pkg-config-flags="--static" --extra-cflags="-I/opt/ffmpeg/include" --extra-ldflags="-L/opt/ffmpeg/lib" --extra-libs="-lpthread -lm -lasound" --enable-gpl --disable-stripping --enable-avresample --disable-filter=resample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librsvg --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-nvenc --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared --enable-version3 --disable-doc --disable-programs --enable-libaribb24 --enable-liblensfun --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libtesseract --enable-libvo_amrwbenc
     ```
 
 ## Concat videos
