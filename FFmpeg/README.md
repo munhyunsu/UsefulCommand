@@ -366,13 +366,125 @@
     cd leptonica-1.79.0
     ./configure --prefix="/opt/ffmpeg"
     make
-    
     wget -O tesseract-4.1.1.tar.gz https://github.com/tesseract-ocr/tesseract/archive/4.1.1.tar.gz
     tar -xvf tesseract-4.1.1.tar.gz
     cd tesseract-4.1.1
     ./configure --prefix="/opt/ffmpeg"
+    make
     ```
 
+1. libtheora
+    ```bash
+    git clone https://gitlab.xiph.org/xiph/theora.git
+    cd theora
+    ./autogen.sh
+    ./configure --prefix="/opt/ffmpeg"
+    make
+    ```
+
+1. libtwolame
+    ```bash
+    https://sourceforge.net/projects/twolame/files/twolame/0.4.0/twolame-0.4.0.tar.gz/download?use_mirror=jaist
+    tar -xvf twolame-0.4.0.tar.gz
+    cd twolame-0.4.0
+    ./configure --prefix="/opt/ffmpeg"
+    make    
+    ```
+
+1. vidstab
+    ```bash
+    wget -O vidstab-1.1.0.tar.gz https://github.com/georgmartius/vid.stab/archive/v1.1.0.tar.gz
+    tar -xvf vidstab-1.1.0.tar.gz
+    cd vid.stab-1.1.0
+    mkdir build
+    cd build
+    cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
+    make
+    ```
+
+1. libvo_amrwbenc
+    ```bash
+    https://sourceforge.net/projects/opencore-amr/files/vo-amrwbenc/vo-amrwbenc-0.1.3.tar.gz/download
+    tar -xvf vo-amrwbenc-0.1.3.tar.gz
+    cd vo-amrwbenc-0.1.3
+    ./configure --prefix="/opt/ffmpeg"
+    make
+    ```
+
+1. WavPack
+    ```bash
+    wget http://www.wavpack.com/wavpack-5.3.0.tar.bz2
+    tar -xvf wavpack-5.3.0.tar.bz2
+    cd wavpack-5.3.0
+    ./configure --prefix="/opt/ffmpeg"
+    make
+    ```
+
+1. libwebp
+    ```bash
+    wget -O libwebp-1.1.0.tar.gz https://github.com/webmproject/libwebp/archive/v1.1.0.tar.gz
+    tar -xvf libwebp-1.1.0.tar.gz
+    cd libwebp-1.1.0
+    autogen.sh
+    ./configure --prefix="/opt/ffmpeg"
+    make
+    ```
+
+1. libxvid
+    ```bash
+    wget https://downloads.xvid.com/downloads/xvidcore-1.3.7.tar.gz
+    tar -xvf xvidcore-1.3.7.tar.gz
+    cd xvidcore
+    cd build/generic
+    ./configure --prefix="/opt/ffmpeg"
+    make
+    ```
+
+1. ZeroMQ
+    ```bash
+    wget https://github.com/zeromq/libzmq/releases/download/v4.3.2/zeromq-4.3.2.tar.gz
+    tar -xvf zeromq-4.3.2.tar.gz
+    cd zeromq-4.3.2
+    ./configure --prefix="/opt/ffmpeg"
+    make
+    ```
+
+1. ZVBI
+    ```bash
+    https://sourceforge.net/projects/zapping/files/zvbi/0.2.35/
+    tar -xvf zvbi-0.2.35.tar.bz2
+    cd zvbi-0.2.35
+    ./configure --prefix="/opt/ffmpeg"
+    make
+    ```
+
+1. OpenAL
+    ```bash
+    wget https://github.com/kcat/openal-soft/archive/openal-soft-1.20.1.tar.gz
+    tar -xvf openal-soft-1.20.1.tar.gz
+    cd openal-soft-openal-soft-1.20.1
+    cd build
+    cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
+    make
+    ```
+
+1. OpenCL
+    ```bash
+    wget -O opencl-2020.06.16.tar.gz https://github.com/KhronosGroup/OpenCL-ICD-Loader/archive/v2020.06.16.tar.gz
+    tar -xvf opencl-2020.06.16.tar.gz
+    cd OpenCL-ICD-Loader-2020.06.16
+    git clone https://github.com/KhronosGroup/OpenCL-Headers.git
+    cd OpenCL-Headers
+    sudo cp -r CL /opt/ffmpeg/include/
+    cd ../inc
+    ln -s ../OpenCL-Headers/CL/
+    cd ..
+    mkdir build
+    cd build
+    cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
+    make
+    
+    ```
 
 1. FFmpeg
     ```bash
