@@ -9,7 +9,7 @@
 1. Install dependencies and Set environment variables
     ```bash
     apt install autoconf automake build-essential cmake git-core libass-dev libfreetype6-dev libgnutls28-dev libsdl2-dev libtool libva-dev libvdpau-dev libvorbis-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev pkg-config texinfo wget yasm zlib1g-dev libunistring-dev autogen zlib1g-dev libcunit1-dev libcunit1-dev libportaudio-ocaml-dev libflac-dev librsvg2-dev libssh-dev
-    export PATH="/opt/ffmpeg/bin:/opt/Python27/bin:${PATH}"
+    export PATH="/opt/ffmpeg/bin:${PATH}"
     export PKG_CONFIG_PATH="/opt/ffmpeg/lib/pkgconfig:${PKG_CONFIG_PATH}"
     ```
 
@@ -62,7 +62,7 @@
     wget https://downloads.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz
     tar -xvf lame-3.100.tar.gz
     cd lame-3.100
-    ./configure --prefix="/opt/ffmpeg" --disable-shared --enable-nasm
+    ./configure --prefix="/opt/ffmpeg" --enable-nasm
     make
     ```
 
@@ -71,7 +71,7 @@
     git clone --depth 1 https://github.com/xiph/opus.git
     cd opus
     ./autogen.sh
-    ./configure --prefix="/opt/ffmpeg" --disable-shared
+    ./configure --prefix="/opt/ffmpeg" --with-pic
     make
     ```
 
@@ -81,7 +81,7 @@
     cd aom
     mkdir -p aom_build
     cd aom_build
-    cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" -DENABLE_SHARED=off -DENABLE_NASM=on ..
+    cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" -DBUILD_SHARED_LIBS=on -DENABLE_NASM=on ..
     make
     ```
 
@@ -232,7 +232,7 @@
     https://sourceforge.net/projects/libdc1394/files/libdc1394-2/2.2.6/libdc1394-2.2.6.tar.gz/download
     tar -xvf libdc1394-2.2.6.tar.gz
     cd libdc1394-2.2.6/
-    ./configure --prefix="/opt/ffmpeg"
+    ./configure --prefix="/opt/ffmpeg" --enable-shared
     make
     ```
 
@@ -241,7 +241,7 @@
     wget http://www.festvox.org/flite/packed/flite-2.1/flite-2.1-release.tar.bz2
     tar -xvf flite-2.1-release.tar.bz2
     cd flite-2.1-release
-    ./configure --prefix="/opt/ffmpeg"
+    ./configure --prefix="/opt/ffmpeg" CFLAGS="-fPIC"
     make
     ```
 
@@ -543,9 +543,16 @@
     ./configure --prefix="/opt/ffmpeg" --pkg-config-flags="--static" --extra-cflags="-I/opt/ffmpeg/include" --extra-ldflags="-L/opt/ffmpeg/lib" --extra-libs="-lpthread -lm -lasound" --enable-gpl --disable-stripping --enable-avresample --disable-filter=resample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librsvg --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-nvenc --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared --enable-version3 --disable-doc --disable-programs --enable-libaribb24 --enable-liblensfun --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libtesseract --enable-libvo_amrwbenc
     ```
     
+    - Optimization version
+    
+    ```bash
+    ./configure --prefix="/opt/ffmpeg" --pkg-config-flags="--static" --extra-cflags="-I/opt/ffmpeg/include" --extra-ldflags="-L/opt/ffmpeg/lib" --extra-libs="-lpthread -lm -lasound" --enable-rpath --enable-gpl --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librsvg --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-nvenc --enable-chromaprint --enable-frei0r --enable-libx264 --enable-static --enable-version3 --disable-doc --enable-libaribb24 --enable-liblensfun --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libtesseract --enable-libvo_amrwbenc
+    ```
     ```bash
     make
+    sudo make install
     ```
+
 
 ## Concat videos
 1. Write down target filenames
