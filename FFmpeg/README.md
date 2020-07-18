@@ -9,7 +9,7 @@
 1. Install dependencies and Set environment variables
     ```bash
     apt install autoconf automake build-essential cmake git-core libass-dev libfreetype6-dev libgnutls28-dev libsdl2-dev libtool libva-dev libvdpau-dev libvorbis-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev pkg-config texinfo wget yasm zlib1g-dev libunistring-dev autogen zlib1g-dev libcunit1-dev libcunit1-dev libportaudio-ocaml-dev libflac-dev librsvg2-dev libssh-dev
-    export PATH="/opt/ffmpeg/bin:${PATH}"
+    export PATH="/opt/ffmpeg/bin:/opt/Python27/bin:${PATH}"
     export PKG_CONFIG_PATH="/opt/ffmpeg/lib/pkgconfig:${PKG_CONFIG_PATH}"
     ```
 
@@ -557,6 +557,13 @@
     ```bash
     make
     sudo make install
+    ```
+
+1. MPV
+    ```bash
+    ./waf configure --prefix=/opt/ffmpeg
+    ./waf
+    sudo ./waf install
     ```
 
 
