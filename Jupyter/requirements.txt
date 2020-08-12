@@ -1,11 +1,2 @@
 pip
-setuptools
-
-jupyter
 jupyterlab
-ipykernel
-ipympl
-
-matplotlib
-numpy
-pandas

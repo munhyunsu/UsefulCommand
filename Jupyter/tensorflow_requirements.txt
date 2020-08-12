@@ -1,0 +1,4 @@
+pip
+ipympl
+tensorflow
+pandas
