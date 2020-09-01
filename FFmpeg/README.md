@@ -524,7 +524,6 @@
     !edit Makefile-l1 PREFIX
     ```
 
-
 1. FFmpeg
     - Download source code
     ```bash
@@ -558,6 +557,7 @@
     make
     sudo make install
     ```
+
 
 ## mpv
 
