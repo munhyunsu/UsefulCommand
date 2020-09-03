@@ -31,3 +31,10 @@
 ```bash
 find -maxdepth 1 -type d | sort | while read -r dir; do n=$(find "$dir" -type f | wc -l); printf "%4d : %s\n" $n "$dir"; done
 ```
+
+## X11 authrization of sudo
+```bash
+sudo su
+xauth merge $HOME/.Xauthority
+exit
+```
