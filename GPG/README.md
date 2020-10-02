@@ -48,9 +48,11 @@
   - Directories
   ```bash
   gpg-zip --encrypt --output FILEZIP.gpg -r RECIPIENT SRCDIR
+  gpgtar --encrypt --output FILEZIP.gpg -r RECIPIENT SRCDIR
   ```
 
   ```bash
   gpg-zip --decrypt ENCRYPTEDDIR
+  gpgtar --decrypt ENCRYPTEDDIR
   ```
 
