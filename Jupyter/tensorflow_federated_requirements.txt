@@ -1,0 +1,17 @@
+pip
+
+ipykernel
+ipympl
+
+tensorflow_federated
+#tensorflow # tensorflow_federated requires
+pydot # plot model
+graphviz # plot model
+nest_asyncio
+#numpy # tensorflow_federated requires
+pandas
+scikit-learn
+matplotlib
+Pillow # Image processing
+scapy[complete] # pcap processing
+psutil # dataset_util
