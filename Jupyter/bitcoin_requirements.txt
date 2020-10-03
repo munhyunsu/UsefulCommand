@@ -1,0 +1,19 @@
+pip
+
+#jupyter
+#jupyterlab
+ipykernel
+ipympl
+
+# essential
+matplotlib
+numpy
+pandas
+scipy
+
+# https://github.com/alecalve/python-bitcoin-blockchain-parser.git
+# https://github.com/twmht/python-rocksdb/tree/pybind11
+python-bitcoinrpc
+
+python-igraph
+cairocffi
