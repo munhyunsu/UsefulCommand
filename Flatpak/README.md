@@ -14,3 +14,8 @@ flatpak list
   ```bash
   flatpak install --user flathub INSTALL
   ```
+
+## Update
+```
+flatpak update
+```
