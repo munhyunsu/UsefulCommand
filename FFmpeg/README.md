@@ -598,10 +598,10 @@ file '/path/to/file3'
 ```bash
 ffmpeg -f concat -safe 0 -i mylist.txt -c copy output
 ```
-    - Alternative method
-    ```bash
-    ffmpeg -f concat -safe 0 -i <(for f in ./*.wav; do echo "file '$PWD/$f'"; done) -c copy output.wav
-    ```
+- Alternative method
+```bash
+ffmpeg -f concat -safe 0 -i <(for f in ./*.wav; do echo "file '$PWD/$f'"; done) -c copy output.wav
+```
 
 ## Trim videos
 - using *ss* and *t* option
