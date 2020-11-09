@@ -33,6 +33,7 @@ find -maxdepth 1 -type d | sort | while read -r dir; do n=$(find "$dir" -type f 
 ```
 
 ## X11 authrization of sudo
+- [Ref](https://unix.stackexchange.com/questions/110558/su-with-error-x11-connection-rejected-because-of-wrong-authentication)
 ```bash
 sudo su
 xauth merge $HOME/.Xauthority
