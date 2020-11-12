@@ -6,7 +6,7 @@ apt install cmake libsdl2-dev libicu-dev gcc pkg-config libspeex-dev libspeexdsp
 ## Configure installation
 ```bash
 mkdir build; cd build;
-cmake -DCMAKE_INSTALL_PREFIX="/opt/OpenRCT2" -DCMAKE_BUILD_TYPE="RelWithDepInfo" ..
+cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/OpenRCT2" -DCMAKE_BUILD_TYPE="RelWithDebInfo" ..
 make -j5
 ```
 
