@@ -1,0 +1,19 @@
+#!/bin/bash
+
+TARGET=/opt/google/chrome-remote-desktop/chrome-remote-desktop
+TARGETBACKUP=/opt/google/chrome-remote-desktop/chrome-remote-desktop.original
+cp $TARGET $TARGETBACKUP
+
+sed -i 's/^DEFAULT_SIZES = "*/#&/g' $TARGET
+sed -i '/^#DEFAULT_SIZES/a DEFAULT_SIZES = "1920x1080"' $TARGET
+
+sed -i 's/^FIRST_X_DISPLAY_NUMBER = */#&/g' $TARGET
+sed -i '/^#FIRST_X_DISPLAY_NUMBER/a FIRST_X_DISPLAY_NUMBER = 0' $TARGET
+
+sed -i 's/^    while os.path.exists(X_LOCK_FILE_TEMPLATE % display):*/#&/g' $TARGET
+sed -i 's/^      display += 1*/#&/g' $TARGET
+
+
+sed -i 's/^    self._launch_x_server(x_args)*/#&/g' $TARGET
+sed -i 's/^    self._launch_x_session()*/#&/g' $TARGET
+sed -i '/^#    self._launch_x_session()/a \ \ \ \ display = self.get_unused_display_number()\n\ \ \ \ self.child_env[\x27DISPLAY\x27] = f\x27:{display}\x27' $TARGET
