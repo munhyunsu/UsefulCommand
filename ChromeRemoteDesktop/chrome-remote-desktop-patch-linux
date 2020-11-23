@@ -1,4 +1,13 @@
 #!/bin/bash
+### BEGIN INIT INFO
+# Provides:          chrome-remote-desktop-patch
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Chrome remote desktop patch
+# Description:       Chrome remote desktop patch for running DISPLAY:0
+### END INIT INFO
 
 TARGET=/opt/google/chrome-remote-desktop/chrome-remote-desktop
 TARGETBACKUP=/opt/google/chrome-remote-desktop/chrome-remote-desktop.original
