@@ -13,13 +13,13 @@ TARGET=/opt/google/chrome-remote-desktop/chrome-remote-desktop
 TARGETBACKUP=/opt/google/chrome-remote-desktop/chrome-remote-desktop.original
 cp $TARGET $TARGETBACKUP
 
-sed -i 's/^DEFAULT_SIZES = "*/#&/g' $TARGET
 if ! grep -q '^DEFAULT_SIZES = "1920x1080"' $TARGET; then
+  sed -i 's/^DEFAULT_SIZES = "*/#&/g' $TARGET
   sed -i '/^#DEFAULT_SIZES/a DEFAULT_SIZES = "1920x1080"' $TARGET
 fi
 
-sed -i 's/^FIRST_X_DISPLAY_NUMBER = */#&/g' $TARGET
 if ! grep -q '^FIRST_X_DISPLAY_NUMBER = 0' $TARGET; then
+  sed -i 's/^FIRST_X_DISPLAY_NUMBER = */#&/g' $TARGET
   sed -i '/^#FIRST_X_DISPLAY_NUMBER/a FIRST_X_DISPLAY_NUMBER = 0' $TARGET
 fi
 
