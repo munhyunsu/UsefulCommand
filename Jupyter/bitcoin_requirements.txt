@@ -17,3 +17,6 @@ python-bitcoinrpc
 
 python-igraph
 cairocffi
+
+# simple machine learning
+scikit-learn
