@@ -7,4 +7,9 @@
 sudo -s
 cd /etc/letsencrypt
 certbot renew --dry-run
+certbot renew
+```
+
+### Copy to other workstation
+```bash
 ```
