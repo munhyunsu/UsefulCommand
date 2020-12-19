@@ -12,4 +12,9 @@ certbot renew
 
 ### Copy to other workstation
 ```bash
+tar -cvf letsencrypt.tar.gz /etc/letsencrypt
+```
+
+```bash
+scp -i PRIKEY /etc/letsencrypt.tar.gz ./
 ```
