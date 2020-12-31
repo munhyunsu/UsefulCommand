@@ -2,7 +2,7 @@ pip
 
 #jupyter
 #jupyterlab
-ipykernel
+#ipykernel
 ipympl
 
 # essential
