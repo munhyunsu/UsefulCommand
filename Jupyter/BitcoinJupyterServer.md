@@ -82,14 +82,14 @@ pip3 install --upgrade -r requirements.txt
     ```bash
     openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mykey.key -out mycert.pem
     ```
-    4. Configure ~/.jupyter/jupyter_notebook_config.py
+    4. Configure ~/.jupyter/jupyter_lab_config.py
     ```
-    c.NotebookApp.password = 'HASHINjupyter_notebook_config.json'
-    c.NotebookApp.certfile = '.../mycert.pem'
-    c.NotebookApp.keyfile = '.../mykey.key'
-    c.NotebookApp.ip = '*'
-    c.NotebookApp.default_url = '/lab?reset'
-    c.NotebookApp.port = 8080
+    c.ServerApp.password = 'HASHINjupyter_notebook_config.json'
+    c.ServerApp.certfile = '.../mycert.pem'
+    c.ServerApp.keyfile = '.../mykey.key'
+    c.ServerApp.ip = '*'
+    c.ServerApp.default_url = '/lab?reset'
+    c.ServerApp.port = 8080
     ```
     5. Create Jupyter Lab Kernel
     ```bash
