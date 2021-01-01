@@ -25,7 +25,7 @@ sudo apt-get install build-essential vim git tmux openssh-server openssh-client
     autocmd FileType automake setlocal noexpandtab " Back to tab from space
     set colorcolumn=80
     ```
-    - Tmux (~/.tmux.conf)
+    - (Optional) Tmux (~/.tmux.conf)
     ```
     set -g mouse on
     ```
