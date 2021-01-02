@@ -55,7 +55,7 @@ tar -xvf Python*.tar.gz
 ```
 3. Configure and Compile Python 3
 ```bash
-configure --prefix=/opt/Python38/ --enable-optimizations
+configure --prefix=/opt/Python3x/ --enable-optimizations
 sudo make install
 ```
 
@@ -72,11 +72,11 @@ pip3 install --upgrade -r requirements.txt
 2. Configure Jupyter Remote Server
     1. Create Jupyter Configuration File
     ```bash
-    jupyter notebook --generate-config
+    jupyter lab --generate-config
     ```
     2. Create Jupyter Password (As of notebook 5.x)
     ```bash
-    jupyter notebook password
+    jupyter lab password
     ```
     3. Generate Jupyter Server Certificate ([Ref](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html))
     ```bash
