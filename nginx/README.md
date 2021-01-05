@@ -23,4 +23,59 @@ apt install nginx
 crul -I 127.0.0.1
 ```
 
+## Reverse proxy
+- vi /etc/nginx/nginx.conf
+```bash
+cd /etc/nginx
+cp nginx.conf nginx.conf.backup
+vi nginx.conf
+```
 
+- nginx.conf
+```
+
+user  nginx;
+#worker_processes  1;
+worker_processes  auto;
+
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    include /etc/nginx/conf.d/*.conf;
+}
+```
+
+- vi /etc/nginx/conf.d/jupyterlab.conf
+```bash
+cd /etc/nginx/conf.d
+cp default.conf default.conf.backup
+mv default.conf jupyterlab.conf
+vi jupyterlab.conf
+```
+
+- jupyterlab.conf
+```
+```
