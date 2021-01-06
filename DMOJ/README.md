@@ -8,10 +8,14 @@
 - 사전 패키지 설치
 ```bash
 apt update
-apt install git gcc g++ make python3-dev python3-pip libxml2-dev libxslt1-dev zlib1g-dev gettext curl redis-server
+apt install git gcc g++ make python3-dev python3-pip libxml2-dev libxslt1-dev zlib1g-dev gettext curl redis-server vim build-essential
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 apt install nodejs
 npm install -g sass postcss-cli postcss autoprefixer
 ```
 
-
+- 데이터베이스 설치
+```bash
+apt update
+apt install mariadb-server libmysqlclient-dev
+```
