@@ -18,4 +18,16 @@ npm install -g sass postcss-cli postcss autoprefixer
 ```bash
 apt update
 apt install mariadb-server libmysqlclient-dev
+mysql_secure_installation
+```
+
+- 데이터베이스 설정
+```bash
+mysql -uroot -p
+```
+
+```sql
+CREATE DATABASE dmoj DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_general_ci;
+GRANT ALL PRIVILEGES ON dmoj.* to 'dmoj'@'localhost' IDENTIFIED BY '<password>';
+exit
 ```
