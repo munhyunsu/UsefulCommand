@@ -8,7 +8,7 @@
 - 사전 패키지 설치
 ```bash
 apt update
-apt install git gcc g++ make python3-dev python3-pip libxml2-dev libxslt1-dev zlib1g-dev gettext curl redis-server vim build-essential
+apt install git gcc g++ make python3-dev python3-pip python3-venv libxml2-dev libxslt1-dev zlib1g-dev gettext curl redis-server vim build-essential
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 apt install nodejs
 npm install -g sass postcss-cli postcss autoprefixer
@@ -30,4 +30,10 @@ mysql -uroot -p
 CREATE DATABASE dmoj DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_general_ci;
 GRANT ALL PRIVILEGES ON dmoj.* to 'dmoj'@'localhost' IDENTIFIED BY '<password>';
 exit
+```
+
+- Python dJango-based DMOJ 프로젝트 설정
+```bash
+python3 -m venv dmojsite
+source .dmojsite/bin/activate
 ```
