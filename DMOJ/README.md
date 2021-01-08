@@ -35,5 +35,13 @@ exit
 - Python dJango-based DMOJ 프로젝트 설정
 ```bash
 python3 -m venv dmojsite
-source .dmojsite/bin/activate
+source dmojsite/bin/activate
+```
+
+```bash
+git clone https://github.com/DMOJ/site.git
+cd site
+git checkout v?.?.? # check the stable version
+git submodule init
+git submodule update
 ```
