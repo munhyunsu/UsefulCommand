@@ -45,3 +45,9 @@ git checkout v?.?.? # check the stable version
 git submodule init
 git submodule update
 ```
+
+```bash
+pip3 install --upgrade pip wheel
+pip3 install -r requirements.txt
+pip3 install mysqlclient
+```
