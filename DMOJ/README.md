@@ -51,3 +51,18 @@ pip3 install --upgrade pip wheel
 pip3 install -r requirements.txt
 pip3 install mysqlclient
 ```
+
+```bash
+cd dmoj
+# https://github.com/DMOJ/docs/blob/master/sample_files/local_settings.py
+wget https://raw.githubusercontent.com/DMOJ/docs/master/sample_files/local_settings.py
+```
+
+- dJango local\_settings.py 설정
+```python
+```
+
+```bash
+cd .. # /home/code/site/
+python3 manage.py check
+```
