@@ -77,6 +77,9 @@ DEFAULT_USER_TIME_ZONE = 'Asia/Seoul'
 SITE_NAME = 'DMOJ'
 SITE_LONG_NAME = 'DMOJ: Modern Online Judge'
 SITE_ADMIN_EMAIL = 'admin@example.com'
+# Line 194 ~ 195
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 # Line 271
             'filename': '<desired bridge log path>'
 ```
