@@ -58,11 +58,43 @@ cd dmoj
 wget https://raw.githubusercontent.com/DMOJ/docs/master/sample_files/local_settings.py
 ```
 
-- dJango local\_settings.py 설정
+- dJango local\_settings.py 설정 **예시** (_개인적인 설정이였으니 참고만 할 것_)
 ```python
+# Line 13
+SECRET_KEY = '<http://www.miniwebtool.com/django-secret-key-generator/>'
+# Line 21
+ALLOWED_HOSTS = ['*'] # until DEBUG = False
+# Line 42
+        'PASSWORD': '<password>'
+# Line 57
+## https://www.gnu.org/software/gettext/manual/gettext.html
+LANGUAGE_CODE = 'ko-KR'
+## https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+DEFAULT_USER_TIME_ZONE = 'Asia/Seoul'
+# Line 110
+   ('Your Name', 'your.email@example.com'),
+# Line 139 ~ 142
+SITE_NAME = 'DMOJ'
+SITE_LONG_NAME = 'DMOJ: Modern Online Judge'
+SITE_ADMIN_EMAIL = 'admin@example.com'
+# Line 271
+            'filename': '<desired bridge log path>'
 ```
 
 ```bash
 cd .. # /home/code/site/
 python3 manage.py check
+```
+
+- Compile assets
+```bash
+./make_style.sh
+python3 manage.py collectstatic
+python3 manage.py compilemessages
+python3 manage.py compilejsi18n
+```
+
+- Database setup
+```bash
+python3 manage.py migrate
 ```
