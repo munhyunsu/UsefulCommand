@@ -49,7 +49,7 @@ git submodule update
 ```bash
 pip3 install --upgrade pip wheel
 pip3 install -r requirements.txt
-pip3 install mysqlclient
+pip3 install mysqlclient redis
 ```
 
 ```bash
@@ -100,4 +100,177 @@ python3 manage.py compilejsi18n
 - Database setup
 ```bash
 python3 manage.py migrate
+```
+
+- Create initial data
+```bash
+python3 manage.py loaddata navbar
+python3 manage.py loaddata language_all
+python3 manage.py createsuperuser
+```
+
+- Run redis
+```
+systemctl start redis-server
+systemctl status redis-server
+```
+
+- Run the server with DEBUG
+```bash
+python3 manage.py runserver 0.0.0.0:8000
+```
+
+- Test for productions
+```bash
+python3 manage.py runbridged
+celery -A dmoj_celery worker
+```
+
+### DMOJ Site production mode
+
+- uwsgi.ini, site.conf, bridged.conf, celery.conf 설정
+
+  - 설정 파일 다운로드
+  ```bash
+  mkdir conf
+  cd conf
+
+  # https://github.com/DMOJ/docs/blob/master/sample_files/uwsgi.ini
+  wget https://raw.githubusercontent.com/DMOJ/docs/master/sample_files/uwsgi.ini
+
+  # https://github.com/DMOJ/docs/blob/master/sample_files/site.conf
+  wget https://raw.githubusercontent.com/DMOJ/docs/master/sample_files/site.conf
+
+  # https://github.com/DMOJ/docs/blob/master/sample_files/bridged.conf
+  wget https://raw.githubusercontent.com/DMOJ/docs/master/sample_files/bridged.conf
+
+  # https://github.com/DMOJ/docs/blob/master/sample_files/celery.conf
+  wget https://raw.githubusercontent.com/DMOJ/docs/master/sample_files/celery.conf
+
+  # https://github.com/DMOJ/docs/blob/master/sample_files/nginx.conf
+  wget https://raw.githubusercontent.com/DMOJ/docs/master/sample_files/nginx.conf
+
+  # https://github.com/DMOJ/docs/blob/master/sample_files/wsevent.conf
+  wget https://raw.githubusercontent.com/DMOJ/docs/master/sample_files/wsevent.conf
+  ```
+
+
+  - uwsgi.ini
+  ```
+  # Line 12~14
+  chdir = /home/code/site
+  pythonpath = /home/code/site
+  virtualenv = /home/code/dmojsite
+  ```
+
+  - site.conf
+  ```
+  # Line 2~3
+  command=/home/code/dmojsite/bin/uwsgi --ini uwsgi.ini
+  directory=/home/code/site
+  ```
+
+  - bridged.conf
+  ```
+  # Line 2~7
+  command=/home/code/dmojsite/bin/python manage.py runbridged
+  directory=/home/code/site$
+  user=code
+  group=code
+  ```
+
+  - celery.conf
+  ```
+  # Line 2~7
+  command=/home/code/dmojsite/bin/celery -A dmoj_celery worker
+  directory=/home/code/site$
+  user=code
+  group=code
+  ```
+
+  - nginx.conf
+  ```
+  # Line 10
+  #server_name <hostname>;
+  # Line 21
+          root /home/code/site;
+  # Line 25
+          root /home/code/site/resources/icons
+  # Line 41
+          root /tmp;
+  # Line 66~77
+  ## Uncomments
+  # Line 67
+          proxy_pass http://127.0.0.1:15100/;
+  # Line 76
+          proxy_pass http://127.0.0.1:15102;
+  ```
+
+  - wsevent.conf
+  ```
+  # Line 2~6
+  command=/usr/bin/node /home/code/site/websocket/daemon.js
+  environment=NODE_PATH="/home/code/site/node_modules"
+  user=code
+  group=code
+  ```
+
+  - site/dmoj/localsettings.py
+  ```python
+  # Line 167
+  EVENT_DAEMON_USE = True
+  # Line 173
+  EVENT_DAEMON_POST = 'ws://127.0.0.1:15101/event/'
+  # Line 183~185
+  EVENT_DAEMON_GET = 'ws://127.0.0.1:15100/event/'
+  EVENT_DAEMON_GET_SSL = 'wss://127.0.0.1:15100/event/'
+  EVENT_DAEMON_POLL = '/channels/'
+  ```
+
+  - site/websocket/config.js
+  ```
+  module.exports = {
+    get_host: '127.0.0.1',
+    get_port: 15100,
+    post_host: '127.0.0.1',
+    post_port: 15101,
+    http_host: '127.0.0.1',
+    http_port: 15102,
+    long_poll_timeout: 29000,
+  };
+  ```
+
+```bash
+pip3 install uwsgi
+uwsgi --ini uwsgi.ini
+```
+
+- supervisord 설치
+```bash
+apt install supervisor
+```
+
+- Link conf files
+```bash
+ln -s /home/code/site/conf/site.conf /etc/supervisor/conf.d/
+ln -s /home/code/site/conf/bridged.conf /etc/supervisor/conf.d/
+ln -s /home/code/site/conf/celery.conf /etc/supervisor/conf.d/
+```
+
+- nginx 설치
+```bash
+apt install nginx
+```
+
+- nginx.conf
+```
+rm /etc/nginx/sites-enabled/default
+ln -s /home/code/site/conf/nginx.conf /etc/nginx/sites-available/dmojsite
+ln -s /etc/nginx/sites-available/dmojsite /etc/nginx/sites-enabled/
+```
+
+- event server
+```bash
+npm install qu ws simplesets
+pip3 install websocket-client
 ```
