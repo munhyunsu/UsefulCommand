@@ -274,3 +274,18 @@ ln -s /etc/nginx/sites-available/dmojsite /etc/nginx/sites-enabled/
 npm install qu ws simplesets
 pip3 install websocket-client
 ```
+
+
+## Python3
+
+```bash
+wget https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tar.xz
+apt install libbz2-dev libcurses-ocaml-dev libdbm-deep-perl libgdbm-dev liblzma-dev libsqlite3-dev libssl-dev libreadline-dev zlib1g-dev libtk-img-dev libffi-dev
+```
+
+## Online judge
+
+```bash
+apt install python3-dev python3-pip build-essential libseccomp-dev
+pip3 install dmoj
+```
