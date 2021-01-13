@@ -6,3 +6,4 @@
 ## Install upgrade
 ```bash
 nvm install 'lts/*' --reinstall-packages-from=node
+```
