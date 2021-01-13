@@ -8,3 +8,9 @@
   ```bash
   udevadm control --reload-rules && udevadm trigger
   ```
+
+## udevadm
+
+```bash
+udevadm info --attribute-walk /dev/xxxx
+```
