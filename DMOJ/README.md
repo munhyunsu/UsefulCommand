@@ -276,6 +276,14 @@ pip3 install websocket-client
 ```
 
 
+# Online judges
+
+## JAVA11
+
+```bash
+apt install openjdk-11-jdk
+```
+
 ## Python3
 
 ```bash
