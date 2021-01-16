@@ -289,6 +289,9 @@ apt install openjdk-11-jdk
 ```bash
 wget https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tar.xz
 apt install libbz2-dev libcurses-ocaml-dev libdbm-deep-perl libgdbm-dev liblzma-dev libsqlite3-dev libssl-dev libreadline-dev zlib1g-dev libtk-img-dev libffi-dev
+tar -xvf Python-3.9.1.tar.xz
+cd Python-3.9.1
+./configure --prefix=/opt/Python3 --enable-optimizations
 ```
 
 ## Online judge
