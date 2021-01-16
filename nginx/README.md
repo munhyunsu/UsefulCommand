@@ -78,6 +78,13 @@ vi jupyterlab.conf
 
 - jupyterlab.conf
 ```
+server {
+    listen 443 ssl;
+    server_name _;
+    ...
+    return 444;
+}
+
 map $http_upgrade $connection_upgrade {
     default upgrade;
     ''      close;
