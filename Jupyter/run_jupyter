@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd $HOME
+source .enable_nvm
+cd $HOME
+source $HOME/Jupyter/venv/bin/activate
+pip3 install --upgrade -r Github/UsefulCommand/Jupyter/requirements.txt
+jupyter server
