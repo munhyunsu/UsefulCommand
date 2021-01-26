@@ -102,7 +102,8 @@ pip3 install --upgrade -r requirements.txt
       ```
 3. **RUN Jupyter Lab Remote Server**
 ```bash
-jupyter lab --no-browser
+#jupyter lab --no-browser
+jupyter server
 ```
 
 ## Setup HTTPS Jupyter Server on Google Cloud Platform
