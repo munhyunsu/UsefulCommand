@@ -1,3 +1,6 @@
 pip
 wheel
+jupyterhub
+jupyter-server
 jupyterlab
+notebook
