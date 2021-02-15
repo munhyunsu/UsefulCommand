@@ -4,3 +4,4 @@ jupyterhub
 jupyter-server
 jupyterlab
 notebook
+ipywidgets
