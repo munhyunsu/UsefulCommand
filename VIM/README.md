@@ -22,4 +22,10 @@
     set colorcolumn=80
     ```
 
-
+## Change encoding EUCKR to UTF-8
+```
+e ++enc=euckr
+set encoding=utf-8
+set fileencoding=utf-8
+set fileformat=unix
+```
