@@ -11,6 +11,7 @@ set shiftwidth=4 "Shift Size Setting
 set expandtab "Tab to space
 set autoindent "Auto Indent
 syntax on "Highlight Syntax
+set list " View white spaces
 autocmd FileType make setlocal noexpandtab " Back to tab from space
 autocmd FileType automake setlocal noexpandtab " Back to tab from space
 autocmd FileType markdown setlocal tabstop=2 shiftwidth=2 " Back to tab from space
