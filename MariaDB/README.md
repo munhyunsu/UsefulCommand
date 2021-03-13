@@ -2,6 +2,12 @@
 
 ## Running MariaDB on Docker
 
+- [Docker Hub Reference](https://hub.docker.com/_/mariadb)
+
+```bash
+docker run --net some-network --name some-mariadb -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mariadb:tag
+```
+
 ## Export Database on Docker
 
 ```bash
