@@ -47,12 +47,6 @@ docker exec CONTAINER /usr/bin/mysqldump --max_allowed_packet=1G -u root --passw
 ## Import Database on Docker
 
 ```bash
-docker exec -i CONTAINER bash -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD
-```
-```bash
-docker exec -i CONTAINER mysql -u root -p=PASSWORD DATABASE < backup.sql
+docker exec -i CONTAINER bash -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD" DATABASE' < backup.sql
 ```
 
-```bash
-cat dump.sql | docker exec -i mysql-container mysql -uuser -ppassword db_name
-```
