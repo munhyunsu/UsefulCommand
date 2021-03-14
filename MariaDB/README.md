@@ -14,7 +14,15 @@ docker run --network some-network --name some-mariadb -e MYSQL_ROOT_PASSWORD=my-
 docker run --name some-mariadb -p 3306:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mariadb 
 ```
 
+- If import large database sql files
+
+```
+docker run --name some-mariadb -p 3306:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mariadb --max_allowed_packet=1G
+```
+
 ## Create Database and User
+
+- Connect only local users
 
 ```sql
 CREATE DATABASE DATABASENAME;
@@ -25,9 +33,10 @@ FLUSH PRIVILEGES;
 - Remote users
 
 ```sql
-grant all privileges on DATABASE_NAME.* TO 'USER_NAME'@'%' identified by 'PASSWORD';
+CREATE DATABASE DATABASENAME;
+GRANT ALL PRIVILEGES ON DATABASENAME.* TO 'USERNAME'@'%' IDENTIFIED BY 'PASSWORD';
+FLUSH PRIVILEGES;
 ```
-
 
 ## Export Database on Docker
 
