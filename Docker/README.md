@@ -32,15 +32,10 @@ c288470c46f6        host                host
 
 ### Container management
 
-- List container
+- List, Stop, Remove container
 
 ```bash
 docker container ls
-```
-
-- Stop and remove container
-
-```bash
 docker container stop CONTAINERNAME
 docer container rm CONTAINERNAME
 ```
