@@ -38,6 +38,12 @@ c288470c46f6        host                host
 docker run -d IMAGE
 ```
 
+  - Automatically restart on boot
+
+  ```bash
+  docker run --unless-stopped -d IMAGE
+  ```
+
 - List, Stop, Remove container
 
 ```bash
