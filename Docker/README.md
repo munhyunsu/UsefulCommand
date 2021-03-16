@@ -32,6 +32,12 @@ c288470c46f6        host                host
 
 ### Container management
 
+- Run, Start containers
+
+```bash
+docker run -d IMAGE
+```
+
 - List, Stop, Remove container
 
 ```bash
