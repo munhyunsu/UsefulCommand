@@ -19,3 +19,8 @@ tar -cvf letsencrypt.tar.gz /etc/letsencrypt
 scp -i PRIKEY /etc/letsencrypt.tar.gz ./
 # chown / chgrp
 ```
+
+### (Optional) Reload nginx
+```bash
+nginx -s reload
+```
