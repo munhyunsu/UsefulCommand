@@ -3,4 +3,5 @@ wheel
 ipympl
 tensorflow-io
 tensorflow
+numpy
 pandas
