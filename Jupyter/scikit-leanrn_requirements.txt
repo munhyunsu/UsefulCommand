@@ -1,0 +1,8 @@
+pip
+wheel
+ipykernel
+
+numpy
+pandas
+scikit-learn
+graphviz
