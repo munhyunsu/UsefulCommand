@@ -27,3 +27,9 @@ _OLD_LD_LIBRARY_PATH="$LD_LIBRARY_PATH"
 LD_LIBRARY_PATH="/home/.../:$LD_LIBRARY_PATH"
 export LD_LIBRARY_PATH
 ```
+
+- In jupyter kernel
+
+```json
+"env": {"LD_LIBRARY_PATH":"/home/..."},
+```
