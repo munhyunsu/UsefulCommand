@@ -5,4 +5,5 @@ ipykernel
 numpy
 pandas
 scikit-learn
+matplotlib
 graphviz
