@@ -1,5 +1,21 @@
 # Jupyter Notebook
 
+## Setup JupyterHub Server
+
+1. Setup virtual environment
+
+```bash
+sudo /opt/Python39/bin/python3 -m venv /opt/jupyterhub/
+```
+
+2. Install requirement library
+
+```bash
+sudo /opt/jupyterhub/bin/python3 -m pip install pip wheel
+sudo /opt/jupyterhub/bin/python3 -m pip install jupyterhub jupyterlab
+sudo /opt/jupyterhub/bin/python3 -m pip install ipywidgets
+```
+
 ### Create Jupyter Lab Kernel
 ```bash
 python3 -m ipykernel install --user --name user-kernel --display-name 'UserKernel'
