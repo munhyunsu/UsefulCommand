@@ -5,6 +5,14 @@
 python3 -m ipykernel install --user --name user-kernel --display-name 'UserKernel'
 ```
 
+### Jupyter lab extension
+
+```bash
+# Node
+jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-matplotlib
+sudo "PATH=$PATH" /opt/jupyterhub/bin/jupyter labextension update --all
+```
+
 ### As a later, it can be removed by
   ```bash
 jupyter kernelspec list
