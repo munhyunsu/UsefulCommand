@@ -16,6 +16,14 @@ sudo /opt/jupyterhub/bin/python3 -m pip install jupyterhub jupyterlab
 sudo /opt/jupyterhub/bin/python3 -m pip install ipywidgets
 ```
 
+3. Enable nvm
+
+```bash
+source /home/user/.nvm/nvm.sh
+source /home/user/.nvm/bash_completion
+sudo install npm install -g configurable-http-proxy
+```
+
 ### Create Jupyter Lab Kernel
 ```bash
 python3 -m ipykernel install --user --name user-kernel --display-name 'UserKernel'
