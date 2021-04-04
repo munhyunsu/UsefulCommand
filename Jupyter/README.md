@@ -37,6 +37,42 @@ sudo /opt/jupyterhub/bin/jupyterhub --generate-config
 c.Spawner.default_url = '/lab'
 ```
 
+5. Setup systemd service
+
+```bash
+sudo mkdir -p /opt/jupyterhub/etc/systemd
+sudo vi /opt/jupyterhub/etc/systemd/jupyterhub.service
+```
+
+- run\_jupyter
+
+```
+#!/bin/bash
+
+cd /home/user/.nvm
+source nvm.sh
+
+cd /opt/jupyterhub
+source bin/activate
+/opt/jupyterhub/bin/jupyterhub -f /opt/jupyterhub/etc/jupyterhub/jupyterhub_config.py
+```
+
+- .service
+
+```
+[Unit]
+Description=JupyterHub
+After=syslog.target network.target
+
+[Service]
+User=root
+Environment="PATH=/usr/local/texlive/2020/bin/x86_64-linux:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/opt/jupyterhub/bin"
+ExecStart=/opt/jupyterhub/etc/systemd/run_jupyterhub
+
+[Install]
+WantedBy=multi-user.target
+```
+
 ### Create Jupyter Lab Kernel
 ```bash
 python3 -m ipykernel install --user --name user-kernel --display-name 'UserKernel'
