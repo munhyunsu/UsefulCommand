@@ -24,6 +24,19 @@ source /home/user/.nvm/bash_completion
 sudo install npm install -g configurable-http-proxy
 ```
 
+4. Create configuration
+
+```bash
+sudo mkdir -p /opt/jupyterhub/etc/jupyterhub/
+cd /opt/jupyterhub/etc/jupyterhub/
+sudo /opt/jupyterhub/bin/jupyterhub --generate-config
+```
+
+```
+# vi /opt/jupyterhub/etc/jupyterhub/jupyterhub_config.py
+c.Spawner.default_url = '/lab'
+```
+
 ### Create Jupyter Lab Kernel
 ```bash
 python3 -m ipykernel install --user --name user-kernel --display-name 'UserKernel'
