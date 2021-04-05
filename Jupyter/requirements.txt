@@ -1,7 +1,9 @@
 pip
 wheel
 jupyterhub
-jupyter-server
+#jupyter-server
 jupyterlab
-notebook
+#notebook
 ipywidgets
+
+#jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-matplotlib
