@@ -73,6 +73,16 @@ ExecStart=/opt/jupyterhub/etc/systemd/run_jupyterhub
 WantedBy=multi-user.target
 ```
 
+- Enable service
+
+```bash
+sudo ln -s /opt/jupyterhub/etc/systemd/jupyterhub.service /etc/systemd/system/jupyterhub.service
+sudo systemctl daemon-reload
+sudo systemctl enable jupyterhub.service
+sudo systemctl start jupyterhub.service
+sudo systemctl status jupyterhub.service
+```
+
 ### Create Jupyter Lab Kernel
 ```bash
 python3 -m ipykernel install --user --name user-kernel --display-name 'UserKernel'
