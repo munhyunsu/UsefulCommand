@@ -1,6 +1,8 @@
 pip
 wheel
+ipykernel
 
 mariadb
 numpy
 pandas
+matplotlib
