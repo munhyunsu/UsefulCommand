@@ -83,6 +83,16 @@ sudo systemctl start jupyterhub.service
 sudo systemctl status jupyterhub.service
 ```
 
+### Jupyter Configuration
+
+- Resolve: Invalid response: 413 Request Entity Too Large
+
+  - Set-up nginx client max body size parameter
+
+  ```
+  client_max_body_size 1G;
+  ```
+
 ### Create Jupyter Lab Kernel
 ```bash
 python3 -m ipykernel install --user --name user-kernel --display-name 'UserKernel'
@@ -101,6 +111,7 @@ sudo "PATH=$PATH" /opt/jupyterhub/bin/jupyter labextension update --all
 jupyter kernelspec list
 jupyter kernelspec remove KERNELNAME
 ```
+
 
 ## Ipykernel management
 
