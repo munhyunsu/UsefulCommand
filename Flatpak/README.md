@@ -19,3 +19,8 @@ flatpak install --user flathub INSTALL
 ```
 flatpak update
 ```
+
+## Remove unused application
+```bash
+flatpak remove --unused
+```
