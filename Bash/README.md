@@ -14,6 +14,7 @@
 - Sorted result with hidden direcotries command
   ```bash
   du -sh .[!.]* * | sort -h
+  du -sh .[!.]* * >(grep -v 'Permission denied') | sort -h
   ```
 
 ## Rename multiple files
