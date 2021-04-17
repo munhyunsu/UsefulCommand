@@ -42,7 +42,7 @@ gpg --encrypt --output FILE.gpg -r RECIPIENT SRCFILE
 ```
 
 ```bash
-gpg --decrypt ECRYPTEDFILE
+gpg --decrypt --output FILE ECRYPTEDFILE
 ```
 
 - Directories
