@@ -16,7 +16,7 @@ flatpak install --user flathub INSTALL
 ```
 
 ## Update
-```
+```bash
 flatpak update
 ```
 
