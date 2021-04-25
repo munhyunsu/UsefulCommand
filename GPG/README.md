@@ -21,6 +21,17 @@ gpg> expire
 
 3. upload the new key to Github
 
+## Change the passphrase
+```bash
+gpg --list-secret-keys
+gpg --edit-key ID
+```
+
+```
+passwd
+save
+```
+
 
 ## Backup and restore gpg keys
 1. Identify private key
