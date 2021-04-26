@@ -40,3 +40,9 @@ sudo su
 xauth merge $HOME/.Xauthority
 exit
 ```
+
+## Check hardware Product Name
+```bash
+sudo dmidecode
+```
+
