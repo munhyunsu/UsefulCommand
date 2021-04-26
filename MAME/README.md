@@ -25,5 +25,6 @@ sudo ldconfig
 ```
 
 ```bash
+vi makefile for /opt/Qt/...
 ```
 
