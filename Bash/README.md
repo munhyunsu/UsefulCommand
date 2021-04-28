@@ -46,3 +46,10 @@ exit
 sudo dmidecode
 ```
 
+## Mount CDROM (virtualbox guest addition)
+```bash
+sudo mkdir -p /media/cdrom
+sudo mount -t iso9660 -o ro /dev/sr0 /media/cdrom
+sudo umount /media/cdrom
+sudo rmdir /media/cdrom
+```
