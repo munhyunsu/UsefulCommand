@@ -11,9 +11,9 @@
 
 TARGET=/opt/google/chrome-remote-desktop/chrome-remote-desktop
 TARGETBACKUP=/opt/google/chrome-remote-desktop/chrome-remote-desktop.original
-cp $TARGET $TARGETBACKUP
 
 if ! grep -q '^DEFAULT_SIZES = "1920x1080"' $TARGET; then
+  cp $TARGET $TARGETBACKUP
   sed -i 's/^DEFAULT_SIZES = "*/#&/g' $TARGET
   sed -i '/^#DEFAULT_SIZES/a DEFAULT_SIZES = "1920x1080"' $TARGET
 fi
@@ -27,7 +27,8 @@ sed -i 's/^    while os.path.exists(X_LOCK_FILE_TEMPLATE % display):*/#&/g' $TAR
 sed -i 's/^      display += 1*/#&/g' $TARGET
 
 sed -i 's/^    self._launch_x_server(x_args)*/#&/g' $TARGET
-sed -i 's/^    self._launch_x_session()*/#&/g' $TARGET
+sed -i 's/^    if not self._launch_pre_session():*/#&/g' $TARGET
+sed -i 's/^      self.launch_x_session()*/#&/g' $TARGET
 if ! grep -q 'display = self.get_unused_display_number()#' $TARGET; then
-  sed -i '/^#    self._launch_x_session()/a \ \ \ \ display = self.get_unused_display_number()#\n\ \ \ \ self.child_env[\x27DISPLAY\x27] = f\x27:{display}\x27#' $TARGET
+  sed -i '/^#      self.launch_x_session()/a \ \ \ \ display = self.get_unused_display_number()#\n\ \ \ \ self.child_env[\x27DISPLAY\x27] = f\x27:{display}\x27#' $TARGET
 fi
