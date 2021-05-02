@@ -4,6 +4,19 @@
 
 - [Official site](https://www.tug.org/texlive/)
 
+### Launch the installer
+
+```bash
+sudo ./install-tl -gui
+```
+
+- Open advanced options
+
+```
+Installation root: /usr/local/texlive/20xx/
+TEXMFHOME: ~/.texmf
+```
+
 ## Configuration
 
 ### Set global environmnet variables
