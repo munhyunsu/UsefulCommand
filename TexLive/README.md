@@ -1,3 +1,9 @@
+## Installation
+
+### Download install-tl.zip
+
+- [Official site](https://www.tug.org/texlive/)
+
 ## Configuration
 
 ### Set global environmnet variables
