@@ -586,6 +586,18 @@
     sudo ./waf install
     ```
 
+## Set a global environmnet variables
+
+```bash
+sudo vi /etc/profile.d/ffmpeg.sh
+```
+
+```
+if [ -d "/opt/ffmpeg" ] ; then
+    PATH="/opt/ffmpeg/bin:$PATH"
+fi
+```
+
 
 ## Concat videos
 1. Write down target filenames
@@ -630,3 +642,4 @@ ffmpeg -i zoom_0.mp4 -vf scale=1280:720,fps=60 -c:v libx264 -c:a aac -ac 2 -b:a 
 ```bash
 ffmpeg -i 1.mp4 -i 2.mp4 -filter_complex "[0:v:0][0:a:0][1:v:0][1:a:0]concat=n=2:v=1:a=1[outv][outa]" -map "[outv]" -map "[outa]" merged.mp4
 ```
+
