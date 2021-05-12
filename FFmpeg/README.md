@@ -649,3 +649,7 @@ ffmpeg -i zoom_0.mp4 -vf scale=1280:720,fps=60 -c:v libx264 -c:a aac -ac 2 -b:a 
 ffmpeg -i 1.mp4 -i 2.mp4 -filter_complex "[0:v:0][0:a:0][1:v:0][1:a:0]concat=n=2:v=1:a=1[outv][outa]" -map "[outv]" -map "[outa]" merged.mp4
 ```
 
+## Capture webcam using FFmpeg
+```bash
+ffmpeg -f alsa -f video4linux2 -s 640x480 -i /dev/video4 -r 30 -b:v 5000k -f matroska - | mpv --demuxer=mkv /dev/stdin
+```
