@@ -651,5 +651,5 @@ ffmpeg -i 1.mp4 -i 2.mp4 -filter_complex "[0:v:0][0:a:0][1:v:0][1:a:0]concat=n=2
 
 ## Capture webcam using FFmpeg
 ```bash
-ffmpeg -f alsa -f video4linux2 -s 640x480 -i /dev/video4 -r 30 -b:v 5000k -f matroska - | mpv --demuxer=mkv /dev/stdin
+ffmpeg -f alsa -i hw:0 -f video4linux2 -s 640x480 -i /dev/video0 -r 30 -b:v 5000k -f matroska - | mpv --demuxer=mkv /dev/stdin
 ```
