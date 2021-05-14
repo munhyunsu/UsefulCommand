@@ -13,3 +13,9 @@ FIRST_X_DISPLAY_NUMBER = 0
     display = self.get_unused_display_number()
     self.child_env['DISPLAY'] = f':{display}'
 ```
+
+## Enable /etc/init.d/ Script
+
+```bash
+update-rc chrome-remote-desktop-patch-linux defaults
+```
