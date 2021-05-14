@@ -653,3 +653,11 @@ ffmpeg -i 1.mp4 -i 2.mp4 -filter_complex "[0:v:0][0:a:0][1:v:0][1:a:0]concat=n=2
 ```bash
 ffmpeg -f alsa -i hw:0 -f video4linux2 -s 640x480 -i /dev/video0 -r 30 -b:v 5000k -f matroska - | mpv --demuxer=mkv /dev/stdin
 ```
+- [Ref1](https://unix.stackexchange.com/questions/2302/can-i-pipe-dev-video-over-ssh)
+- [Ref2](https://unix.stackexchange.com/questions/116919/redirect-sound-microphone-via-ssh-how-to-telephone-via-ssh/116921#116921)
+
+## Encode using VAAPI on Linux
+```bash
+apt install vainfo intel-mesa-driver-non-free
+```
+- [Ref](https://wiki.debian.org/HardwareVideoAcceleration#VA-API)
