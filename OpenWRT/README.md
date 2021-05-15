@@ -37,3 +37,17 @@ apt-get install gtkterm
   echo 'reset' > /dev/ttyUSB0
   ```
 
+## TFTP
+
+1. Install TFTP daemon
+
+```bash
+apt install atftpd
+```
+
+2. Place file on /srv/tftp
+```bash
+mv FILE /srv/tftp
+chown nobody FILE
+```
+
