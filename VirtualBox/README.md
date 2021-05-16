@@ -1,5 +1,12 @@
 # Virtualbox
 
+## Installation
+
+1. install virtualbox dkms (even with SecureBoot)
+```bash
+apt install --reinstall virtualbox-dkms
+```
+
 ## Manage SharedFolder
 
 ### Linux Guest
