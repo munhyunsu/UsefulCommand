@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd /home/HOME/.nvm
+source nvm.sh
+
+cd /opt/jupyterhub
+source bin/activate
+#/opt/jupyterhub/bin/pip3 install -r /home/harny/Github/UsefulCommand/Jupyter/requirements.txt
+/opt/jupyterhub/bin/jupyterhub -f /opt/jupyterhub/etc/jupyterhub/jupyterhub_config.py
