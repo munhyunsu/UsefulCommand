@@ -1,0 +1,25 @@
+ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -f pulse -i default -c:v libx264rgb -crf 23 -preset medium -y ~/.rfs.mkv
+
+ffmpeg -vaapi_device /dev/dri/renderD128 -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -f pulse -i default -c:v libx264rgb -crf 23 -preset medium -y ~/.rfs.mkv
+
+ffmpeg -vaapi_device /dev/dri/renderD128 -f x11grab -video_size 1920x1080 -framerate 30 -i :0.0 -f pulse -i default -vf 'hwupload,scale_vaapi=format=nv12' -c:v h264_vaapi -y ~/.rfs.mkv
+
+ffmpeg -vaapi_device /dev/dri/renderD128 -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0  -f pulse -i default -vf 'hwupload,scale_vaapi=format=nv12' -c:v h264_vaapi -qp 24 -y ~/.rfs2.mkv
+
+ffmpeg -vaapi_device /dev/dri/renderD128 -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0  -f pulse -i default -vf 'hwupload,scale_vaapi=format=vaapi' -c:v h264_vaapi -qp 24 -y ~/.rfs2.mkv
+
+
+https://gist.github.com/Brainiarc7/4636a162ef7dc2e8c9c4c1d4ae887c0e
+
+
+ffmpeg -vaapi_device /dev/dri/renderD128 -f x11grab -video_size 1920x1080 -i :0 -f pulse -i default -vf 'hwupload,scale_vaapi=format=nv12' -c:v h264_vaapi -qp 24 -y output.mp4
+
+ffmpeg -vaapi_device /dev/dri/renderD128 -f x11grab -video_size 1920x1080 -framerate 30 -i :0.0 -f pulse -i default -vf 'hwupload,scale_vaapi=format=nv12,' -c:v h264_vaapi -y output.mkv
+
+ffmpeg -vaapi_device /dev/dri/renderD128 -f x11grab -video_size 1920x1080 -framerate 30 -i :0.0 -f pulse -i default -vf 'format=nv12,hwupload,scale_vaapi=w=1280:h=720:' -c:v h264_vaapi -y output.mp4
+
+ffmpeg -vaapi_device /dev/dri/renderD128 -f x11grab -video_size 1920x1080 -framerate 30 -i :0.0 -f pulse -i default -vf 'hwupload,scale_vaapi=format=nv12;hwdownload' -c:v libx264rgb -crf 23 -preset medium -y output.mkv
+
+
+ffmpeg -hwaccel vaapi -vaapi_device /dev/dri/renderD128 -f x11grab -video_size 1920x1080 -i :0.0 -f pulse -i default -vf 'format=nv12,hwupload' -c:v h264_vaapi -qp 24 -y output.mp4
+
