@@ -53,3 +53,9 @@ sudo mount -t iso9660 -o ro /dev/sr0 /media/cdrom
 sudo umount /media/cdrom
 sudo rmdir /media/cdrom
 ```
+
+## Backlight adjustment
+
+```bash
+echo 0 | sudo tee /sys/class/backlight/intel_backlight/brightness
+```
