@@ -59,3 +59,11 @@ sudo rmdir /media/cdrom
 ```bash
 echo 0 | sudo tee /sys/class/backlight/intel_backlight/brightness
 ```
+
+## Pulseaudio
+
+### Microphone unmute
+- If it is default device
+```
+pactl set-source-mute $(pactl info | grep "Default Source" | awk '{print $3;}') 0
+```
