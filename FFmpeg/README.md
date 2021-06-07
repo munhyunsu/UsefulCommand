@@ -685,3 +685,11 @@ ffmpeg -y -r 24 -i output.h264 -i output.aac -c copy output.mp4
 ```bash
 ffmpeg -r 30 -i input.mp4 output.mp4
 ```
+
+## Extract only audio
+
+- `-vn`: no video
+- `-acodec copy`: copy codec of original file
+```bash
+ffmpeg -i input.mp4 -vn -acodec copy output.aac
+```
