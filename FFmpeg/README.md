@@ -680,3 +680,8 @@ ffmpeg -i input.mp4 -c copy -f h264 output.h264
 ffmpeg -i input.mp4 -vn -acodec copy output.aac
 ffmpeg -y -r 24 -i output.h264 -i output.aac -c copy output.mp4
 ```
+
+- using -r options
+```bash
+ffmpeg -r 30 -i input.mp4 output.mp4
+```
