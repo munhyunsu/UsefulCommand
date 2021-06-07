@@ -693,3 +693,11 @@ ffmpeg -r 30 -i input.mp4 output.mp4
 ```bash
 ffmpeg -i input.mp4 -vn -acodec copy output.aac
 ```
+
+- `-vn`: no video
+- `-ar`: sampling frequency (48000)
+- `-ac`: audio channel (2)
+- `-b:a`: bitrate (320k)
+```bash
+ffmpeg -i input.mp4 -vn -ar 48000 -ac 2 -b:a 320k output.mp3
+```
