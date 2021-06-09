@@ -6,6 +6,12 @@
 sudo vi /etc/apt/preferences.d/nosnap.pref
 ```
 
+- Update snapd
+```bash
+sudo snap install core
+sudo snap refresh core
+```
+
 ## Renew
 
 ```bash
