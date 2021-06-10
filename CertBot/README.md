@@ -19,6 +19,11 @@ sudo apt remove certbot
 sudo snap install --classic certbot
 ```
 
+- Link command
+```bash
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+```
+
 ## Renew
 
 ```bash
