@@ -12,6 +12,13 @@ sudo snap install core
 sudo snap refresh core
 ```
 
+## Install Certbot
+- Remove and install certbot
+```bash
+sudo apt remove certbot
+sudo snap install --classic certbot
+```
+
 ## Renew
 
 ```bash
