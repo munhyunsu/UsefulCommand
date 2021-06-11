@@ -4,6 +4,8 @@ set ff=unix
 ```
 
 ## .vimrc
+- vi ~/.vimrc
+
 ```bash
 set number "Indicate Line Number
 set tabstop=4 "Tab Size Setting
