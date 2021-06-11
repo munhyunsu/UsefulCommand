@@ -24,6 +24,11 @@ sudo snap install --classic certbot
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
 ```
 
+- Container with root
+```bash
+sudo snap set certbot trust-plugin-with-root=ok
+```
+
 ## Renew
 
 ```bash
