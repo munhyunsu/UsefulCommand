@@ -701,3 +701,9 @@ ffmpeg -i input.mp4 -vn -acodec copy output.aac
 ```bash
 ffmpeg -i input.mp4 -vn -ar 48000 -ac 2 -b:a 320k output.mp3
 ```
+
+## Merged video of video1 and audio of video2
+
+```bash
+ffmpeg -i video1.mp4 -i video2.mp4 -c copy -map 0:v:0 -map 1:a:0 output.mp4
+```
