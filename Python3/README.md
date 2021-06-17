@@ -8,4 +8,6 @@ sudo apt install build-essential libbz2-dev libcurses-ocaml-dev libdbm-deep-perl
 ## Configuration for build
 ```bash
 ./configure --prefix=/opt/Python3 --enable-optimizations
+sudo make install
 ```
+
