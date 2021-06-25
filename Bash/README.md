@@ -83,6 +83,7 @@ pactl set-source-mute $(pactl info | grep "Default Source" | awk '{print $3;}') 
 # Sound redirect using ssh
 
 - arecord [manual](https://linux.die.net/man/1/arecord)
+- Sound quality [reference](https://trac.ffmpeg.org/wiki/audio%20types)
 
 ```bash
 #!/bin/bash
