@@ -79,3 +79,10 @@ pactl set-source-mute $(pactl info | grep "Default Source" | awk '{print $3;}') 
 - (`$!`): Expands to the process ID of the job most recently placed into the background, whether executed as an asynchronous command or using the bg builtin (see Job Control Builtins).
 - (`$0`): Expands to the name of the shell or shell script.
 
+
+# Sound redirect using ssh
+```bash
+#!/bin/bash
+
+ssh IPADDRESS "arecord -f S16_LE -c 2 -r $1 -B 10000" | mpv -
+```
