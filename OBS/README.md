@@ -14,3 +14,9 @@ Rate Control: CBR
 Bitrate: 5530Kbps
 Ketframe interval: 0
 ```
+
+# Bitrate calculation
+
+```
+BITRATE(kbps) = (WIDTH * HEIGHT * FRAMERATE * BPP) / 1000
+```
