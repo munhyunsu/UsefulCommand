@@ -20,3 +20,8 @@ Ketframe interval: 0
 ```
 BITRATE(kbps) = (WIDTH * HEIGHT * FRAMERATE * BPP) / 1000
 ```
+
+## Bits per pixel
+- High motion (all screen chage): 0.1
+- Low motion (1/3 of screen change): 0.06
+```
