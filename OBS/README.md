@@ -17,6 +17,8 @@ Ketframe interval: 0
 
 # Bitrate calculation
 
+- [Reference](https://www.reddit.com/r/Twitch/comments/2dz7ru/bitrates_resolutions_and_quality/)
+
 ```
 BITRATE(kbps) = (WIDTH * HEIGHT * FRAMERATE * BPP) / 1000
 ```
