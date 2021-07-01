@@ -88,5 +88,12 @@ pactl set-source-mute $(pactl info | grep "Default Source" | awk '{print $3;}') 
 ```bash
 #!/bin/bash
 
-ssh IPADDRESS "arecord -f S16_LE -c 2 -r $1 -B 10000" | mpv -
+if [ -z "$1" ];
+    then
+        BITRATE=16000
+    else
+        BITRATE=$1
+fi
+
+ssh IPADDRESS "arecord -f S16_LE -c 2 -r $BITRATE -B 10000" | mpv -
 ```
