@@ -4,5 +4,6 @@ ipykernel
 ipympl
 tensorflow-io
 tensorflow
+tensorflow-hub
 numpy
 pandas
