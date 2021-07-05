@@ -28,6 +28,20 @@ c288470c46f6        host                host
 7b369448dccb        bridge              bridge
 ```
 
+## Change Docker data-path (Docker version 20.10.7, build f0df350)
+
+1. Create docker setting JSON
+```bash
+vi /etc/docker/daemon.json
+```
+
+2. set `data-root`
+```
+{
+    "data-root": "/var/lib/docker"
+}
+```
+
 ## Usage example
 
 ### Container management
@@ -51,3 +65,4 @@ docker container ls
 docker container stop CONTAINERNAME
 docer container rm CONTAINERNAME
 ```
+
