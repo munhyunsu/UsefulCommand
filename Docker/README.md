@@ -42,6 +42,12 @@ vi /etc/docker/daemon.json
 }
 ```
 
+- (Optional) Can used symbolic link
+
+```
+ln -s /var/lib/docker WANTEDPATH
+```
+
 ## Usage example
 
 ### Container management
