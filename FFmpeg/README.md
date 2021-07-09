@@ -707,3 +707,9 @@ ffmpeg -i input.mp4 -vn -ar 48000 -ac 2 -b:a 320k output.mp3
 ```bash
 ffmpeg -i video1.mp4 -i video2.mp4 -c copy -map 0:v:0 -map 1:a:0 output.mp4
 ```
+
+## Resize video
+
+```bash
+ffmpeg -i video.mp4 -vf scale=1920:-1 -scodec copy output.mp4
+```
