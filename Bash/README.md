@@ -57,7 +57,14 @@ sudo rmdir /media/cdrom
 ## Backlight adjustment
 
 ```bash
+cat /sys/class/backlight/intel_backlight/brightness
 echo 0 | sudo tee /sys/class/backlight/intel_backlight/brightness
+```
+
+## Check laptop lid status
+
+```bash
+cat /proc/acpi/button/lid/LID/state
 ```
 
 ## Pulseaudio
@@ -97,3 +104,5 @@ fi
 
 ssh IPADDRESS "arecord -f S16_LE -c 2 -r $BITRATE -B 10000" | mpv -
 ```
+
+
