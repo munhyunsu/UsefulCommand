@@ -67,6 +67,12 @@ echo 0 | sudo tee /sys/class/backlight/intel_backlight/brightness
 cat /proc/acpi/button/lid/LID/state
 ```
 
+## Check battery status
+
+```bash
+upower -i /org/freedesktop/UPower/devices/battery_BAT01
+```
+
 ## Pulseaudio
 
 ### Microphone unmute
