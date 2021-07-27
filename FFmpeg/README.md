@@ -266,10 +266,20 @@
     ```
 
 1. lensfun
+  - Deprecated since n4.3.1-29-g89daac5fe2
     ```bash
     wget -O lensfun-0.3.95.tar.gz https://github.com/lensfun/lensfun/archive/v0.3.95.tar.gz
     tar -xvf lensfun-0.3.95.tar.gz
     cd lensfun-0.3.95
+    mkdir build
+    cd build
+    cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
+    make
+    ```
+
+    ```bash
+    git clone https://github.com/lensfun/lensfun.git
+    cd lensfun
     mkdir build
     cd build
     cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
@@ -717,4 +727,10 @@ ffmpeg -i video1.mp4 -i video2.mp4 -c copy -c:s copy -map 0:v:0 -map 1:a:0 -map 
 
 ```bash
 ffmpeg -i video.mp4 -vf scale=1920:-1 -scodec copy output.mp4
+```
+
+## Open RTSP Server
+
+```bash
+ffmpeg -listen 1 -i rtmp://localhost -f matroska - | mpv --demuxer=mkv /dev/stdin
 ```
