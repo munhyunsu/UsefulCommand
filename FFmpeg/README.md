@@ -732,5 +732,5 @@ ffmpeg -i video.mp4 -vf scale=1920:-1 -scodec copy output.mp4
 ## Open RTSP Server
 
 ```bash
-ffmpeg -listen 1 -i rtmp://localhost -f matroska - | mpv --demuxer=mkv /dev/stdin
+ffmpeg -loglevel error -listen 1 -i rtmp://localhost -bufsize 1024k -f matroska - | mpv --demuxer=mkv /dev/stdin
 ```
