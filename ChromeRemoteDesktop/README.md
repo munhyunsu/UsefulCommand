@@ -19,3 +19,4 @@ FIRST_X_DISPLAY_NUMBER = 0
 ```bash
 update-rc chrome-remote-desktop-patch-linux defaults
 ```
+

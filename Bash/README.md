@@ -111,4 +111,19 @@ fi
 ssh IPADDRESS "arecord -f S16_LE -c 2 -r $BITRATE -B 10000" | mpv -
 ```
 
-
+```bash
+if [ -z "$1" ];
+    then
+        BITRATE=8000
+    else
+        BITRATE=$1
+fi
+if [ "$2" == "on" ] || [ "$2" == "ON" ];
+    then
+        GUI="--profile=pseudo-gui --geometry=360"
+    else
+        GUI=""
+fi
+echo "Bitrate is setted by $BITRATE"
+ssh IPADDRESS "arecord -f S16_LE -c 2 -r $BITRATE -B 10000" | mpv $GUI -
+```
