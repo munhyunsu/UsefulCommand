@@ -125,5 +125,6 @@ if [ "$2" == "on" ] || [ "$2" == "ON" ];
         GUI=""
 fi
 echo "Bitrate is setted by $BITRATE"
+echo "GUI is setted by $GUI"
 ssh IPADDRESS "arecord -f S16_LE -c 2 -r $BITRATE -B 10000" | mpv $GUI -
 ```
