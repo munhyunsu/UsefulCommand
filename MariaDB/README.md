@@ -50,3 +50,8 @@ docker exec CONTAINER /usr/bin/mysqldump --max_allowed_packet=1G -u root --passw
 docker exec -i CONTAINER bash -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD" DATABASE' < backup.sql
 ```
 
+## Database disk path
+
+```bash
+docker run --name some-mariadb -v /my/own/datadir:/var/lib/mysql -e MARIADB_ROOT_PASSWORD=my-secret-pw -d mariadb:tag
+```
