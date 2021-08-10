@@ -734,3 +734,9 @@ ffmpeg -i video.mp4 -vf scale=1920:-1 -scodec copy output.mp4
 ```bash
 ffmpeg -loglevel error -listen 1 -i rtmp://localhost -bufsize 1024k -f matroska - | mpv --demuxer=mkv /dev/stdin
 ```
+
+## Blur video
+
+```bash
+ffmpeg -i INPUTVIDEO.mp4 -i INPUTMASK.jpg -filter_complex "[0:v][1:v]alphamerge,boxblur=50[alf];[0:v][alf]overlay[v]" -map "[v]" -map 0:a -map 0:s -c:v libx264 -c:a copy -c:s copy OUTPUTVIDEO.mp4;
+```
