@@ -8,7 +8,7 @@ pactl load-module module-loopback latency_msec=1
 
 - Very nice cycling example ([Ref](https://itectec.com/ubuntu/ubuntu-share-an-audio-playback-stream-through-a-live-audio-video-conversation-like-skype/))
 
-https://unix.stackexchange.com/questions/576785/redirecting-pulseaudio-sink-to-a-virtual-source
+- Redirecting to virtual Sink ([Ref](https://unix.stackexchange.com/questions/576785/redirecting-pulseaudio-sink-to-a-virtual-source))
 
 # Echo cancel
 
