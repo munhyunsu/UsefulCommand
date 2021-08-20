@@ -11,5 +11,5 @@ pactl load-module module-loopback latency_msec=1
 # Echo cancel
 
 ```bash
-pactl load-module module-echo-cancel aec_method=webrtc
+pactl load-module module-echo-cancel aec_method=webrtc channels=2
 ```
