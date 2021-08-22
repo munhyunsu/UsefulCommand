@@ -22,3 +22,27 @@ pactl load-module module-echo-cancel aec_method=webrtc channels=2
 pactl load-module module-null-sink sink_name=recsink sink_properties=device.description=RecSink
 pactl load-module module-loopback source=recsink.monitor sink=SPEAKER latency_msec=1
 ```
+
+# Script example
+
+## Monitoring mode
+
+```bash
+#!/bin/bash
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 [on|off]"
+    exit 1
+fi
+
+if [[ $1 == "on"  ]]; then
+    pactl load-module module-null-sink sink_name=monitorsink sink_properties=device.description=MonitorSink
+    pactl load-module module-loopback source=monitorsink.monitor latency_msec=1
+    echo "pulseaudio monitor sink module loaded"
+elif [[ $1 == "off" ]]; then
+    pactl unload-module module-loopback
+    pactl unload-module module-null-sink
+    echo "pulseaudio monitor sink module unloaded"
+else
+    echo "Usage: $0 [on|off]"
+fi
+```
