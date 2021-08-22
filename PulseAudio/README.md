@@ -25,6 +25,25 @@ pactl load-module module-loopback source=recsink.monitor sink=SPEAKER latency_ms
 
 # Script example
 
+## Loopback mode
+```bash
+#!/bin/bash
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 [on|off]"
+    exit 1
+fi
+
+if [[ $1 == "on"  ]]; then
+    pactl load-module module-loopback latency_msec=1
+    echo "pulseaudio loopback module loaded"
+elif [[ $1 == "off" ]]; then
+    pactl unload-module module-loopback
+    echo "pulseaudio loopback module unloaded"
+else
+    echo "Usage: $0 [on|off]"
+fi
+```
+
 ## Monitoring mode
 
 ```bash
