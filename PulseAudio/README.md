@@ -1,3 +1,12 @@
+# Set a default sink
+
+- List sinks
+
+```bash
+pactl list sinks
+pactl list short sinks
+```
+
 # Loopback interface
 
 ```bash
