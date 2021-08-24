@@ -7,6 +7,12 @@ pactl list sinks
 pactl list short sinks
 ```
 
+- Set defaukt sink
+
+```bash
+pactl set-default-sink 0
+```
+
 # Loopback interface
 
 ```bash
