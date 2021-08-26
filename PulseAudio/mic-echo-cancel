@@ -1,0 +1,15 @@
+#!/bin/bash
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 [on|off]"
+    exit 1
+fi
+
+if [[ $1 == "on"  ]]; then
+    pactl load-module module-echo-cancel aec_method=webrtc channels=2
+    echo "pulseaudio echo cancel module loaded"
+elif [[ $1 == "off" ]]; then
+    pactl unload-module module-echo-cancel
+    echo "pulseaudio echo cancel module unloaded"
+else
+    echo "Usage: $0 [on|off]"
+fi
