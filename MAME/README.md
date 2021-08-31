@@ -29,6 +29,11 @@ vi makefile for /opt/Qt/...
 ```
 
 - Python3 (Line 102)
+
+```bash
+vi makefile
+```
+
 ```bash
 PYTHON_EXECUTABLE = python3
 ```
