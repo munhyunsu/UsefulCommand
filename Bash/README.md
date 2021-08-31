@@ -128,3 +128,9 @@ fi
 echo "GUI is setted by $GUI"
 ssh IPADDRESS "arecord -f S16_LE -c 2 -r $BITRATE -B 10000" | mpv $GUI -
 ```
+
+### Auto startup application
+
+- In crontab to system boot
+
+- In startup application to user log-in
