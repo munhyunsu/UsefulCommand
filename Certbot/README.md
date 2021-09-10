@@ -29,6 +29,11 @@ sudo ln -s /snap/bin/certbot /usr/bin/certbot
 sudo snap set certbot trust-plugin-with-root=ok
 ```
 
+## Acquire certificate (with Google DNS)
+
+- [Ref](https://certbot-dns-google.readthedocs.io/en/stable/)
+
+
 ## Renew
 
 ```bash
