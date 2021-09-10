@@ -32,7 +32,9 @@ sudo snap set certbot trust-plugin-with-root=ok
 ## Acquire certificate (with Google DNS)
 
 - [Ref](https://certbot-dns-google.readthedocs.io/en/stable/)
-
+```bash
+sudo certbot certonly --dns-google --dns-google-credential JSONPATH -d *.domain.com -d domain.com
+```
 
 ## Renew
 
