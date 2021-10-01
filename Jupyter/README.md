@@ -83,6 +83,19 @@ sudo systemctl start jupyterhub.service
 sudo systemctl status jupyterhub.service
 ```
 
+### Jupyterlab upgrade
+
+```bash
+sudo -s
+source /opt/jupyterhub/bin/activate
+```
+
+```bash
+/opt/jupyterhub/bin/pip3 install --upgrade -r requirements.txt
+source /home/user/.nvm/nvm.sh
+/opt/jupyterhub/bin/jupyter lab build
+```
+
 ### Jupyter Configuration
 
 - Resolve: Invalid response: 413 Request Entity Too Large
