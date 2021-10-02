@@ -5,4 +5,5 @@
 
 ## Reference
 
+- [TensorFlow Nvidia](https://www.tensorflow.org/install/gpu)
 - [Nvidia official documentation]()
