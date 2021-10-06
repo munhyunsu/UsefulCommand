@@ -134,3 +134,5 @@ ssh IPADDRESS "arecord -f S16_LE -c 2 -r $BITRATE -B 10000" | mpv $GUI -
 - In crontab to system boot
 
 - In startup application to user log-in
+
+  - (LinuxMint) Startup application
