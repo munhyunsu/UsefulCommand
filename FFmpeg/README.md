@@ -6,84 +6,95 @@
 - Download precompiled binary [Link](https://www.ffmpeg.org/download.html)
 
 ### Custom compile
+
 1. Install dependencies and Set environment variables
-    ```bash
-    apt install autoconf automake build-essential cmake git-core libass-dev libfreetype6-dev libgnutls28-dev libsdl2-dev libtool libva-dev libvdpau-dev libvorbis-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev pkg-config texinfo wget yasm zlib1g-dev libunistring-dev autogen zlib1g-dev libcunit1-dev libcunit1-dev libportaudio-ocaml-dev libflac-dev librsvg2-dev libssh-dev
-    export PATH="/opt/ffmpeg/bin:/opt/Python27/bin:${PATH}"
-    export PKG_CONFIG_PATH="/opt/ffmpeg/lib/pkgconfig:${PKG_CONFIG_PATH}"
-    ```
+
+```bash
+apt install autoconf automake build-essential cmake git-core libass-dev libfreetype6-dev libgnutls28-dev libsdl2-dev libtool libva-dev libvdpau-dev libvorbis-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev pkg-config texinfo wget yasm zlib1g-dev libunistring-dev autogen zlib1g-dev libcunit1-dev libcunit1-dev libportaudio-ocaml-dev libflac-dev librsvg2-dev libssh-dev
+export PATH="/opt/ffmpeg/bin:/opt/Python27/bin:${PATH}"
+export PKG_CONFIG_PATH="/opt/ffmpeg/lib/pkgconfig:${PKG_CONFIG_PATH}"
+```
 
 1. NASM
-    - https://www.nasm.us/pub/nasm/releasebuilds/
-    ```bash
-    wget https://www.nasm.us/pub/nasm/releasebuilds/2.15.02/nasm-2.15.02.tar.bz2
-    tar -xvf nasm-2.15.02.tar.bz2
-    cd nasm-2.15.02
-    ./autogen.sh
-    ./configure --prefix="/opt/ffmpeg"
-    make
-    ```
+
+- https://www.nasm.us/pub/nasm/releasebuilds/
+
+```bash
+wget https://www.nasm.us/pub/nasm/releasebuilds/2.15.02/nasm-2.15.02.tar.bz2
+tar -xvf nasm-2.15.02.tar.bz2
+cd nasm-2.15.02
+./autogen.sh
+./configure --prefix="/opt/ffmpeg"
+make
+```
 
 1. libx264
-    ```bash
-    git clone --depth 1 https://code.videolan.org/videolan/x264.git
-    ./configure --prefix="/opt/ffmpeg" --enable-static --enable-pic
-    make
-    ```
+
+```bash
+git clone --depth 1 https://code.videolan.org/videolan/x264.git
+./configure --prefix="/opt/ffmpeg" --enable-static --enable-pic
+make
+```
 
 1. libx265
-    ```bash
-    apt install libnuma-dev
-    hg clone https://bitbucket.org/multicoreware/x265
-    cd x265/build/linux
-    cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" -DENABLE_SHARED=off ../../source
-    make
-    ```
+
+```bash
+apt install libnuma-dev
+hg clone https://bitbucket.org/multicoreware/x265
+cd x265/build/linux
+cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" -DENABLE_SHARED=off ../../source
+make
+```
 
 1. libvpx
-    ```bash
-    git clone --depth 1 https://chromium.googlesource.com/webm/libvpx.git
-    cd libvpx
-    ./configure --prefix="/opt/ffmpeg" --disable-examples --disable-unit-tests --enable-vp9-highbitdepth --as=yasm
-    make
-    ```
+
+```bash
+git clone --depth 1 https://chromium.googlesource.com/webm/libvpx.git
+cd libvpx
+./configure --prefix="/opt/ffmpeg" --disable-examples --disable-unit-tests --enable-vp9-highbitdepth --as=yasm
+make
+```
 
 1. libfdk-aac
-    ```bash
-    git clone --depth 1 https://github.com/mstorsjo/fdk-aac
-    cd fdk-aac
-    autoreconf -fiv
-    ./configure --prefix="/opt/ffmpeg" --disable-shared
-    make
-    ```
+
+```bash
+git clone --depth 1 https://github.com/mstorsjo/fdk-aac
+cd fdk-aac
+autoreconf -fiv
+./configure --prefix="/opt/ffmpeg" --disable-shared
+make
+```
 
 1. libmp3lame
-    ```bash
-    wget https://downloads.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz
-    tar -xvf lame-3.100.tar.gz
-    cd lame-3.100
-    ./configure --prefix="/opt/ffmpeg" --enable-nasm
-    make
-    ```
+
+```bash
+wget https://downloads.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz
+tar -xvf lame-3.100.tar.gz
+cd lame-3.100
+./configure --prefix="/opt/ffmpeg" --enable-nasm
+make
+```
 
 1. libopus
-    ```bash
-    git clone --depth 1 https://github.com/xiph/opus.git
-    cd opus
-    ./autogen.sh
-    ./configure --prefix="/opt/ffmpeg" --with-pic
-    make
-    ```
+
+```bash
+git clone --depth 1 https://github.com/xiph/opus.git
+cd opus
+./autogen.sh
+./configure --prefix="/opt/ffmpeg" --with-pic
+make
+```
 
 1. libaom
-    ```bash
-    git clone --depth 1 https://aomedia.googlesource.com/aom
-    cd aom
-    mkdir -p aom_build
-    cd aom_build
-    cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" -DBUILD_SHARED_LIBS=on -DENABLE_NASM=on ..
-    make
-    ```
+
+```bash
+git clone --depth 1 https://aomedia.googlesource.com/aom
+cd aom
+mkdir -p aom_build
+cd aom_build
+cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" -DBUILD_SHARED_LIBS=on -DENABLE_NASM=on ..
+make
+```
 
 1. AviSynth
     ```bash
