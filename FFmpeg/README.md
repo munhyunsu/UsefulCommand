@@ -97,207 +97,227 @@ make
 ```
 
 1. AviSynth
-    ```bash
-    wget -O AviSynthPlus-3.6.1.tar.gz https://github.com/AviSynth/AviSynthPlus/archive/v3.6.1.tar.gz
-    tar -xvf AviSynthPlus-3.6.1.tar.gz
-    cd AviSynthPlus-3.6.1
-    mkdir avisynth_build
-    cd avisynth_build
-    cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" -DHEADERS_ONLY:bool=on ..
-    ```
+
+```bash
+wget -O AviSynthPlus-3.6.1.tar.gz https://github.com/AviSynth/AviSynthPlus/archive/v3.6.1.tar.gz
+tar -xvf AviSynthPlus-3.6.1.tar.gz
+cd AviSynthPlus-3.6.1
+mkdir avisynth_build
+cd avisynth_build
+cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" -DHEADERS_ONLY:bool=on ..
+```
 
 1. Chromaprint
-    ```bash
-    wget -O Chromaprint-1.5.0.tar.gz https://github.com/acoustid/chromaprint/archive/v1.5.0.tar.gz
-    tar -xvf Chromaprint-1.5.0.tar.gz
-    cd chromaprint-1.5.0/
-    mkdir chromaprint_build
-    cd chromaprint_build
-    cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
-    ```
+
+```bash
+wget -O Chromaprint-1.5.0.tar.gz https://github.com/acoustid/chromaprint/archive/v1.5.0.tar.gz
+tar -xvf Chromaprint-1.5.0.tar.gz
+cd chromaprint-1.5.0/
+mkdir chromaprint_build
+cd chromaprint_build
+cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
+```
 
 1. Frei0r
-    ```bash
-    wget -O frei0r-1.7.0.tar.gz https://github.com/dyne/frei0r/archive/v1.7.0.tar.gz
-    tar -xvf frei0r-1.7.0.tar.gz
-    cd frei0r-1.7.0
-    autogen.sh
-    ./configure --prefix="/opt/ffmpeg"
-    ```
+
+```bash
+wget -O frei0r-1.7.0.tar.gz https://github.com/dyne/frei0r/archive/v1.7.0.tar.gz
+tar -xvf frei0r-1.7.0.tar.gz
+cd frei0r-1.7.0
+autogen.sh
+./configure --prefix="/opt/ffmpeg"
+```
     
-    - Needed?
-    ```bash
-    apt install --install-recommends libopencv-dev libgavl-dev
-    ```
+- Needed (?)
+
+```bash
+apt install --install-recommends libopencv-dev libgavl-dev
+```
 
 1. LADSPA
-    ```bash
-    wget -O ladspa.h https://www.ladspa.org/ladspa_sdk/ladspa.h.txt
-    cp ladspa.h /opt/ffmpeg/include
-    ```
+
+```bash
+wget -O ladspa.h https://www.ladspa.org/ladspa_sdk/ladspa.h.txt
+cp ladspa.h /opt/ffmpeg/include
+```
 
 1. ARIB STD-B24
-    ```bash
-    wget -O aribb24-1.0.3.tar.gz https://github.com/nkoriyama/aribb24/archive/v1.0.3.tar.gz
-    tar -xvf aribb24-1.0.3.tar.gz
-    cd aribb24-1.0.3
-    ./bootstrap
-    ./configure --prefix="/opt/ffmpeg"
-    ```
+
+```bash
+wget -O aribb24-1.0.3.tar.gz https://github.com/nkoriyama/aribb24/archive/v1.0.3.tar.gz
+tar -xvf aribb24-1.0.3.tar.gz
+cd aribb24-1.0.3
+./bootstrap
+./configure --prefix="/opt/ffmpeg"
+```
 
 1. Lilv-0
-    ```bash
-    wget http://lv2plug.in/spec/lv2-1.18.0.tar.bz2
-    tar -xvf lv2-1.18.0.tar.bz2
-    cd lv2-1.18.0
-    ./waf configure --prefix="/opt/ffmpeg"
-    sudo ./waf install
-    wget http://download.drobilla.net/serd-0.30.4.tar.bz2
-    tar -xvf serd-0.30.4.tar.bz2
-    cd serd-0.30.4
-    ./waf configure --prefix="/opt/ffmpeg"
-    sudo ./waf install
-    wget http://download.drobilla.net/sord-0.16.4.tar.bz2
-    tar -xvf sord-0.16.4.tar.bz2
-    cd sord-0.16.4
-    ./waf configure --prefix="/opt/ffmpeg"
-    sudo ./waf install
-    wget http://download.drobilla.net/sratom-0.6.4.tar.bz2
-    tar -xvf sratom-0.6.4.tar.bz2
-    cd sratom-0.6.4
-    ./waf configure --prefix="/opt/ffmpeg"
-    sudo ./waf install
-    wget http://download.drobilla.net/lilv-0.24.8.tar.bz2
-    tar -xvf lilv-0.24.8.tar.bz2
-    cd lilv-0.24.8
-    ./waf configure --prefix="/opt/ffmpeg"
-    sudo ./waf install
-    ```
+
+```bash
+wget http://lv2plug.in/spec/lv2-1.18.0.tar.bz2
+tar -xvf lv2-1.18.0.tar.bz2
+cd lv2-1.18.0
+./waf configure --prefix="/opt/ffmpeg"
+sudo ./waf install
+wget http://download.drobilla.net/serd-0.30.4.tar.bz2
+tar -xvf serd-0.30.4.tar.bz2
+cd serd-0.30.4
+./waf configure --prefix="/opt/ffmpeg"
+sudo ./waf install
+wget http://download.drobilla.net/sord-0.16.4.tar.bz2
+tar -xvf sord-0.16.4.tar.bz2
+cd sord-0.16.4
+./waf configure --prefix="/opt/ffmpeg"
+sudo ./waf install
+wget http://download.drobilla.net/sratom-0.6.4.tar.bz2
+tar -xvf sratom-0.6.4.tar.bz2
+cd sratom-0.6.4
+./waf configure --prefix="/opt/ffmpeg"
+sudo ./waf install
+wget http://download.drobilla.net/lilv-0.24.8.tar.bz2
+tar -xvf lilv-0.24.8.tar.bz2
+cd lilv-0.24.8
+./waf configure --prefix="/opt/ffmpeg"
+sudo ./waf install
+```
 
 1. libiec61883
-    ```bash
-    https://sourceforge.net/projects/libraw1394/files/libraw1394/libraw1394-2.0.5.tar.gz/download
-    ./configure --prefix="/opt/ffmpeg"
-    make
-    https://sourceforge.net/projects/libavc1394/files/libavc1394/libavc1394-0.5.4.tar.gz/download
-    tar -xvf libavc1394-0.5.4.tar.gz
-    cd libavc1394-0.5.4
-    make
-    wget -O libiec61883-1.2.0.tar.gz https://github.com/Distrotech/libiec61883/archive/v1.2.0.tar.gz
-    tar -xvf libiec61883-1.2.0.tar.gz
-    cd libiec61883-1.2.0
-    ./configure --prefix="/opt/ffmpeg"
-    make
-    ```
+
+```bash
+https://sourceforge.net/projects/libraw1394/files/libraw1394/libraw1394-2.0.5.tar.gz/download
+./configure --prefix="/opt/ffmpeg"
+make
+https://sourceforge.net/projects/libavc1394/files/libavc1394/libavc1394-0.5.4.tar.gz/download
+tar -xvf libavc1394-0.5.4.tar.gz
+cd libavc1394-0.5.4
+make
+wget -O libiec61883-1.2.0.tar.gz https://github.com/Distrotech/libiec61883/archive/v1.2.0.tar.gz
+tar -xvf libiec61883-1.2.0.tar.gz
+cd libiec61883-1.2.0
+./configure --prefix="/opt/ffmpeg"
+make
+```
 
 1. libbluray
-    ```bash
-    git clone https://gitlab.gnome.org/GNOME/libxml2.git
-    cd libxml2
-    ./autogen.sh
-    ./configure --prefix="/opt/ffmpeg"
-    make
-    https://ant.apache.org/
-    cp bin/ant /opt/ffmpeg/bin
-    https://code.videolan.org/videolan/libudfread/-/releases
-    tar -xvf libudfread-1.1.0.tar.bz2
-    cd libudfread-1.1.0
-    ./bootstrap
-    ./configure --prefix="/opt/ffmpeg"
-    make
-    
-    git clone https://code.videolan.org/videolan/libbluray.git
-    cd libbluray
-    git submodule update --init
-    ./bootstrap
-    ./configure --prefix="/opt/ffmpeg"
-    make
-    sudo env PATH=${PATH} make install
-    ```
+
+```bash
+git clone https://gitlab.gnome.org/GNOME/libxml2.git
+cd libxml2
+./autogen.sh
+./configure --prefix="/opt/ffmpeg"
+make
+https://ant.apache.org/
+cp bin/ant /opt/ffmpeg/bin
+https://code.videolan.org/videolan/libudfread/-/releases
+tar -xvf libudfread-1.1.0.tar.bz2
+cd libudfread-1.1.0
+./bootstrap
+./configure --prefix="/opt/ffmpeg"
+make
+
+git clone https://code.videolan.org/videolan/libbluray.git
+cd libbluray
+git submodule update --init
+./bootstrap
+./configure --prefix="/opt/ffmpeg"
+make
+sudo env PATH=${PATH} make install
+```
 
 1. libbs2b
-    ```bash
-    wget -O libsndfile-1.0.28.tar.gz https://github.com/erikd/libsndfile/archive/1.0.28.tar.gz
-    tar -xvf libsndfile-1.0.28.tar.gz
-    ./autogen.sh
-    ./configure --prefix="/opt/ffmpeg"
-    https://sourceforge.net/projects/bs2b/files/libbs2b/3.1.0/libbs2b-3.1.0.tar.gz/download
-    tar -xvf libbs2b-3.1.0.tar.gz
-    cd libbs2b-3.1.0
-    ./configure --prefix="/opt/ffmpeg"
-    LD_LIBRARY_PATH=/opt/ffmpeg/lib/ C_INCLUDE_PATH=/opt/ffmpeg/include/ make
-    ```
+
+```bash
+wget -O libsndfile-1.0.28.tar.gz https://github.com/erikd/libsndfile/archive/1.0.28.tar.gz
+tar -xvf libsndfile-1.0.28.tar.gz
+./autogen.sh
+./configure --prefix="/opt/ffmpeg"
+https://sourceforge.net/projects/bs2b/files/libbs2b/3.1.0/libbs2b-3.1.0.tar.gz/download
+tar -xvf libbs2b-3.1.0.tar.gz
+cd libbs2b-3.1.0
+./configure --prefix="/opt/ffmpeg"
+LD_LIBRARY_PATH=/opt/ffmpeg/lib/ C_INCLUDE_PATH=/opt/ffmpeg/include/ make
+```
 
 1. libcodec2
-    ```bash
-    wget -O libcodec2-0.9.2.tar.gz https://github.com/drowe67/codec2/archive/v0.9.2.tar.gz
-    tar -xvf libcodec2-0.9.2.tar.gz
-    cd codec2-0.9.2
-    mkdir build
-    cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
-    make
-    ```
+
+```bash
+wget -O libcodec2-0.9.2.tar.gz https://github.com/drowe67/codec2/archive/v0.9.2.tar.gz
+tar -xvf libcodec2-0.9.2.tar.gz
+cd codec2-0.9.2
+mkdir build
+cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
+make
+```
 
 1. libdc1394-2
-    ```bash
-    https://sourceforge.net/projects/libdc1394/files/libdc1394-2/2.2.6/libdc1394-2.2.6.tar.gz/download
-    tar -xvf libdc1394-2.2.6.tar.gz
-    cd libdc1394-2.2.6/
-    ./configure --prefix="/opt/ffmpeg" --enable-shared
-    make
-    ```
+
+```bash
+https://sourceforge.net/projects/libdc1394/files/libdc1394-2/2.2.6/libdc1394-2.2.6.tar.gz/download
+tar -xvf libdc1394-2.2.6.tar.gz
+cd libdc1394-2.2.6/
+./configure --prefix="/opt/ffmpeg" --enable-shared
+make
+```
 
 1. libflite
-    ```bash
-    wget http://www.festvox.org/flite/packed/flite-2.1/flite-2.1-release.tar.bz2
-    tar -xvf flite-2.1-release.tar.bz2
-    cd flite-2.1-release
-    ./configure --prefix="/opt/ffmpeg" CFLAGS="-fPIC"
-    make
-    ```
+
+```bash
+wget http://www.festvox.org/flite/packed/flite-2.1/flite-2.1-release.tar.bz2
+tar -xvf flite-2.1-release.tar.bz2
+cd flite-2.1-release
+./configure --prefix="/opt/ffmpeg" CFLAGS="-fPIC"
+make
+```
 
 1. libgme
-    ```bash
-    git clone https://github.com/mcfiredrill/libgme.git
-    cd libgme
-    mkdir build
-    cd build
-    cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
-    make
-    ```
+
+```bash
+git clone https://github.com/mcfiredrill/libgme.git
+cd libgme
+mkdir build
+cd build
+cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
+make
+```
     
 1. libgsm
-    ```bash
-    https://github.com/timothytylee/libgsm
-    tar -xvf gsm-1.0.19.tar.gz
-    cd gsm-1.0-pl19
-    !edit-l74 INSTALL_ROOT=/opt/ffmpeg
-    !edit-l76 GSM_INSTALL_INC=$(GSM_INSTALL_ROOT)/include
-    make
-    ```
+
+```bash
+https://github.com/timothytylee/libgsm
+tar -xvf gsm-1.0.19.tar.gz
+cd gsm-1.0-pl19
+!edit-l74 INSTALL_ROOT=/opt/ffmpeg
+!edit-l76 GSM_INSTALL_INC=$(GSM_INSTALL_ROOT)/include
+make
+```
 
 1. lensfun
-  - Deprecated since n4.3.1-29-g89daac5fe2
-    ```bash
-    wget -O lensfun-0.3.95.tar.gz https://github.com/lensfun/lensfun/archive/v0.3.95.tar.gz
-    tar -xvf lensfun-0.3.95.tar.gz
-    cd lensfun-0.3.95
-    mkdir build
-    cd build
-    cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
-    make
-    ```
 
-    ```bash
-    git clone https://github.com/lensfun/lensfun.git
-    cd lensfun
-    mkdir build
-    cd build
-    cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
-    make
-    ```
+- Deprecated since n4.3.1-29-g89daac5fe2
+
+```bash
+wget -O lensfun-0.3.95.tar.gz https://github.com/lensfun/lensfun/archive/v0.3.95.tar.gz
+tar -xvf lensfun-0.3.95.tar.gz
+cd lensfun-0.3.95
+mkdir build
+cd build
+cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
+make
+```
+
+- Need after n4.3.1-29
+
+```bash
+git clone https://github.com/lensfun/lensfun.git
+cd lensfun
+mkdir build
+cd build
+cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
+make
+```
 
 1. libmysofa
+
     ```bash
     wget -O libmysofa-1.1.tar.gz https://github.com/hoene/libmysofa/archive/v1.1.tar.gz
     tar -xvf libmysofa-1.1.tar.gz
