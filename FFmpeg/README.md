@@ -318,158 +318,171 @@ make
 
 1. libmysofa
 
-    ```bash
-    wget -O libmysofa-1.1.tar.gz https://github.com/hoene/libmysofa/archive/v1.1.tar.gz
-    tar -xvf libmysofa-1.1.tar.gz
-    cd libmysofa-1.1
-    cd build
-    cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
-    make
-    ```
+```bash
+wget -O libmysofa-1.1.tar.gz https://github.com/hoene/libmysofa/archive/v1.1.tar.gz
+tar -xvf libmysofa-1.1.tar.gz
+cd libmysofa-1.1
+cd build
+cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
+make
+```
 
 1. libopencore_amrnb
-    ```bash
-    https://sourceforge.net/projects/opencore-amr/files/opencore-amr/opencore-amr-0.1.5.tar.gz/download
-    tar -xvf opencore-amr-0.1.5.tar.gz
-    cd opencore-amr-0.1.5
-    ./configure --prefix="/opt/ffmpeg"
-    make
-    ```
+
+```bash
+https://sourceforge.net/projects/opencore-amr/files/opencore-amr/opencore-amr-0.1.5.tar.gz/download
+tar -xvf opencore-amr-0.1.5.tar.gz
+cd opencore-amr-0.1.5
+./configure --prefix="/opt/ffmpeg"
+make
+```
 
 1. OpenJPEG
-    ```bash
-    wget -O openjpeg-2.3.1.tar.gz https://github.com/uclouvain/openjpeg/archive/v2.3.1.tar.gz
-    tar -xvf openjpeg-2.3.1.tar.gz
-    cd openjpeg-2.3.1
-    mkdir build
-    cd build
-    cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
-    make
-    ```
+
+```bash
+wget -O openjpeg-2.3.1.tar.gz https://github.com/uclouvain/openjpeg/archive/v2.3.1.tar.gz
+tar -xvf openjpeg-2.3.1.tar.gz
+cd openjpeg-2.3.1
+mkdir build
+cd build
+cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
+make
+```
 
 1. libopenmpt
-    ```bash
-    wget https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.5.0+release.autotools.tar.gz
-    tar -xvf libopenmpt-0.5.0+release.autotools.tar.gz
-    cd libopenmpt-0.5.0+release.autotools
-    ./configure --prefix="/opt/ffmpeg"
-    make
-    ```
+
+```bash
+wget https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.5.0+release.autotools.tar.gz
+tar -xvf libopenmpt-0.5.0+release.autotools.tar.gz
+cd libopenmpt-0.5.0+release.autotools
+./configure --prefix="/opt/ffmpeg"
+make
+```
     
 1. rubberband
-    ```bash
-    wget http://www.mega-nerd.com/libsamplerate/libsamplerate-0.1.9.tar.gz
-    tar -xvf libsamplerate-0.1.9.tar.gz
-    cd libsamplerate-0.1.9
-    ./configure --prefix="/opt/ffmpeg"
-    make
-    wget http://www.fftw.org/fftw-3.3.8.tar.gz
-    tar -xvf fftw-3.3.8.tar.gz
-    cd fftw-3.3.8
-    ./configure --prefix="/opt/ffmpeg" --enable-shared
-    make
-    wget https://code.soundsoftware.ac.uk/attachments/download/2588/vamp-plugin-sdk-2.9.0.tar.gz
-    tar -xvf vamp-plugin-sdk-2.9.0.tar.gz
-    cd vamp-plugin-sdk-2.9.0
-    ./configure --prefix="/opt/ffmpeg"
-    make
-    wget https://breakfastquay.com/files/releases/rubberband-1.8.2.tar.bz2
-    tar -xvf rubberband-1.8.2.tar.bz2
-    cd rubberband-1.8.2
-    !edit Makefile https://github.com/breakfastquay/rubberband/issues/17
-    make
-    ```
+
+```bash
+wget http://www.mega-nerd.com/libsamplerate/libsamplerate-0.1.9.tar.gz
+tar -xvf libsamplerate-0.1.9.tar.gz
+cd libsamplerate-0.1.9
+./configure --prefix="/opt/ffmpeg"
+make
+wget http://www.fftw.org/fftw-3.3.8.tar.gz
+tar -xvf fftw-3.3.8.tar.gz
+cd fftw-3.3.8
+./configure --prefix="/opt/ffmpeg" --enable-shared
+make
+wget https://code.soundsoftware.ac.uk/attachments/download/2588/vamp-plugin-sdk-2.9.0.tar.gz
+tar -xvf vamp-plugin-sdk-2.9.0.tar.gz
+cd vamp-plugin-sdk-2.9.0
+./configure --prefix="/opt/ffmpeg"
+make
+wget https://breakfastquay.com/files/releases/rubberband-1.8.2.tar.bz2
+tar -xvf rubberband-1.8.2.tar.bz2
+cd rubberband-1.8.2
+!edit Makefile https://github.com/breakfastquay/rubberband/issues/17
+make
+```
 
 1. shine
-    ```bash
-    wget https://github.com/toots/shine/releases/download/3.1.1/shine-3.1.1.tar.gz
-    tar -xvf shine-3.1.1.tar.gz
-    cd shine-3.1.1
-    ./configure --prefix="/opt/ffmpeg"
-    make
-    ```
+
+```bash
+wget https://github.com/toots/shine/releases/download/3.1.1/shine-3.1.1.tar.gz
+tar -xvf shine-3.1.1.tar.gz
+cd shine-3.1.1
+./configure --prefix="/opt/ffmpeg"
+make
+```
 
 1. libsoxr
-    ```bash
-    https://sourceforge.net/projects/soxr/files/soxr-0.1.3-Source.tar.xz/download
-    tar -xvf soxr-0.1.3-Source.tar.xz
-    cd soxr-0.1.3-Source
-    mkdir build
-    cd build
-    cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
-    make
-    ```
+
+```bash
+https://sourceforge.net/projects/soxr/files/soxr-0.1.3-Source.tar.xz/download
+tar -xvf soxr-0.1.3-Source.tar.xz
+cd soxr-0.1.3-Source
+mkdir build
+cd build
+cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
+make
+```
 
 1. tesseract
-    ```bash
-    wget http://www.leptonica.org/source/leptonica-1.79.0.tar.gz
-    tar -xvf leptonica-1.79.0.tar.gz
-    cd leptonica-1.79.0
-    ./configure --prefix="/opt/ffmpeg"
-    make
-    wget -O tesseract-4.1.1.tar.gz https://github.com/tesseract-ocr/tesseract/archive/4.1.1.tar.gz
-    tar -xvf tesseract-4.1.1.tar.gz
-    cd tesseract-4.1.1
-    ./configure --prefix="/opt/ffmpeg"
-    make
-    ```
+
+```bash
+wget http://www.leptonica.org/source/leptonica-1.79.0.tar.gz
+tar -xvf leptonica-1.79.0.tar.gz
+cd leptonica-1.79.0
+./configure --prefix="/opt/ffmpeg"
+make
+wget -O tesseract-4.1.1.tar.gz https://github.com/tesseract-ocr/tesseract/archive/4.1.1.tar.gz
+tar -xvf tesseract-4.1.1.tar.gz
+cd tesseract-4.1.1
+./configure --prefix="/opt/ffmpeg"
+make
+```
 
 1. libtheora
-    ```bash
-    git clone https://gitlab.xiph.org/xiph/theora.git
-    cd theora
-    ./autogen.sh
-    ./configure --prefix="/opt/ffmpeg"
-    make
-    ```
+
+```bash
+git clone https://gitlab.xiph.org/xiph/theora.git
+cd theora
+./autogen.sh
+./configure --prefix="/opt/ffmpeg"
+make
+```
 
 1. libtwolame
-    ```bash
-    https://sourceforge.net/projects/twolame/files/twolame/0.4.0/twolame-0.4.0.tar.gz/download?use_mirror=jaist
-    tar -xvf twolame-0.4.0.tar.gz
-    cd twolame-0.4.0
-    ./configure --prefix="/opt/ffmpeg"
-    make    
-    ```
+
+```bash
+https://sourceforge.net/projects/twolame/files/twolame/0.4.0/twolame-0.4.0.tar.gz/download?use_mirror=jaist
+tar -xvf twolame-0.4.0.tar.gz
+cd twolame-0.4.0
+./configure --prefix="/opt/ffmpeg"
+make    
+```
 
 1. vidstab
-    ```bash
-    wget -O vidstab-1.1.0.tar.gz https://github.com/georgmartius/vid.stab/archive/v1.1.0.tar.gz
-    tar -xvf vidstab-1.1.0.tar.gz
-    cd vid.stab-1.1.0
-    mkdir build
-    cd build
-    cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
-    make
-    ```
+
+```bash
+wget -O vidstab-1.1.0.tar.gz https://github.com/georgmartius/vid.stab/archive/v1.1.0.tar.gz
+tar -xvf vidstab-1.1.0.tar.gz
+cd vid.stab-1.1.0
+mkdir build
+cd build
+cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
+make
+```
 
 1. libvo_amrwbenc
-    ```bash
-    https://sourceforge.net/projects/opencore-amr/files/vo-amrwbenc/vo-amrwbenc-0.1.3.tar.gz/download
-    tar -xvf vo-amrwbenc-0.1.3.tar.gz
-    cd vo-amrwbenc-0.1.3
-    ./configure --prefix="/opt/ffmpeg"
-    make
-    ```
 
-1. WavPack (Deprecated)
-    ```bash
-    wget http://www.wavpack.com/wavpack-5.3.0.tar.bz2
-    tar -xvf wavpack-5.3.0.tar.bz2
-    cd wavpack-5.3.0
-    ./configure --prefix="/opt/ffmpeg"
-    make
-    ```
+```bash
+https://sourceforge.net/projects/opencore-amr/files/vo-amrwbenc/vo-amrwbenc-0.1.3.tar.gz/download
+tar -xvf vo-amrwbenc-0.1.3.tar.gz
+cd vo-amrwbenc-0.1.3
+./configure --prefix="/opt/ffmpeg"
+make
+```
+
+1. WavPack (Deprecated after n4.3.1)
+
+```bash
+wget http://www.wavpack.com/wavpack-5.3.0.tar.bz2
+tar -xvf wavpack-5.3.0.tar.bz2
+cd wavpack-5.3.0
+./configure --prefix="/opt/ffmpeg"
+make
+```
 
 1. libwebp
-    ```bash
-    wget -O libwebp-1.1.0.tar.gz https://github.com/webmproject/libwebp/archive/v1.1.0.tar.gz
-    tar -xvf libwebp-1.1.0.tar.gz
-    cd libwebp-1.1.0
-    autogen.sh
-    ./configure --prefix="/opt/ffmpeg"
-    make
-    ```
+
+```bash
+wget -O libwebp-1.1.0.tar.gz https://github.com/webmproject/libwebp/archive/v1.1.0.tar.gz
+tar -xvf libwebp-1.1.0.tar.gz
+cd libwebp-1.1.0
+autogen.sh
+./configure --prefix="/opt/ffmpeg"
+make
+```
 
 1. libxvid
     ```bash
