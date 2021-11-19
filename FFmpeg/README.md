@@ -485,98 +485,105 @@ make
 ```
 
 1. libxvid
-    ```bash
-    wget https://downloads.xvid.com/downloads/xvidcore-1.3.7.tar.gz
-    tar -xvf xvidcore-1.3.7.tar.gz
-    cd xvidcore
-    cd build/generic
-    ./configure --prefix="/opt/ffmpeg"
-    make
-    ```
+
+```bash
+wget https://downloads.xvid.com/downloads/xvidcore-1.3.7.tar.gz
+tar -xvf xvidcore-1.3.7.tar.gz
+cd xvidcore
+cd build/generic
+./configure --prefix="/opt/ffmpeg"
+make
+```
 
 1. ZeroMQ
-    ```bash
-    wget https://github.com/zeromq/libzmq/releases/download/v4.3.2/zeromq-4.3.2.tar.gz
-    tar -xvf zeromq-4.3.2.tar.gz
-    cd zeromq-4.3.2
-    ./configure --prefix="/opt/ffmpeg"
-    make
-    ```
+
+```bash
+wget https://github.com/zeromq/libzmq/releases/download/v4.3.2/zeromq-4.3.2.tar.gz
+tar -xvf zeromq-4.3.2.tar.gz
+cd zeromq-4.3.2
+./configure --prefix="/opt/ffmpeg"
+make
+```
 
 1. ZVBI
-    ```bash
-    https://sourceforge.net/projects/zapping/files/zvbi/0.2.35/
-    tar -xvf zvbi-0.2.35.tar.bz2
-    cd zvbi-0.2.35
-    ./configure --prefix="/opt/ffmpeg"
-    make
-    ```
+
+```bash
+https://sourceforge.net/projects/zapping/files/zvbi/0.2.35/
+tar -xvf zvbi-0.2.35.tar.bz2
+cd zvbi-0.2.35
+./configure --prefix="/opt/ffmpeg"
+make
+```
 
 1. OpenAL
-    ```bash
-    wget https://github.com/kcat/openal-soft/archive/openal-soft-1.20.1.tar.gz
-    tar -xvf openal-soft-1.20.1.tar.gz
-    cd openal-soft-openal-soft-1.20.1
-    cd build
-    cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
-    make
-    ```
+
+```bash
+wget https://github.com/kcat/openal-soft/archive/openal-soft-1.20.1.tar.gz
+tar -xvf openal-soft-1.20.1.tar.gz
+cd openal-soft-openal-soft-1.20.1
+cd build
+cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
+make
+```
 
 1. OpenCL
-    ```bash
-    wget -O opencl-2020.06.16.tar.gz https://github.com/KhronosGroup/OpenCL-ICD-Loader/archive/v2020.06.16.tar.gz
-    tar -xvf opencl-2020.06.16.tar.gz
-    cd OpenCL-ICD-Loader-2020.06.16
-    git clone https://github.com/KhronosGroup/OpenCL-Headers.git
-    cd OpenCL-Headers
-    sudo cp -r CL /opt/ffmpeg/include/
-    cd ../inc
-    ln -s ../OpenCL-Headers/CL/
-    cd ..
-    mkdir build
-    cd build
-    cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
-    make
-    
-    ```
+
+```bash
+wget -O opencl-2020.06.16.tar.gz https://github.com/KhronosGroup/OpenCL-ICD-Loader/archive/v2020.06.16.tar.gz
+tar -xvf opencl-2020.06.16.tar.gz
+cd OpenCL-ICD-Loader-2020.06.16
+git clone https://github.com/KhronosGroup/OpenCL-Headers.git
+cd OpenCL-Headers
+sudo cp -r CL /opt/ffmpeg/include/
+cd ../inc
+ln -s ../OpenCL-Headers/CL/
+cd ..
+mkdir build
+cd build
+cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" ..
+make
+```
 
 1. OMX_Core
-    ```bash
-    https://sourceforge.net/projects/omxil/files/omxil/Bellagio%200.9.3/libomxil-bellagio-0.9.3.tar.gz/download
-    tar -xvf libomxil-bellagio-0.9.3.tar.gz
-    cd libomxil-bellagio-0.9.3
-    cd libomxil-bellagio-0.9.3/include
-    sudo cp *.h /opt/ffmpeg/include/
-    ```
+
+```bash
+https://sourceforge.net/projects/omxil/files/omxil/Bellagio%200.9.3/libomxil-bellagio-0.9.3.tar.gz/download
+tar -xvf libomxil-bellagio-0.9.3.tar.gz
+cd libomxil-bellagio-0.9.3
+cd libomxil-bellagio-0.9.3/include
+sudo cp *.h /opt/ffmpeg/include/
+```
 
 1. libcdio
-    ```bash
-    wget https://ftp.gnu.org/gnu/help2man/help2man-1.47.16.tar.xz
-    tar -xvf help2man-1.47.16.tar.xz
-    cd help2man-1.47.16
-    ./configure --prefix="/opt/ffmpeg"
-    make
-    wget http://git.savannah.gnu.org/cgit/libcdio.git/snapshot/libcdio-release-2.1.0.tar.gz
-    tar -xvf libcdio-release-2.1.0.tar.gz
-    cd libcdio-release-2.1.0
-    ./configure --prefix="/opt/ffmpeg"
-    !edit src/Makefile-l989 uncomments
-    make
-    wget -O libcdio-10.2+2.0.1.tar.gz https://github.com/rocky/libcdio-paranoia/archive/release-10.2+2.0.1.tar.gz
-    tar -xvf libcdio-10.2+2.0.1.tar.gz
-    cd libcdio-paranoia-release-10.2-2.0.1
-    ./autogen.sh
-    ./configure --prefix="/opt/ffmpeg"
-    make
-    ```
+
+```bash
+wget https://ftp.gnu.org/gnu/help2man/help2man-1.47.16.tar.xz
+tar -xvf help2man-1.47.16.tar.xz
+cd help2man-1.47.16
+./configure --prefix="/opt/ffmpeg"
+make
+wget http://git.savannah.gnu.org/cgit/libcdio.git/snapshot/libcdio-release-2.1.0.tar.gz
+tar -xvf libcdio-release-2.1.0.tar.gz
+cd libcdio-release-2.1.0
+./configure --prefix="/opt/ffmpeg"
+!edit src/Makefile-l989 uncomments
+make
+wget -O libcdio-10.2+2.0.1.tar.gz https://github.com/rocky/libcdio-paranoia/archive/release-10.2+2.0.1.tar.gz
+tar -xvf libcdio-10.2+2.0.1.tar.gz
+cd libcdio-paranoia-release-10.2-2.0.1
+./autogen.sh
+./configure --prefix="/opt/ffmpeg"
+make
+```
 
 1. nv-codec-headers
-    ```bash
-    wget -O nv-codec-headers-10.0.26.0.tar.gz https://github.com/FFmpeg/nv-codec-headers/archive/n10.0.26.0.tar.gz
-    tar -xvf nv-codec-headers-10.0.26.0.tar.gz
-    cd nv-codec-headers-n10.0.26.0/
-    !edit Makefile-l1 PREFIX
-    ```
+
+```bash
+wget -O nv-codec-headers-10.0.26.0.tar.gz https://github.com/FFmpeg/nv-codec-headers/archive/n10.0.26.0.tar.gz
+tar -xvf nv-codec-headers-10.0.26.0.tar.gz
+cd nv-codec-headers-n10.0.26.0/
+!edit Makefile-l1 PREFIX
+```
 
 1. FFmpeg
     - Download source code
