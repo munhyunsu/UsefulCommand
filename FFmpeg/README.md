@@ -644,38 +644,39 @@ sudo make install
 ## mpv
 
 1. LuaJIT
-    ```bash
-    wget https://luajit.org/download/LuaJIT-2.0.5.tar.gz
-    tar -xvf LuaJIT-2.0.5.tar.gz
-    cd LuaJIT-2.0.5
-    !edit Makefile-l27 PREFIX=/opt/ffmpeg
-    make
-    ```
+
+```bash
+wget https://luajit.org/download/LuaJIT-2.0.5.tar.gz
+tar -xvf LuaJIT-2.0.5.tar.gz
+cd LuaJIT-2.0.5
+!edit Makefile-l27 PREFIX=/opt/ffmpeg
+make
+```
 
 1. MuJS
-    ```bash
-    wget https://mujs.com/downloads/mujs-1.0.7.tar.xz
-    tar -xvf mujs-1.0.7.tar.xz
-    cd mujs-1.0.7
-    !edit Makefile-l5 PREFIX=/opt/ffmpeg
-    make
-    ```
+
+```bash
+wget https://mujs.com/downloads/mujs-1.0.7.tar.xz
+tar -xvf mujs-1.0.7.tar.xz
+cd mujs-1.0.7
+!edit Makefile-l5 PREFIX=/opt/ffmpeg
+make
+```
 
 1. MPV
-    ```bash
-    ./bootstrap.py
-    ./waf configure --prefix=/opt/ffmpeg
-    ./waf
-    sudo ./waf install
-    ```
+
+```bash
+./bootstrap.py
+./waf configure --prefix=/opt/ffmpeg
+./waf
+sudo ./waf install
+```
 
 ## Set a global environmnet variables
 
-```bash
-sudo vi /etc/profile.d/ffmpeg.sh
-```
+- vi /etc/profile.d/ffmpeg.sh
 
-```
+```bash
 if [ -d "/opt/ffmpeg" ] ; then
     PATH="/opt/ffmpeg/bin:$PATH"
 fi
