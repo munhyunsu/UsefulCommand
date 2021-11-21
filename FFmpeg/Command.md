@@ -1,5 +1,3 @@
-
-
 ## Concat videos
 
 1. Write down target filenames
@@ -25,28 +23,36 @@ ffmpeg -f concat -safe 0 -i <(for f in ./*.wav; do echo "file '$PWD/$f'"; done) 
 ## Trim videos
 
 - using *ss* and *t* option
+
 ```bash
 ffmpeg -i FILENAME -ss 00:00:30 -t 00:01:00 -c copy out.mp4 # 1 Min video
 ffmpeg -i FILENAME -ss 00:00:30 -to 00:01:00 -c copy out.mp4 # 30 Sec video
 ```
 
 ## Fix bad frames
+
 ```bash
 ffmpeg -i INPUT.mp4 -force_key_frames "expr:(t,n_forced*3)" fixed.mp4
 ```
 
 ## Merge video and audio from two files
+
 - video channel 0 index from 0 index source and audio channel 0 index from 1 index source
+
 ```bash
 ffmpeg -i A.mp4 -i B.mp3 -c:v copy -map 0:v:0 -map 1:a:0 output.mp4
 ```
 
 ## Merge video and audio if diffrent meta
+
 - Need to rescale for same resolutions
+
 ```bash
 ffmpeg -i zoom_0.mp4 -vf scale=1280:720,fps=60 -c:v libx264 -c:a aac -ac 2 -b:a 158k o.mp4
 ```
+
 - Merge
+
 ```bash
 ffmpeg -i 1.mp4 -i 2.mp4 -filter_complex "[0:v:0][0:a:0][1:v:0][1:a:0]concat=n=2:v=1:a=1[outv][outa]" -map "[outv]" -map "[outa]" merged.mp4
 ```
