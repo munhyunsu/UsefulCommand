@@ -77,11 +77,13 @@ apt install vainfo intel-mesa-driver-non-free
 ## Change frame per seconds (fps)
 
 - Official wiki [Link](https://trac.ffmpeg.org/wiki/ChangingFrameRate)
+
 ```bash
 ffmpeg -i <input> -filter:v fps=30 <output>
 ```
 
 - Without re-encoding (only downscale fps)
+
 ```bash
 ffprobe input.mp4
 ffmpeg -i input.mp4 -c copy -f h264 output.h264
@@ -90,6 +92,7 @@ ffmpeg -y -r 24 -i output.h264 -i output.aac -c copy output.mp4
 ```
 
 - using -r options
+
 ```bash
 ffmpeg -r 30 -i input.mp4 output.mp4
 ```
@@ -98,6 +101,7 @@ ffmpeg -r 30 -i input.mp4 output.mp4
 
 - `-vn`: no video
 - `-acodec copy`: copy codec of original file
+
 ```bash
 ffmpeg -i input.mp4 -vn -acodec copy output.aac
 ```
@@ -106,6 +110,7 @@ ffmpeg -i input.mp4 -vn -acodec copy output.aac
 - `-ar`: sampling frequency (48000)
 - `-ac`: audio channel (2)
 - `-b:a`: bitrate (320k)
+
 ```bash
 ffmpeg -i input.mp4 -vn -ar 48000 -ac 2 -b:a 320k output.mp3
 ```
