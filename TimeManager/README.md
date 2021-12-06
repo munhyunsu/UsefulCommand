@@ -17,3 +17,10 @@ datetime.datetime.fromisoformat('2021-12-03T09:12:44+09:00').timestamp()
 import datetime
 datetime.datetime.fromtimestamp(1638972557)
 ```
+
+- ISO 8601 to Epochtime with timezone
+
+```python
+import datetime
+datetime.datetime.fromtimestamp(time.time(), tz=KST).isoformat()
+```
