@@ -2,6 +2,14 @@
 
 - [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
 
+## Bash
+
+- Epochtime to String
+
+```bash
+date --date @1639114001
+```
+
 ## Python 3
 
 - Epochtime to ISO 8601
