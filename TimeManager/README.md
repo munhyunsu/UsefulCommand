@@ -8,6 +8,14 @@
 
 ```bash
 date --date @1639114001
+date -d @1639114001
+```
+
+- Epochtime to String with UTC
+
+```bash
+date --utc --date @1639114001
+date -u -d @1639114001
 ```
 
 ## Python 3
