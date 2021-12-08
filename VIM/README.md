@@ -30,3 +30,9 @@ set fileformat=unix
 ```
 g/REGEX/d
 ```
+
+## Remove white spaces
+
+```
+:%s/\s\+$//e
+```
