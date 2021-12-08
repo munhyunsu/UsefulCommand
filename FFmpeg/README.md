@@ -641,7 +641,7 @@ sudo make install
 ```
 
 
-## mpv
+# mpv
 
 1. LuaJIT
 
@@ -672,7 +672,7 @@ make
 sudo ./waf install
 ```
 
-## Set a global environmnet variables
+# Set a global environmnet variables
 
 - vi /etc/profile.d/ffmpeg.sh
 
