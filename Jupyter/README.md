@@ -96,6 +96,9 @@ source /home/user/.nvm/nvm.sh
 /opt/jupyterhub/bin/jupyter lab build
 ```
 
+- If jupyterhub produce `set_loginuid failed` error, then delete $HOME/.jupyter
+
+
 ### Jupyter Configuration
 
 - Resolve: Invalid response: 413 Request Entity Too Large
