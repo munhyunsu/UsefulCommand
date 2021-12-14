@@ -40,3 +40,5 @@ fi
 ```bash
 sudo tlmgr --gui --usermode --usertree /usr/local/texlive/2020
 ```
+
+### Compile tex
