@@ -10,3 +10,5 @@
 
 - `reader.parse-on-load.enabled false`
 - `media.webspeech.synth.enabled false`
+
+## Adjust scroll speed
