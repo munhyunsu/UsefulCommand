@@ -12,3 +12,7 @@
 - `media.webspeech.synth.enabled false`
 
 ## Adjust scroll speed
+
+- `mousewheel.min_line_scroll_amount`
+- `mousewheel.acceleration.start`
+- `mousewheel.acceleration.factor`
