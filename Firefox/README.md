@@ -13,6 +13,6 @@
 
 ## Adjust scroll speed
 
-- `mousewheel.min_line_scroll_amount`
-- `mousewheel.acceleration.start`
-- `mousewheel.acceleration.factor`
+- `mousewheel.min_line_scroll_amount 5`
+- `mousewheel.acceleration.start -1`
+- `mousewheel.acceleration.factor 10`
