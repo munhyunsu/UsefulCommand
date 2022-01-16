@@ -1,5 +1,24 @@
 # Install Nvidia driver on ubuntu based Linux
 
+## (New) Installation
+
+- [Really good reference](https://gist.github.com/wangruohui/df039f0dc434d6486f5d4d098aa52d07#install-nvidia-graphics-driver-via-apt-get)
+
+0. Remove previous installations
+
+```bash
+sudo apt remove --purge nvidia-[TABTAB]
+sudo apt autoremove
+sudo dpkg -P cuda-[TABTAB]
+```
+
+0. Remove previous source list
+
+```bash
+# /etc/apt/source.list.d/
+# /etc/apt/additional-packages.list
+```
+
 ## Installation
 
 0. Check the CUDA version supported by TensorFlow
