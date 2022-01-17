@@ -25,6 +25,33 @@ sudo dpkg -P cuda-[TABTAB]
 sudo apt install build-essential dkms
 ```
 
+0. Download and copy the NVIDIA Driver
+
+```
+# https://www.nvidia.com/download/index.aspx
+scp [SRCPATH] [DSTPATH]
+```
+
+0. Stop lightdm
+
+```
+sudo systemctl stop lightdm
+```
+
+0. Execute the NVIDIA driver runfile
+
+```
+chmod +x 
+```
+
+- If the error about `nouveau` was occured, create blacklist using nvidia-runfile
+
+```
+sudo update-initramfs -u
+sudo reboot
+# re-excute runfile above
+```
+
 ## Installation
 
 0. Check the CUDA version supported by TensorFlow
