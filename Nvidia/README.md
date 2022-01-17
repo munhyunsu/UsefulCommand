@@ -19,6 +19,12 @@ sudo dpkg -P cuda-[TABTAB]
 # /etc/apt/additional-packages.list
 ```
 
+0. Install dependencies
+
+```bash
+sudo apt install build-essential dkms
+```
+
 ## Installation
 
 0. Check the CUDA version supported by TensorFlow
