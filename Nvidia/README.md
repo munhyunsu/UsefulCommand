@@ -56,13 +56,43 @@ sudo reboot
 
 - Check the CUDA version supported by TensorFlow according to [TensorFlow Install source](https://www.tensorflow.org/install/source#gpu)
 
-- Download CUDA from [Official Download Page](https://developer.nvidia.com/cuda-toolkit-archive)
+- Download CUDA runfile from [Official Download Page](https://developer.nvidia.com/cuda-toolkit-archive)
 
 - It show broken link, change link like below example
 
 ```
 https://developer.nvidia.com/cuda-11-2-2-download-archive
 => https://developer.nvidia.com/cuda-11.2.2-download-archive
+```
+
+- Download runfile
+
+```bash
+# It has three installer: NVIDIA driver (old), CUDA, CUDA sample
+wget https://developer.download.nvidia.com/compute/cuda/11.2.2/local_installers/cuda_11.2.2_460.32.03_linux.run
+```
+
+0. Extract CUDA runfile and install CUDA
+
+```bash
+chmod +x cuda_11.2.2_460.32.03_linux.run
+# do not install Driver
+sudo ./cuda_11.2.2_460.32.03_linux.run
+```
+
+0. Add runtime library
+
+```bash
+# /usr/local/cuda-11.2/lib64
+vi /etc/ld.so.conf.d/cuda-11.2.conf
+sudo ldconfig
+```
+
+0. Add bin
+
+```
+# /usr/local/cuda-11.2/bin
+vi /etc/environments
 ```
 
 
