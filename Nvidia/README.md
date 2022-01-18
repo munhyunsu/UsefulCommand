@@ -52,6 +52,20 @@ sudo reboot
 # re-excute runfile above
 ```
 
+0. Download CUDA
+
+- Check the CUDA version supported by TensorFlow according to [TensorFlow Install source](https://www.tensorflow.org/install/source#gpu)
+
+- Download CUDA from [Official Download Page](https://developer.nvidia.com/cuda-toolkit-archive)
+
+- It show broken link, change link like below example
+
+```
+https://developer.nvidia.com/cuda-11-2-2-download-archive
+=> https://developer.nvidia.com/cuda-11.2.2-download-archive
+```
+
+
 ## Installation
 
 0. Check the CUDA version supported by TensorFlow
