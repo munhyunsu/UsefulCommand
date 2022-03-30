@@ -143,3 +143,9 @@ ffmpeg -loglevel error -listen 1 -i rtmp://localhost -bufsize 1024k -f matroska 
 ```bash
 ffmpeg -i INPUTVIDEO.mp4 -i INPUTMASK.jpg -filter_complex "[0:v][1:v]alphamerge,boxblur=50[alf];[0:v][alf]overlay[v]" -map "[v]" -map 0:a -map 0:s -c:v libx264 -c:a copy -c:s copy OUTPUTVIDEO.mp4;
 ```
+
+## Capture Video using VAAPI
+
+```bash
+ffmpeg -thread_queue_size 4096k -vaapi_device /dev/dri/renderD128 -f video4linux2 -video_size 1280x720 -input_format mjpeg -framerate 60 -i /dev/video2 -thread_queue_size 4096k -f alsa -channels 2 -sample_rate 48000 -i default -bufsize 1024k -vf 'hwupload,scale_vaapi=format=nv12' -qp 20 -c:v h264_vaapi -c:a aac -f matroska output.mkv
+```
