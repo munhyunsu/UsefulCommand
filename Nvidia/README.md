@@ -88,13 +88,22 @@ vi /etc/ld.so.conf.d/cuda-11.2.conf
 sudo ldconfig
 ```
 
-0. Add bin
+0. Add bin to PATH
 
-```
+```bash
 # /usr/local/cuda-11.2/bin
 vi /etc/environments
 ```
 
+0. Download and install [cuDNN](https://developer.nvidia.com/rdp/cudnn-archive)
+
+- NVIDIA Developer account login needed
+
+```bash
+sudo cp cudnn-11.2-linux-x64-v8.1.1.33.tgz /usr/local/
+sudo tar -xvf cudnn-11.2-linux-x64-v8.1.1.33.tgz
+sudo rm cudnn-11.2-linux-x64-v8.1.1.33.tgz
+```
 
 ## Installation
 
