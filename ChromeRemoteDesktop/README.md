@@ -8,6 +8,9 @@ FIRST_X_DISPLAY_NUMBER = 0
     #while os.path.exists(X_LOCK_FILE_TEMPLATE % display):
     #  display += 1
 # L752-755
+    #self._launch_server(server_args)
+    #if not self._launch_pre_session():
+    #  self.launch_desktop_session
     #self._launch_x_server(x_args)
     #self._launch_x_session()
     display = self.get_unused_display_number()
