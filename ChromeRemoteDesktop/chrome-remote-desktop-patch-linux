@@ -26,9 +26,9 @@ fi
 sed -i 's/^    while os.path.exists(X_LOCK_FILE_TEMPLATE % display):*/#&/g' $TARGET
 sed -i 's/^      display += 1*/#&/g' $TARGET
 
+sed -i 's/^    self._launch_server(server_args)*/#&/g' $TARGET
 sed -i 's/^    self._launch_x_server(x_args)*/#&/g' $TARGET
 sed -i 's/^    if not self._launch_pre_session():*/#&/g' $TARGET
-sed -i 's/^      self.launch_x_session()*/#&/g' $TARGET
+sed -i 's/^      self.launch_desktop_session()*/#&/g' $TARGET
 if ! grep -q 'display = self.get_unused_display_number()#' $TARGET; then
-  sed -i '/^#      self.launch_x_session()/a \ \ \ \ display = self.get_unused_display_number()#\n\ \ \ \ self.child_env[\x27DISPLAY\x27] = f\x27:{display}\x27#' $TARGET
-fi
+  sed -i '/^#      self.launch_desktop_session()/a \ \ \ \ display = self.get_unused_display_number()#\n\ \ \ \ self.child_env[\x27DISPLAY\x27] = f\x27:{display}\x27#' $TARGET
