@@ -11,8 +11,6 @@ FIRST_X_DISPLAY_NUMBER = 0
     #self._launch_server(server_args)
     #if not self._launch_pre_session():
     #  self.launch_desktop_session
-    #self._launch_x_server(x_args)
-    #self._launch_x_session()
     display = self.get_unused_display_number()
     self.child_env['DISPLAY'] = f':{display}'
 ```
