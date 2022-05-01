@@ -12,4 +12,10 @@ else
 fi
 echo "Target by args: ${TARGET}"
 
-
+if [ -z "$2" ];
+then
+    PARAM=10
+else
+    PARAM=$2
+fi
+echo "Param by args: ${PARAM}"
