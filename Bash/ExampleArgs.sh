@@ -19,3 +19,10 @@ else
     PARAM=$2
 fi
 echo "Param by args: ${PARAM}"
+
+PARAM2=20
+if [ ! -z "$3" ];
+then
+    PARAM2=$3
+fi
+echo "Param2 by args: ${PARAM2}"
