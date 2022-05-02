@@ -1,3 +1,24 @@
+# Add / Remove ppa
+
+## Add repository
+
+```bash
+add-apt-repository ppa:[PPANAME]
+```
+
+## Remove repository
+
+```bash
+add-apt-repository --remove ppa:[PPANAME]
+```
+
+## Remove and purge repository (Uninstall packages using target ppa)
+
+```bash
+apt install ppa-purge
+ppa-purge ppa:[PPANAME]
+```
+
 ## update-initramfs
 
 ### Generating /boot/initrd.img-5.3.0-23-generic
@@ -22,5 +43,6 @@ W: Possible missing firmware /lib/firmware/i915/bxt_huc_ver01_8_2893.bin for mod
 
   2. Copy some Graphic drivers
     ```
-    
+    ```
+
 
