@@ -36,11 +36,9 @@ case $1 in
     ;;
 --)
     shift
-    break
     ;;
 *)
-    shift
-    break
+    echo "$1"
 esac
 shift
 done
