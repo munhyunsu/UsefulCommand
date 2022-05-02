@@ -26,3 +26,23 @@ then
     PARAM2=$3
 fi
 echo "Param2 by args: ${PARAM2}"
+
+
+while :; do
+case $1 in
+-h | --help | -\?)
+    echo "Help"
+    exit
+    ;;
+--)
+    shift
+    break
+    ;;
+*)
+    shift
+    break
+esac
+shift
+done
+
+
