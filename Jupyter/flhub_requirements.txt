@@ -1,0 +1,14 @@
+pip
+wheel
+ipykernel
+
+tensorflow
+#numpy # dependency of tensorflow
+matplotlib
+ipympl
+pandas
+grpcio
+grpcio-tools
+mariadb
+# Pillow # Image # dependency of matplotlib
+scipy

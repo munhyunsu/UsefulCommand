@@ -5,15 +5,15 @@
 1. Setup virtual environment
 
 ```bash
-sudo /opt/Python39/bin/python3 -m venv /opt/jupyterhub/
+sudo /opt/Python310/bin/python3 -m venv /opt/jupyterhub_venv/
 ```
 
 2. Install requirement library
 
 ```bash
-sudo /opt/jupyterhub/bin/python3 -m pip install pip wheel
-sudo /opt/jupyterhub/bin/python3 -m pip install jupyterhub jupyterlab
-sudo /opt/jupyterhub/bin/python3 -m pip install ipywidgets
+sudo /opt/jupyterhub_venv/bin/python3 -m pip install pip wheel
+sudo /opt/jupyterhub_venv/bin/python3 -m pip install jupyterhub jupyterlab
+sudo /opt/jupyterhub_venv/bin/python3 -m pip install ipywidgets
 ```
 
 3. Enable nvm
@@ -52,9 +52,9 @@ sudo vi /opt/jupyterhub/etc/systemd/jupyterhub.service
 cd /home/user/.nvm
 source nvm.sh
 
-cd /opt/jupyterhub
+cd /opt/jupyterhub_venv
 source bin/activate
-/opt/jupyterhub/bin/jupyterhub -f /opt/jupyterhub/etc/jupyterhub/jupyterhub_config.py
+/opt/jupyterhub_venv/bin/jupyterhub -f /opt/jupyterhub/etc/jupyterhub/jupyterhub_config.py
 ```
 
 - .service
@@ -66,7 +66,7 @@ After=syslog.target network.target
 
 [Service]
 User=root
-Environment="PATH=/usr/local/texlive/2020/bin/x86_64-linux:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/opt/jupyterhub/bin"
+Environment="PATH=/opt/jupyterhub_venv/bin:/usr/local/texlive/2021/bin/x86_64-linux:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin"
 ExecStart=/opt/jupyterhub/etc/systemd/run_jupyterhub
 
 [Install]
@@ -103,13 +103,14 @@ source /home/user/.nvm/nvm.sh
 
 - Resolve: Invalid response: 413 Request Entity Too Large
 
-  - Set-up nginx client max body size parameter
+- Set-up nginx client max body size parameter
 
-  ```
-  client_max_body_size 1G;
-  ```
+```
+client_max_body_size 1G;
+```
 
 ### Create Jupyter Lab Kernel
+
 ```bash
 python3 -m ipykernel install --user --name user-kernel --display-name 'UserKernel'
 ```
@@ -151,3 +152,7 @@ export LD_LIBRARY_PATH
 ```json
 "env": {"LD_LIBRARY_PATH":"/home/..."},
 ```
+
+# References
+
+- [About ipympl version](https://github.com/matplotlib/ipympl/issues/416)
