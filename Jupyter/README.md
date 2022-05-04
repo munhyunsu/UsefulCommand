@@ -124,7 +124,8 @@ sudo "PATH=$PATH" /opt/jupyterhub/bin/jupyter labextension update --all
 ```
 
 ### As a later, it can be removed by
-  ```bash
+
+```bash
 jupyter kernelspec list
 jupyter kernelspec remove KERNELNAME
 ```
