@@ -1,11 +1,10 @@
 pip
 wheel
 ipykernel
-
 tensorflow
 #numpy # dependency of tensorflow
 matplotlib
-ipympl
+# ipympl #?
 pandas
 grpcio
 grpcio-tools
