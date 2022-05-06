@@ -87,13 +87,13 @@ sudo systemctl status jupyterhub.service
 
 ```bash
 sudo -s
-source /opt/jupyterhub/bin/activate
+source /opt/jupyterhub_venv/bin/activate
 ```
 
 ```bash
-/opt/jupyterhub/bin/pip3 install --upgrade -r requirements.txt
+/opt/jupyterhub_venv/bin/pip3 install --upgrade -r /home/user/UsefulCommand/Jupyter/requirements.txt
 source /home/user/.nvm/nvm.sh
-/opt/jupyterhub/bin/jupyter lab build
+/opt/jupyterhub_venv/bin/jupyter lab build
 ```
 
 - If jupyterhub produce `set_loginuid failed` error, then delete $HOME/.jupyter
