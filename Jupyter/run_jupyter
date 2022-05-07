@@ -1,8 +1,10 @@
 #!/bin/bash
 
-cd $HOME
-source .enable_nvm
-cd $HOME
-source $HOME/Jupyter/venv/bin/activate
-pip3 install --upgrade -r Github/UsefulCommand/Jupyter/requirements.txt
-jupyter server
+cd /home/user/.nvm
+source nvm.sh
+
+cd /opt/jupyterhub_venv
+source bin/activate
+
+cd /opt/jupyterhub
+cd /opt/jupyterhub_venv/bin/jupyterhub -f /opt/jupyterhub/etc/jupyterhub/jupyterhub_config.py
