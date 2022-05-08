@@ -62,7 +62,7 @@
 
 ## Grant admin users permission to access single-user servers.
 #  
-#  Users should be properly informed if this is enabled.
+#          Users should be properly informed if this is enabled.
 #  Default: False
 # c.JupyterHub.admin_access = False
 
@@ -78,14 +78,23 @@
 #  Default: False
 # c.JupyterHub.answer_yes = False
 
+## The default amount of records returned by a paginated endpoint
+#  Default: 50
+# c.JupyterHub.api_page_default_limit = 50
+
+## The maximum amount of records that can be returned at once
+#  Default: 200
+# c.JupyterHub.api_page_max_limit = 200
+
 ## PENDING DEPRECATION: consider using services
 #  
-#  Dict of token:username to be loaded into the database.
+#          Dict of token:username to be loaded into the database.
 #  
-#  Allows ahead-of-time generation of API tokens for use by externally managed
-#  services, which authenticate as JupyterHub users.
+#          Allows ahead-of-time generation of API tokens for use by externally managed services,
+#          which authenticate as JupyterHub users.
 #  
-#  Consider using services for general services that talk to the JupyterHub API.
+#          Consider using services for general services that talk to the
+#  JupyterHub API.
 #  Default: {}
 # c.JupyterHub.api_tokens = {}
 
@@ -112,50 +121,52 @@
 #  Currently installed: 
 #    - default: jupyterhub.auth.PAMAuthenticator
 #    - dummy: jupyterhub.auth.DummyAuthenticator
+#    - null: jupyterhub.auth.NullAuthenticator
 #    - pam: jupyterhub.auth.PAMAuthenticator
 #  Default: 'jupyterhub.auth.PAMAuthenticator'
 # c.JupyterHub.authenticator_class = 'jupyterhub.auth.PAMAuthenticator'
 
 ## The base URL of the entire application.
 #  
-#  Add this to the beginning of all JupyterHub URLs. Use base_url to run
-#  JupyterHub within an existing website.
+#          Add this to the beginning of all JupyterHub URLs.
+#          Use base_url to run JupyterHub within an existing website.
 #  
-#  .. deprecated: 0.9
-#      Use JupyterHub.bind_url
+#          .. deprecated: 0.9
+#              Use JupyterHub.bind_url
 #  Default: '/'
 # c.JupyterHub.base_url = '/'
 
 ## The public facing URL of the whole JupyterHub application.
 #  
-#  This is the address on which the proxy will bind. Sets protocol, ip, base_url
+#          This is the address on which the proxy will bind.
+#          Sets protocol, ip, base_url
 #  Default: 'http://:8000'
 # c.JupyterHub.bind_url = 'http://:8000'
 c.JupyterHub.bind_url = 'http://:8000/jupyter'
 
 ## Whether to shutdown the proxy when the Hub shuts down.
 #  
-#  Disable if you want to be able to teardown the Hub while leaving the proxy
-#  running.
+#          Disable if you want to be able to teardown the Hub while leaving the
+#  proxy running.
 #  
-#  Only valid if the proxy was starting by the Hub process.
+#          Only valid if the proxy was starting by the Hub process.
 #  
-#  If both this and cleanup_servers are False, sending SIGINT to the Hub will
-#  only shutdown the Hub, leaving everything else running.
+#          If both this and cleanup_servers are False, sending SIGINT to the Hub will
+#          only shutdown the Hub, leaving everything else running.
 #  
-#  The Hub should be able to resume from database state.
+#          The Hub should be able to resume from database state.
 #  Default: True
 # c.JupyterHub.cleanup_proxy = True
 
 ## Whether to shutdown single-user servers when the Hub shuts down.
 #  
-#  Disable if you want to be able to teardown the Hub while leaving the single-
-#  user servers running.
+#          Disable if you want to be able to teardown the Hub while leaving the
+#  single-user servers running.
 #  
-#  If both this and cleanup_proxy are False, sending SIGINT to the Hub will only
-#  shutdown the Hub, leaving everything else running.
+#          If both this and cleanup_proxy are False, sending SIGINT to the Hub will
+#          only shutdown the Hub, leaving everything else running.
 #  
-#  The Hub should be able to resume from database state.
+#          The Hub should be able to resume from database state.
 #  Default: True
 # c.JupyterHub.cleanup_servers = True
 
@@ -185,28 +196,29 @@ c.JupyterHub.bind_url = 'http://:8000/jupyter'
 #  Default: False
 # c.JupyterHub.confirm_no_ssl = False
 
-## Number of days for a login cookie to be valid. Default is two weeks.
+## Number of days for a login cookie to be valid.
+#          Default is two weeks.
 #  Default: 14
 # c.JupyterHub.cookie_max_age_days = 14
 
 ## The cookie secret to use to encrypt cookies.
 #  
-#  Loaded from the JPY_COOKIE_SECRET env variable by default.
+#          Loaded from the JPY_COOKIE_SECRET env variable by default.
 #  
-#  Should be exactly 256 bits (32 bytes).
-#  Default: b''
-# c.JupyterHub.cookie_secret = b''
+#          Should be exactly 256 bits (32 bytes).
+#  Default: traitlets.Undefined
+# c.JupyterHub.cookie_secret = traitlets.Undefined
 
 ## File in which to store the cookie secret.
 #  Default: 'jupyterhub_cookie_secret'
 # c.JupyterHub.cookie_secret_file = 'jupyterhub_cookie_secret'
 
 ## The location of jupyterhub data files (e.g. /usr/local/share/jupyterhub)
-#  Default: '/opt/jupyterhub/share/jupyterhub'
-# c.JupyterHub.data_files_path = '/opt/jupyterhub/share/jupyterhub'
+#  Default: '/opt/jupyterhub_venv/share/jupyterhub'
+# c.JupyterHub.data_files_path = '/opt/jupyterhub_venv/share/jupyterhub'
 
-## Include any kwargs to pass to the database connection. See
-#  sqlalchemy.create_engine for details.
+## Include any kwargs to pass to the database connection.
+#          See sqlalchemy.create_engine for details.
 #  Default: {}
 # c.JupyterHub.db_kwargs = {}
 
@@ -246,22 +258,22 @@ c.JupyterHub.bind_url = 'http://:8000/jupyter'
 #  Default: traitlets.Undefined
 # c.JupyterHub.default_url = traitlets.Undefined
 
-## Dict authority:dict(files). Specify the key, cert, and/or ca file for an
-#  authority. This is useful for externally managed proxies that wish to use
-#  internal_ssl.
+## Dict authority:dict(files). Specify the key, cert, and/or
+#          ca file for an authority. This is useful for externally managed
+#          proxies that wish to use internal_ssl.
 #  
-#  The files dict has this format (you must specify at least a cert)::
+#          The files dict has this format (you must specify at least a cert)::
 #  
-#      {
-#          'key': '/path/to/key.key',
-#          'cert': '/path/to/cert.crt',
-#          'ca': '/path/to/ca.crt'
-#      }
+#              {
+#                  'key': '/path/to/key.key',
+#                  'cert': '/path/to/cert.crt',
+#                  'ca': '/path/to/ca.crt'
+#              }
 #  
-#  The authorities you can override: 'hub-ca', 'notebooks-ca', 'proxy-api-ca',
-#  'proxy-client-ca', and 'services-ca'.
+#          The authorities you can override: 'hub-ca', 'notebooks-ca',
+#          'proxy-api-ca', 'proxy-client-ca', and 'services-ca'.
 #  
-#  Use with internal_ssl
+#          Use with internal_ssl
 #  Default: {}
 # c.JupyterHub.external_ssl_authorities = {}
 
@@ -282,6 +294,14 @@ c.JupyterHub.bind_url = 'http://:8000/jupyter'
 ## Extra log handlers to set on JupyterHub logger
 #  Default: []
 # c.JupyterHub.extra_log_handlers = []
+
+## Alternate header to use as the Host (e.g., X-Forwarded-Host)
+#          when determining whether a request is cross-origin
+#  
+#          This may be useful when JupyterHub is running behind a proxy that rewrites
+#          the Host header.
+#  Default: ''
+# c.JupyterHub.forwarded_host_header = ''
 
 ## Generate certs used for internal ssl
 #  Default: False
@@ -304,19 +324,19 @@ c.JupyterHub.bind_url = 'http://:8000/jupyter'
 #  Default: ''
 # c.JupyterHub.hub_bind_url = ''
 
-## The ip or hostname for proxies and spawners to use for connecting to the Hub.
+## The ip or hostname for proxies and spawners to use
+#          for connecting to the Hub.
 #  
-#  Use when the bind address (`hub_ip`) is 0.0.0.0, :: or otherwise different
-#  from the connect address.
+#          Use when the bind address (`hub_ip`) is 0.0.0.0, :: or otherwise different
+#          from the connect address.
 #  
-#  Default: when `hub_ip` is 0.0.0.0 or ::, use `socket.gethostname()`, otherwise
-#  use `hub_ip`.
+#          Default: when `hub_ip` is 0.0.0.0 or ::, use `socket.gethostname()`,
+#  otherwise use `hub_ip`.
 #  
-#  Note: Some spawners or proxy implementations might not support hostnames.
-#  Check your spawner or proxy documentation to see if they have extra
-#  requirements.
+#          Note: Some spawners or proxy implementations might not support hostnames. Check your
+#          spawner or proxy documentation to see if they have extra requirements.
 #  
-#  .. versionadded:: 0.8
+#          .. versionadded:: 0.8
 #  Default: ''
 # c.JupyterHub.hub_connect_ip = ''
 
@@ -347,39 +367,59 @@ c.JupyterHub.bind_url = 'http://:8000/jupyter'
 
 ## The ip address for the Hub process to *bind* to.
 #  
-#  By default, the hub listens on localhost only. This address must be accessible
-#  from the proxy and user servers. You may need to set this to a public ip or ''
-#  for all interfaces if the proxy or user servers are in containers or on a
-#  different host.
+#          By default, the hub listens on localhost only. This address must be accessible from
+#          the proxy and user servers. You may need to set this to a public ip or '' for all
+#          interfaces if the proxy or user servers are in containers or on a different host.
 #  
-#  See `hub_connect_ip` for cases where the bind and connect address should
-#  differ, or `hub_bind_url` for setting the full bind URL.
+#          See `hub_connect_ip` for cases where the bind and connect address should differ,
+#          or `hub_bind_url` for setting the full bind URL.
 #  Default: '127.0.0.1'
 # c.JupyterHub.hub_ip = '127.0.0.1'
 
 ## The internal port for the Hub process.
 #  
-#  This is the internal port of the hub itself. It should never be accessed
-#  directly. See JupyterHub.port for the public port to use when accessing
-#  jupyterhub. It is rare that this port should be set except in cases of port
-#  conflict.
+#          This is the internal port of the hub itself. It should never be accessed directly.
+#          See JupyterHub.port for the public port to use when accessing jupyterhub.
+#          It is rare that this port should be set except in cases of port conflict.
 #  
-#  See also `hub_ip` for the ip and `hub_bind_url` for setting the full bind URL.
+#          See also `hub_ip` for the ip and `hub_bind_url` for setting the full
+#  bind URL.
 #  Default: 8081
 # c.JupyterHub.hub_port = 8081
 
+## The routing prefix for the Hub itself.
+#  
+#  Override to send only a subset of traffic to the Hub. Default is to use the
+#  Hub as the default route for all requests.
+#  
+#  This is necessary for normal jupyterhub operation, as the Hub must receive
+#  requests for e.g. `/user/:name` when the user's server is not running.
+#  
+#  However, some deployments using only the JupyterHub API may want to handle
+#  these events themselves, in which case they can register their own default
+#  target with the proxy and set e.g. `hub_routespec = /hub/` to serve only the
+#  hub's own pages, or even `/hub/api/` for api-only operation.
+#  
+#  Note: hub_routespec must include the base_url, if any.
+#  
+#  .. versionadded:: 1.4
+#  Default: '/'
+# c.JupyterHub.hub_routespec = '/'
+
 ## Trigger implicit spawns after this many seconds.
 #  
-#  When a user visits a URL for a server that's not running, they are shown a
-#  page indicating that the requested server is not running with a button to
-#  spawn the server.
+#          When a user visits a URL for a server that's not running,
+#          they are shown a page indicating that the requested server
+#          is not running with a button to spawn the server.
 #  
-#  Setting this to a positive value will redirect the user after this many
-#  seconds, effectively clicking this button automatically for the users,
-#  automatically beginning the spawn process.
+#          Setting this to a positive value will redirect the user
+#          after this many seconds, effectively clicking this button
+#          automatically for the users,
+#          automatically beginning the spawn process.
 #  
-#  Warning: this can result in errors and surprising behavior when sharing access
-#  URLs to actual servers, since the wrong server is likely to be started.
+#          Warning: this can result in errors and surprising behavior
+#          when sharing access URLs to actual servers,
+#          since the wrong server is likely to be started.
 #  Default: 0
 # c.JupyterHub.implicit_spawn_seconds = 0
 
@@ -399,29 +439,30 @@ c.JupyterHub.bind_url = 'http://:8000/jupyter'
 #  Default: 10
 # c.JupyterHub.init_spawners_timeout = 10
 
-## The location to store certificates automatically created by JupyterHub.
+## The location to store certificates automatically created by
+#          JupyterHub.
 #  
-#  Use with internal_ssl
+#          Use with internal_ssl
 #  Default: 'internal-ssl'
 # c.JupyterHub.internal_certs_location = 'internal-ssl'
 
 ## Enable SSL for all internal communication
 #  
-#  This enables end-to-end encryption between all JupyterHub components.
-#  JupyterHub will automatically create the necessary certificate authority and
-#  sign notebook certificates as they're created.
+#          This enables end-to-end encryption between all JupyterHub components.
+#          JupyterHub will automatically create the necessary certificate
+#          authority and sign notebook certificates as they're created.
 #  Default: False
 # c.JupyterHub.internal_ssl = False
 
-## The public facing ip of the whole JupyterHub application (specifically
-#  referred to as the proxy).
+## The public facing ip of the whole JupyterHub application
+#          (specifically referred to as the proxy).
 #  
-#  This is the address on which the proxy will listen. The default is to listen
-#  on all interfaces. This is the only address through which JupyterHub should be
-#  accessed by users.
+#          This is the address on which the proxy will listen. The default is to
+#          listen on all interfaces. This is the only address through which JupyterHub
+#          should be accessed by users.
 #  
-#  .. deprecated: 0.9
-#      Use JupyterHub.bind_url
+#          .. deprecated: 0.9
+#              Use JupyterHub.bind_url
 #  Default: ''
 # c.JupyterHub.ip = ''
 
@@ -435,13 +476,35 @@ c.JupyterHub.bind_url = 'http://:8000/jupyter'
 
 ## Dict of 'group': ['usernames'] to load at startup.
 #  
-#  This strictly *adds* groups and users to groups.
+#          This strictly *adds* groups and users to groups.
 #  
-#  Loading one set of groups, then starting JupyterHub again with a different set
-#  will not remove users or groups from previous launches. That must be done
-#  through the API.
+#          Loading one set of groups, then starting JupyterHub again with a different
+#          set will not remove users or groups from previous launches.
+#          That must be done through the API.
 #  Default: {}
 # c.JupyterHub.load_groups = {}
+
+## List of predefined role dictionaries to load at startup.
+#  
+#          For instance::
+#  
+#              load_roles = [
+#                              {
+#                                  'name': 'teacher',
+#                                  'description': 'Access to users' information and group membership',
+#                                  'scopes': ['users', 'groups'],
+#                                  'users': ['cyclops', 'gandalf'],
+#                                  'services': [],
+#                                  'groups': []
+#                              }
+#                          ]
+#  
+#          All keys apart from 'name' are optional.
+#          See all the available scopes in the JupyterHub REST API documentation.
+#  
+#          Default roles are defined in roles.py.
+#  Default: []
+# c.JupyterHub.load_roles = []
 
 ## The date format used by logging formatters for %(asctime)s
 #  See also: Application.log_datefmt
@@ -468,17 +531,46 @@ c.JupyterHub.bind_url = 'http://:8000/jupyter'
 #  Default: 0
 # c.JupyterHub.named_server_limit_per_user = 0
 
-## File to write PID Useful for daemonizing JupyterHub.
+## Expiry (in seconds) of OAuth access tokens.
+#  
+#          The default is to expire when the cookie storing them expires,
+#          according to `cookie_max_age_days` config.
+#  
+#          These are the tokens stored in cookies when you visit
+#          a single-user server or service.
+#          When they expire, you must re-authenticate with the Hub,
+#          even if your Hub authentication is still valid.
+#          If your Hub authentication is valid,
+#          logging in may be a transparent redirect as you refresh the page.
+#  
+#          This does not affect JupyterHub API tokens in general,
+#          which do not expire by default.
+#          Only tokens issued during the oauth flow
+#          accessing services and single-user servers are affected.
+#  
+#          .. versionadded:: 1.4
+#              OAuth token expires_in was not previously configurable.
+#          .. versionchanged:: 1.4
+#              Default now uses cookie_max_age_days so that oauth tokens
+#              which are generally stored in cookies,
+#              expire when the cookies storing them expire.
+#              Previously, it was one hour.
+#  Default: 0
+# c.JupyterHub.oauth_token_expires_in = 0
+
+## File to write PID
+#          Useful for daemonizing JupyterHub.
 #  Default: ''
 # c.JupyterHub.pid_file = ''
 
 ## The public facing port of the proxy.
 #  
-#  This is the port on which the proxy will listen. This is the only port through
-#  which JupyterHub should be accessed by users.
+#          This is the port on which the proxy will listen.
+#          This is the only port through which JupyterHub
+#          should be accessed by users.
 #  
-#  .. deprecated: 0.9
-#      Use JupyterHub.bind_url
+#          .. deprecated: 0.9
+#              Use JupyterHub.bind_url
 #  Default: 8000
 # c.JupyterHub.port = 8000
 
@@ -494,9 +586,9 @@ c.JupyterHub.bind_url = 'http://:8000/jupyter'
 #  Default: ''
 # c.JupyterHub.proxy_auth_token = ''
 
-## Interval (in seconds) at which to check if the proxy is running.
-#  Default: 30
-# c.JupyterHub.proxy_check_interval = 30
+## DEPRECATED since version 0.8: Use ConfigurableHTTPProxy.check_running_interval
+#  Default: 5
+# c.JupyterHub.proxy_check_interval = 5
 
 ## The class to use for configuring the JupyterHub proxy.
 #  
@@ -518,9 +610,9 @@ c.JupyterHub.bind_url = 'http://:8000/jupyter'
 
 ## Recreate all certificates used within JupyterHub on restart.
 #  
-#  Note: enabling this feature requires restarting all notebook servers.
+#          Note: enabling this feature requires restarting all notebook servers.
 #  
-#  Use with internal_ssl
+#          Use with internal_ssl
 #  Default: False
 # c.JupyterHub.recreate_internal_certs = False
 
@@ -539,29 +631,29 @@ c.JupyterHub.bind_url = 'http://:8000/jupyter'
 
 ## Dict of token:servicename to be loaded into the database.
 #  
-#  Allows ahead-of-time generation of API tokens for use by externally managed
-#  services.
+#          Allows ahead-of-time generation of API tokens for use by externally
+#  managed services.
 #  Default: {}
 # c.JupyterHub.service_tokens = {}
 
 ## List of service specification dictionaries.
 #  
-#  A service
+#          A service
 #  
-#  For instance::
+#          For instance::
 #  
-#      services = [
-#          {
-#              'name': 'cull_idle',
-#              'command': ['/path/to/cull_idle_servers.py'],
-#          },
-#          {
-#              'name': 'formgrader',
-#              'url': 'http://127.0.0.1:1234',
-#              'api_token': 'super-secret',
-#              'environment':
-#          }
-#      ]
+#              services = [
+#                  {
+#                      'name': 'cull_idle',
+#                      'command': ['/path/to/cull_idle_servers.py'],
+#                  },
+#                  {
+#                      'name': 'formgrader',
+#                      'url': 'http://127.0.0.1:1234',
+#                      'api_token': 'super-secret',
+#                      'environment':
+#                  }
+#              ]
 #  Default: []
 # c.JupyterHub.services = []
 
@@ -594,13 +686,13 @@ c.JupyterHub.bind_url = 'http://:8000/jupyter'
 
 ## Path to SSL certificate file for the public facing interface of the proxy
 #  
-#  When setting this, you should also set ssl_key
+#          When setting this, you should also set ssl_key
 #  Default: ''
 # c.JupyterHub.ssl_cert = ''
 
 ## Path to SSL key file for the public facing interface of the proxy
 #  
-#  When setting this, you should also set ssl_cert
+#          When setting this, you should also set ssl_cert
 #  Default: ''
 # c.JupyterHub.ssl_key = ''
 
@@ -619,17 +711,18 @@ c.JupyterHub.bind_url = 'http://:8000/jupyter'
 
 ## Run single-user servers on subdomains of this host.
 #  
-#  This should be the full `https://hub.domain.tld[:port]`.
+#          This should be the full `https://hub.domain.tld[:port]`.
 #  
-#  Provides additional cross-site protections for javascript served by single-
-#  user servers.
+#          Provides additional cross-site protections for javascript served by
+#  single-user servers.
 #  
-#  Requires `<username>.hub.domain.tld` to resolve to the same host as
+#          Requires `<username>.hub.domain.tld` to resolve to the same host as
 #  `hub.domain.tld`.
 #  
-#  In general, this is most easily achieved with wildcard DNS.
+#          In general, this is most easily achieved with wildcard DNS.
 #  
-#  When using SSL (i.e. always) this also requires a wildcard SSL certificate.
+#          When using SSL (i.e. always) this also requires a wildcard SSL
+#  certificate.
 #  Default: ''
 # c.JupyterHub.subdomain_host = ''
 
@@ -645,53 +738,68 @@ c.JupyterHub.bind_url = 'http://:8000/jupyter'
 #  Default: {}
 # c.JupyterHub.tornado_settings = {}
 
-## Trust user-provided tokens (via JupyterHub.service_tokens) to have good
-#  entropy.
+## Trust user-provided tokens (via JupyterHub.service_tokens)
+#          to have good entropy.
 #  
-#  If you are not inserting additional tokens via configuration file, this flag
-#  has no effect.
+#          If you are not inserting additional tokens via configuration file,
+#          this flag has no effect.
 #  
-#  In JupyterHub 0.8, internally generated tokens do not pass through additional
-#  hashing because the hashing is costly and does not increase the entropy of
-#  already-good UUIDs.
+#          In JupyterHub 0.8, internally generated tokens do not
+#          pass through additional hashing because the hashing is costly
+#          and does not increase the entropy of already-good UUIDs.
 #  
-#  User-provided tokens, on the other hand, are not trusted to have good entropy
-#  by default, and are passed through many rounds of hashing to stretch the
-#  entropy of the key (i.e. user-provided tokens are treated as passwords instead
-#  of random keys). These keys are more costly to check.
+#          User-provided tokens, on the other hand, are not trusted to have good entropy by default,
+#          and are passed through many rounds of hashing to stretch the entropy of the key
+#          (i.e. user-provided tokens are treated as passwords instead of random keys).
+#          These keys are more costly to check.
 #  
-#  If your inserted tokens are generated by a good-quality mechanism, e.g.
-#  `openssl rand -hex 32`, then you can set this flag to True to reduce the cost
-#  of checking authentication tokens.
+#          If your inserted tokens are generated by a good-quality mechanism,
+#          e.g. `openssl rand -hex 32`, then you can set this flag to True
+#          to reduce the cost of checking authentication tokens.
 #  Default: False
 # c.JupyterHub.trust_user_provided_tokens = False
 
 ## Names to include in the subject alternative name.
 #  
-#  These names will be used for server name verification. This is useful if
-#  JupyterHub is being run behind a reverse proxy or services using ssl are on
-#  different hosts.
+#          These names will be used for server name verification. This is useful
+#          if JupyterHub is being run behind a reverse proxy or services using ssl
+#          are on different hosts.
 #  
-#  Use with internal_ssl
+#          Use with internal_ssl
 #  Default: []
 # c.JupyterHub.trusted_alt_names = []
 
 ## Downstream proxy IP addresses to trust.
 #  
-#  This sets the list of IP addresses that are trusted and skipped when
-#  processing the `X-Forwarded-For` header. For example, if an external proxy is
-#  used for TLS termination, its IP address should be added to this list to
-#  ensure the correct client IP addresses are recorded in the logs instead of the
-#  proxy server's IP address.
+#          This sets the list of IP addresses that are trusted and skipped when processing
+#          the `X-Forwarded-For` header. For example, if an external proxy is used for TLS
+#          termination, its IP address should be added to this list to ensure the correct
+#          client IP addresses are recorded in the logs instead of the proxy server's IP
+#          address.
 #  Default: []
 # c.JupyterHub.trusted_downstream_ips = []
 
 ## Upgrade the database automatically on start.
 #  
-#  Only safe if database is regularly backed up. Only SQLite databases will be
-#  backed up to a local file automatically.
+#          Only safe if database is regularly backed up.
+#          Only SQLite databases will be backed up to a local file automatically.
 #  Default: False
 # c.JupyterHub.upgrade_db = False
+
+## Return 503 rather than 424 when request comes in for a non-running server.
+#  
+#  Prior to JupyterHub 2.0, we returned a 503 when any request came in for a user
+#  server that was currently not running. By default, JupyterHub 2.0 will return
+#  a 424 - this makes operational metric dashboards more useful.
+#  
+#  JupyterLab < 3.2 expected the 503 to know if the user server is no longer
+#  running, and prompted the user to start their server. Set this config to true
+#  to retain the old behavior, so JupyterLab < 3.2 can continue to show the
+#  appropriate UI when the user server is stopped.
+#  
+#  This option will be removed in a future release.
+#  Default: False
+# c.JupyterHub.use_legacy_stopped_server_status_code = False
 
 ## Callable to affect behavior of /user-redirect/
 #  
@@ -710,13 +818,17 @@ c.JupyterHub.bind_url = 'http://:8000/jupyter'
 #------------------------------------------------------------------------------
 ## Base class for spawning single-user notebook servers.
 #  
-#  Subclass this, and override the following methods:
+#      Subclass this, and override the following methods:
 #  
-#  - load_state - get_state - start - stop - poll
+#      - load_state
+#      - get_state
+#      - start
+#      - stop
+#      - poll
 #  
-#  As JupyterHub supports multiple users, an instance of the Spawner subclass is
-#  created for each user. If there are 20 JupyterHub users, there will be 20
-#  instances of the subclass.
+#      As JupyterHub supports multiple users, an instance of the Spawner subclass
+#      is created for each user. If there are 20 JupyterHub users, there will be 20
+#      instances of the subclass.
 
 ## Extra arguments to be passed to the single-user server.
 #  
@@ -831,6 +943,7 @@ c.Spawner.default_url = '/lab'
 #  single-user server's process.
 #  Default: ['PATH', 'PYTHONPATH', 'CONDA_ROOT', 'CONDA_DEFAULT_ENV', 'VIRTUAL_ENV', 'LANG', 'LC_ALL', 'JUPYTERHUB_SINGLEUSER_APP']
 # c.Spawner.env_keep = ['PATH', 'PYTHONPATH', 'CONDA_ROOT', 'CONDA_DEFAULT_ENV', 'VIRTUAL_ENV', 'LANG', 'LC_ALL', 'JUPYTERHUB_SINGLEUSER_APP']
+c.Spawner.env_keep = ['PATH', 'PYTHONPATH', 'CONDA_ROOT', 'CONDA_DEFAULT_ENV', 'VIRTUAL_ENV', 'LANG', 'LC_ALL', 'JUPYTERHUB_SINGLEUSER_APP']
 
 ## Extra environment variables to set for the single-user server's process.
 #  
@@ -864,12 +977,32 @@ c.Spawner.default_url = '/lab'
 #  Default: 30
 # c.Spawner.http_timeout = 30
 
+## The URL the single-user server should connect to the Hub.
+#  
+#  If the Hub URL set in your JupyterHub config is not reachable from spawned
+#  notebooks, you can set differnt URL by this config.
+#  
+#  Is None if you don't need to change the URL.
+#  Default: None
+# c.Spawner.hub_connect_url = None
+
 ## The IP address (or hostname) the single-user server should listen on.
+#  
+#  Usually either '127.0.0.1' (default) or '0.0.0.0'.
 #  
 #  The JupyterHub proxy implementation should be able to send packets to this
 #  interface.
-#  Default: ''
-# c.Spawner.ip = ''
+#  
+#  Subclasses which launch remotely or in containers should override the default
+#  to '0.0.0.0'.
+#  
+#  .. versionchanged:: 2.0
+#      Default changed to '127.0.0.1', from ''.
+#      In most cases, this does not result in a change in behavior,
+#      as '' was interpreted as 'unspecified',
+#      which used the subprocesses' own default, itself usually '127.0.0.1'.
+#  Default: '127.0.0.1'
+# c.Spawner.ip = '127.0.0.1'
 
 ## Minimum number of bytes a single-user notebook server is guaranteed to have
 #  available.
@@ -919,6 +1052,18 @@ c.Spawner.default_url = '/lab'
 #  path! They can do so with many other means.
 #  Default: ''
 # c.Spawner.notebook_dir = ''
+
+## Allowed roles for oauth tokens.
+#  
+#          This sets the maximum and default roles
+#          assigned to oauth tokens issued by a single-user server's
+#          oauth client (i.e. tokens stored in browsers after authenticating with the server),
+#          defining what actions the server can take on behalf of logged-in users.
+#  
+#          Default is an empty list, meaning minimal permissions to identify users,
+#          no actions can be taken on their behalf.
+#  Default: traitlets.Undefined
+# c.Spawner.oauth_roles = traitlets.Undefined
 
 ## An HTML form for options a user can specify on launching their server.
 #  
@@ -1023,8 +1168,8 @@ c.Spawner.default_url = '/lab'
 
 ## List of SSL alt names
 #  
-#  May be set in config if all spawners should have the same value(s), or set at
-#  runtime by Spawner that know their names.
+#          May be set in config if all spawners should have the same value(s),
+#          or set at runtime by Spawner that know their names.
 #  Default: []
 # c.Spawner.ssl_alt_names = []
 
@@ -1048,6 +1193,9 @@ c.Spawner.default_url = '/lab'
 
 ## Set of users that will have admin rights on this JupyterHub.
 #  
+#  Note: As of JupyterHub 2.0, full admin rights should not be required, and more
+#  precise permissions can be managed via roles.
+#  
 #  Admin users have extra privileges:
 #   - Use the admin panel to see list of users logged in
 #   - Add / remove users in some authenticators
@@ -1065,7 +1213,8 @@ c.Spawner.default_url = '/lab'
 #  
 #  Use this with supported authenticators to restrict which users can log in.
 #  This is an additional list that further restricts users, beyond whatever
-#  restrictions the authenticator has in place.
+#  restrictions the authenticator has in place. Any user in this list is granted
+#  the 'user' role on hub startup.
 #  
 #  If empty, does not perform any additional restriction.
 #  
@@ -1074,27 +1223,42 @@ c.Spawner.default_url = '/lab'
 #  Default: set()
 # c.Authenticator.allowed_users = set()
 
-## The max age (in seconds) of authentication info before forcing a refresh of
-#  user auth info.
+## The max age (in seconds) of authentication info
+#          before forcing a refresh of user auth info.
 #  
-#  Refreshing auth info allows, e.g. requesting/re-validating auth tokens.
+#          Refreshing auth info allows, e.g. requesting/re-validating auth
+#  tokens.
 #  
-#  See :meth:`.refresh_user` for what happens when user auth info is refreshed
-#  (nothing by default).
+#          See :meth:`.refresh_user` for what happens when user auth info is refreshed
+#          (nothing by default).
 #  Default: 300
 # c.Authenticator.auth_refresh_age = 300
 
 ## Automatically begin the login process
 #  
-#  rather than starting with a "Login with..." link at `/hub/login`
+#          rather than starting with a "Login with..." link at `/hub/login`
 #  
-#  To work, `.login_url()` must give a URL other than the default `/hub/login`,
-#  such as an oauth handler or another automatic login handler, registered with
-#  `.get_handlers()`.
+#          To work, `.login_url()` must give a URL other than the default `/hub/login`,
+#          such as an oauth handler or another automatic login handler,
+#          registered with `.get_handlers()`.
 #  
-#  .. versionadded:: 0.8
+#          .. versionadded:: 0.8
 #  Default: False
 # c.Authenticator.auto_login = False
+
+## Automatically begin login process for OAuth2 authorization requests
+#  
+#  When another application is using JupyterHub as OAuth2 provider, it sends
+#  users to `/hub/api/oauth2/authorize`. If the user isn't logged in already, and
+#  auto_login is not set, the user will be dumped on the hub's home page, without
+#  any context on what to do next.
+#  
+#  Setting this to true will automatically redirect users to login if they aren't
+#  logged in *only* on the `/hub/api/oauth2/authorize` endpoint.
+#  
+#  .. versionadded:: 1.5
+#  Default: False
+# c.Authenticator.auto_login_oauth2_authorize = False
 
 ## Set of usernames that are not allowed to log in.
 #  
@@ -1113,35 +1277,47 @@ c.Spawner.default_url = '/lab'
 
 ## Delete any users from the database that do not pass validation
 #  
-#  When JupyterHub starts, `.add_user` will be called on each user in the
-#  database to verify that all users are still valid.
+#          When JupyterHub starts, `.add_user` will be called
+#          on each user in the database to verify that all users are still valid.
 #  
-#  If `delete_invalid_users` is True, any users that do not pass validation will
-#  be deleted from the database. Use this if users might be deleted from an
-#  external system, such as local user accounts.
+#          If `delete_invalid_users` is True,
+#          any users that do not pass validation will be deleted from the database.
+#          Use this if users might be deleted from an external system,
+#          such as local user accounts.
 #  
-#  If False (default), invalid users remain in the Hub's database and a warning
-#  will be issued. This is the default to avoid data loss due to config changes.
+#          If False (default), invalid users remain in the Hub's database
+#          and a warning will be issued.
+#          This is the default to avoid data loss due to config changes.
 #  Default: False
 # c.Authenticator.delete_invalid_users = False
 
 ## Enable persisting auth_state (if available).
 #  
-#  auth_state will be encrypted and stored in the Hub's database. This can
-#  include things like authentication tokens, etc. to be passed to Spawners as
-#  environment variables.
+#          auth_state will be encrypted and stored in the Hub's database.
+#          This can include things like authentication tokens, etc.
+#          to be passed to Spawners as environment variables.
 #  
-#  Encrypting auth_state requires the cryptography package.
+#          Encrypting auth_state requires the cryptography package.
 #  
-#  Additionally, the JUPYTERHUB_CRYPT_KEY environment variable must contain one
-#  (or more, separated by ;) 32B encryption keys. These can be either base64 or
-#  hex-encoded.
+#          Additionally, the JUPYTERHUB_CRYPT_KEY environment variable must
+#          contain one (or more, separated by ;) 32B encryption keys.
+#          These can be either base64 or hex-encoded.
 #  
-#  If encryption is unavailable, auth_state cannot be persisted.
+#          If encryption is unavailable, auth_state cannot be persisted.
 #  
-#  New in JupyterHub 0.8
+#          New in JupyterHub 0.8
 #  Default: False
 # c.Authenticator.enable_auth_state = False
+
+## Let authenticator manage user groups
+#  
+#          If True, Authenticator.authenticate and/or .refresh_user
+#          may return a list of group names in the 'groups' field,
+#          which will be assigned to the user.
+#  
+#          All group-assignment APIs are disabled if this is True.
+#  Default: False
+# c.Authenticator.manage_groups = False
 
 ## An optional hook function that you can implement to do some bootstrapping work
 #  during authentication. For example, loading user account details from an
@@ -1177,20 +1353,20 @@ c.Spawner.default_url = '/lab'
 
 ## Force refresh of auth prior to spawn.
 #  
-#  This forces :meth:`.refresh_user` to be called prior to launching a server, to
-#  ensure that auth state is up-to-date.
+#          This forces :meth:`.refresh_user` to be called prior to launching
+#          a server, to ensure that auth state is up-to-date.
 #  
-#  This can be important when e.g. auth tokens that may have expired are passed
-#  to the spawner via environment variables from auth_state.
+#          This can be important when e.g. auth tokens that may have expired
+#          are passed to the spawner via environment variables from auth_state.
 #  
-#  If refresh_user cannot refresh the user auth data, launch will fail until the
-#  user logs in again.
+#          If refresh_user cannot refresh the user auth data,
+#          launch will fail until the user logs in again.
 #  Default: False
 # c.Authenticator.refresh_pre_spawn = False
 
 ## Dictionary mapping authenticator usernames to JupyterHub users.
 #  
-#  Primarily used to normalize OAuth user names to local users.
+#          Primarily used to normalize OAuth user names to local users.
 #  Default: {}
 # c.Authenticator.username_map = {}
 
@@ -1212,22 +1388,11 @@ c.Spawner.default_url = '/lab'
 #------------------------------------------------------------------------------
 ## Encapsulate encryption configuration
 #  
-#  Use via the encryption_config singleton below.
+#      Use via the encryption_config singleton below.
 
 #  Default: []
 # c.CryptKeeper.keys = []
 
 ## The number of threads to allocate for encryption
-#  Default: 8
-# c.CryptKeeper.n_threads = 8
-
-#------------------------------------------------------------------------------
-# Pagination(Configurable) configuration
-#------------------------------------------------------------------------------
-## Default number of entries per page for paginated results.
-#  Default: 100
-# c.Pagination.default_per_page = 100
-
-## Maximum number of entries per page for paginated results.
-#  Default: 250
-# c.Pagination.max_per_page = 250
+#  Default: 36
+# c.CryptKeeper.n_threads = 36

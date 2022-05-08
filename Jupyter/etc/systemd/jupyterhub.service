@@ -4,7 +4,7 @@ After=syslog.target network.target
 
 [Service]
 User=root
-Environment="PATH=/usr/local/texlive/2021/bin/x86_64-linux:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/opt/jupyterhub/bin"
+Environment="PATH=/opt/jupyterhub_venv/bin:/usr/local/texlive/2021/bin/x86_64-linux:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:"
 ExecStart=/opt/jupyterhub/etc/systemd/run_jupyterhub
 
 [Install]
