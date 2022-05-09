@@ -92,7 +92,7 @@ sudo ldconfig
 
 ```bash
 # /usr/local/cuda-11.2/bin
-vi /etc/environments
+vi /etc/environment
 ```
 
 0. Download and install [cuDNN](https://developer.nvidia.com/rdp/cudnn-archive)
