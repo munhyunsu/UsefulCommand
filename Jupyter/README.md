@@ -115,6 +115,12 @@ client_max_body_size 1G;
 python3 -m ipykernel install --user --name user-kernel --display-name 'UserKernel'
 ```
 
+- Install system-wide
+
+```bash
+/opt/jupyterhub_venv/bin/python3 -m ipykernel install --name jupyter --display-name 'Jupyter' --prefix=/opt/jupyterhub_venv/
+```
+
 ### Jupyter lab extension
 
 ```bash
