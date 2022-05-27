@@ -5,6 +5,7 @@
 ## Change tab by scroll
 
 - `toolkit.tabbox.switchByScrolling true`
+- `browser.tabs.tabMinWidth 0`
 
 ## Disable TTS (speech-dispatcher)
 
