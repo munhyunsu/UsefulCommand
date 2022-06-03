@@ -1,3 +1,9 @@
+# List default sink and source
+
+```bash
+pactl info
+```
+
 # Set a default sink
 
 - List sinks
