@@ -4,6 +4,13 @@
 pactl info
 ```
 
+# Set source or sink volume
+
+```
+pactl set-sink-volume 0 100%
+pactl set-source-volume 0 100%
+```
+
 # Set a default sink
 
 - List sinks
