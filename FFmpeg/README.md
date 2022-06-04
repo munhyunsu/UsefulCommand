@@ -149,3 +149,9 @@ ffmpeg -i INPUTVIDEO.mp4 -i INPUTMASK.jpg -filter_complex "[0:v][1:v]alphamerge,
 ```bash
 ffmpeg -thread_queue_size 4096k -vaapi_device /dev/dri/renderD128 -f video4linux2 -video_size 1280x720 -input_format mjpeg -framerate 60 -i /dev/video2 -thread_queue_size 4096k -f alsa -channels 2 -sample_rate 48000 -i default -bufsize 1024k -vf 'hwupload,scale_vaapi=format=nv12' -qp 20 -c:v h264_vaapi -c:a aac -f matroska output.mkv
 ```
+
+## Capture Video using 
+
+```bash
+ffmpeg -hwaccel cuvid -i /dev/video0 -video_size 1280x720 -input_format mjpeg
+```
