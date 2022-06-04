@@ -11,6 +11,12 @@ pactl set-sink-volume 0 100%
 pactl set-source-volume 0 100%
 ```
 
+# Unmute default source
+
+```
+pactl set-source-mute $(pactl info | grep "Default Source" | awk '{print $3;}') 0
+```
+
 # Set a default sink
 
 - List sinks
