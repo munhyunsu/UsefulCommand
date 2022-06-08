@@ -11,3 +11,10 @@ sudo apt install build-essential libbz2-dev libcurses-ocaml-dev libdbm-deep-perl
 sudo make install
 ```
 
+# URL encoded string decode
+
+```python
+import urllib.parse
+encoded = ''
+urllib.parse.unquote(encoded)
+```
