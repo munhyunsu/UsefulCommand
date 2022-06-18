@@ -49,7 +49,7 @@ gpg --import secret-keys.gpg
 ## Encrypt and decrypt file or directory
 - Files
 ```bash
-gpg --encrypt --output FILE.gpg -r RECIPIENT SRCFILE
+gpg --encrypt --output FILE.gpg --recipient RECIPIENT SRCFILE
 ```
 
 ```bash
