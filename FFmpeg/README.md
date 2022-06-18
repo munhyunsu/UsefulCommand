@@ -156,4 +156,6 @@ ffmpeg -thread_queue_size 4096k -vaapi_device /dev/dri/renderD128 -f video4linux
 ffmpeg -hwaccel cuvid -c:v h264_cuvid cuvid -i /dev/video0 -video_size 1280x720 -input_format mjpeg
 ```
 
+# Good References
 
+- [ ffmpeg livestreaming to youtube via Nvidia's NVENC and Intel's VAAPI on supported hardware](https://gist.github.com/Brainiarc7/7b6049aac3145927ae1cfeafc8f682c1)
