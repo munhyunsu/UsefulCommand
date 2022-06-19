@@ -1,3 +1,11 @@
+# Installation
+
+- Ubuntu / Linux Mint
+
+```bash
+apt install v4l-utils
+```
+
 # Check configuration
 
 ## Get devices
