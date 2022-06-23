@@ -48,6 +48,14 @@ vi /etc/docker/daemon.json
 ln -s /var/lib/docker WANTEDPATH
 ```
 
+## Container automatically start option
+
+- [Reference](https://docs.docker.com/config/containers/start-containers-automatically/)
+
+```bash
+docker update --restart unless-stopped IMAGE
+```
+
 ## Usage example
 
 ### Container management
