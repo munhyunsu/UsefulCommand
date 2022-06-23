@@ -119,6 +119,7 @@ python3 -m ipykernel install --user --name user-kernel --display-name 'UserKerne
 
 ```bash
 /opt/jupyterhub_venv/bin/python3 -m ipykernel install --name jupyter --display-name 'Jupyter' --prefix=/opt/jupyterhub_venv/
+/opt/venv/bin/python3 -m ipykernel install --name new_venv --display-name 'New venv' --prefix=/opt/jupyterhub_venv/
 ```
 
 ### Jupyter lab extension
