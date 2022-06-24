@@ -29,7 +29,7 @@ sudo install npm install -g configurable-http-proxy
 ```bash
 sudo mkdir -p /opt/jupyterhub/etc/jupyterhub/
 cd /opt/jupyterhub/etc/jupyterhub/
-sudo /opt/jupyterhub/bin/jupyterhub --generate-config
+sudo /opt/jupyterhub_venv/bin/jupyterhub --generate-config
 ```
 
 ```
