@@ -3,10 +3,11 @@ wheel
 
 #jupyter
 #jupyterlab
-#ipykernel
+ipykernel
 ipympl
 
 # essential
+tensorflow
 matplotlib
 numpy
 pandas
@@ -21,3 +22,4 @@ cairocffi
 
 # simple machine learning
 scikit-learn
+
