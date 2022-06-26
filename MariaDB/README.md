@@ -56,3 +56,12 @@ docker exec CONTAINER /usr/bin/mysqldump --max_allowed_packet=1G -u root --passw
 docker exec -i CONTAINER bash -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD" DATABASE' < backup.sql
 ```
 
+
+# MariaDB Repository setup (for Connector/C)
+
+- [MariaDB Repo Setup](https://mariadb.com/downloads/repo-setup/)
+
+```bash
+```
+
+
