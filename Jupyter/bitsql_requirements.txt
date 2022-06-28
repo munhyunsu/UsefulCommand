@@ -23,3 +23,5 @@ cairocffi
 # simple machine learning
 scikit-learn
 
+# database
+mariadb
