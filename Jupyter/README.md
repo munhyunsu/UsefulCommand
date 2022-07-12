@@ -161,6 +161,18 @@ export LD_LIBRARY_PATH
 "env": {"LD_LIBRARY_PATH":"/home/..."},
 ```
 
+## Export to Latex, broken korea font problem
+
+```bash
+vi /opt/jupyterhub_venv/share/jupyter/nbconvert/templates/latex/base.tex.j2
+```
+
+```
+\usapackage{kotex}
+```
+
+
+
 # References
 
 - [About ipympl version](https://github.com/matplotlib/ipympl/issues/416)
