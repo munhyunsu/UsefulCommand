@@ -16,3 +16,18 @@ export PATH=${PATH}:${HOME}/Android/Sdk/platform-tools
 echo $PATH
 ```
 
+4. (Optional) Create mitmproxy CA certificate
+
+- When? First or mitmproxy CA certificate was expired
+
+```bash
+rm -rf $HOME/.mitmproxy
+mitmproxy
+```
+
+5. Copy and rename mitmproxy CA certificate
+
+```bash
+cd $HOME/.mitmproxy
+hashed_name=`openssl x509 -inform PEM -subject_hash_old -in mitmproxy-ca-cert.cer | head -1` && cp mitmproxy-ca-cert.cer $hashed_name.0
+```
