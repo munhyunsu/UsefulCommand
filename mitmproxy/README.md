@@ -27,6 +27,8 @@ mitmproxy
 
 5. Copy and rename mitmproxy CA certificate
 
+- Why? Android store CA certificate by the name of their hash, with a '0' as extension
+
 ```bash
 cd $HOME/.mitmproxy
 hashed_name=`openssl x509 -inform PEM -subject_hash_old -in mitmproxy-ca-cert.cer | head -1` && cp mitmproxy-ca-cert.cer $hashed_name.0
