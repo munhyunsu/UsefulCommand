@@ -8,6 +8,8 @@
 
 - We must create AVD non production mode (no marked Google Play)
 
+- This manual create AVD with API level 30
+
 3. Add `emulator` and `adb` to `$PATH`
 
 ```bash
@@ -33,3 +35,4 @@ mitmproxy
 cd $HOME/.mitmproxy
 hashed_name=`openssl x509 -inform PEM -subject_hash_old -in mitmproxy-ca-cert.cer | head -1` && cp mitmproxy-ca-cert.cer $hashed_name.0
 ```
+
