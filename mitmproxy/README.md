@@ -42,3 +42,16 @@ hashed_name=`openssl x509 -inform PEM -subject_hash_old -in mitmproxy-ca-cert.ce
 emulator -list-avds
 emulator -avd AVDNAME -writable-system [-show-kernel]
 ```
+
+- In other terminal
+
+```bash
+adb root
+adb shell avbctl disable-verification
+adb reboot
+adb root
+adb remount
+abd reboot
+adb root
+adb remount
+```
