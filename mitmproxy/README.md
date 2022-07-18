@@ -56,4 +56,5 @@ adb root
 adb remount
 adb push $HOME/.mitmproxy/hashed_name.0 /system/etc/security/cacerts
 adb shell chmod 644 /system/etc/security/cacerts/hashed_name.0
+adb reboot
 ```
