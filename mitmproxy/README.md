@@ -51,7 +51,7 @@ adb shell avbctl disable-verification
 adb reboot
 adb root
 adb remount
-abd reboot
+adb reboot
 adb root
 adb remount
 adb push $HOME/.mitmproxy/hashed_name.0 /system/etc/security/cacerts
