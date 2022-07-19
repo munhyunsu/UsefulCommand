@@ -15,3 +15,11 @@ echo $PATH
 ```bash
 adb devices
 ```
+
+3. Determine the package name of the app
+
+```bash
+adb -s serial shell pm list packages
+```
+
+
