@@ -10,3 +10,8 @@ export PATH=${PATH}:${HOME}/Android/Sdk/platform-tools
 echo $PATH
 ```
 
+2. Get Android device serial
+
+```bash
+adb devices
+```
