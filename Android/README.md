@@ -18,6 +18,8 @@ adb devices
 
 3. Determine the package name of the app
 
+- If we are confused about the package name, please refer to the Play Store
+
 ```bash
 adb -s serial shell pm list packages
 ```
