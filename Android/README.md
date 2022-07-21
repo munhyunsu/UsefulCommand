@@ -24,4 +24,9 @@ adb devices
 adb -s serial shell pm list packages
 ```
 
+4. Get the full path name of the apk file for the target package
+
+```bash
+adb -s serial shell pm path package
+```
 
