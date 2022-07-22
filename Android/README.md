@@ -35,3 +35,9 @@ adb -s serial shell pm path package
 ```bash
 adb -s serial pull /data/app/some.apk ./
 ```
+
+6. Rename apk
+
+```bash
+mv someapp.apk package.apk
+```
