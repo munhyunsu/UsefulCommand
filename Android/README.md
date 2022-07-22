@@ -41,3 +41,9 @@ adb -s serial pull /data/app/some.apk ./
 ```bash
 mv someapp.apk package.apk
 ```
+
+# Install apk to Android using adb
+
+```bash
+adb -s serial install package.apk
+```
