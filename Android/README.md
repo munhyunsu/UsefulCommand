@@ -30,3 +30,8 @@ adb -s serial shell pm list packages
 adb -s serial shell pm path package
 ```
 
+5. Pull apk file from Android hardware
+
+```bash
+adb -s serial pull /data/app/some.apk ./
+```
