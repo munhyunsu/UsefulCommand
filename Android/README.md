@@ -44,6 +44,24 @@ mv someapp.apk package.apk
 
 # Install apk to Android using adb
 
+1. Add `emulator` and `adb` to `$PATH`
+
+```bash
+export PATH=${PATH}:${HOME}/Android/Sdk/emulator
+export PATH=${PATH}:${HOME}/Android/Sdk/platform-tools
+echo $PATH
+```
+
+2. Get Android device serial
+
+```bash
+adb devices
+```
+
+3. Get Install apk
+
 ```bash
 adb -s serial install package.apk
 ```
+
+
