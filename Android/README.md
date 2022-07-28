@@ -64,4 +64,6 @@ adb devices
 adb -s serial install package.apk
 ```
 
+## Reference
 
+- [How do I get an apk file from an Android device?](https://stackoverflow.com/questions/4032960/how-do-i-get-an-apk-file-from-an-android-device)
