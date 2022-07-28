@@ -58,3 +58,7 @@ adb push $HOME/.mitmproxy/hashed_name.0 /system/etc/security/cacerts
 adb shell chmod 644 /system/etc/security/cacerts/hashed_name.0
 adb reboot
 ```
+
+## References
+
+- [Install System CA Certificate on Android Emulator](https://docs.mitmproxy.org/stable/howto-install-system-trusted-ca-android/)
