@@ -4,7 +4,7 @@ ipykernel
 tensorflow
 #numpy # dependency of tensorflow
 matplotlib
-# ipympl #?
+ipympl # For Jupyter Notebook
 pandas
 grpcio
 grpcio-tools
