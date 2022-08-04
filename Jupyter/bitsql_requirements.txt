@@ -28,3 +28,7 @@ mariadb
 
 # MessageQ
 pyzmq
+
+# RestAPI
+fastapi
+uvicorn[standard]
