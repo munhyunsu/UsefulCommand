@@ -32,3 +32,4 @@ pyzmq
 # RestAPI
 fastapi
 uvicorn[standard]
+gunicorn
