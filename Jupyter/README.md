@@ -179,6 +179,7 @@ vi /opt/jupyterhub_venv/share/jupyter/nbconvert/templates/latex/base.tex.j2
 
 3. `jupyterhub upgrade-db`
 
+4. `service restart`
 
 # References
 
