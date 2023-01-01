@@ -2,12 +2,17 @@ pip
 wheel
 ipykernel
 tensorflow
+tensorflow-hub
 #numpy # dependency of tensorflow
 matplotlib
 ipympl # For Jupyter Notebook
 pandas
-grpcio
-grpcio-tools
+#grpcio # deprecate
+#grpcio-tools # deprecate
+fastapi
+uvicorn[standard]
+gunicorn
+python-multipart
 mariadb
 # Pillow # Image # dependency of matplotlib
 scipy

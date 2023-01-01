@@ -171,7 +171,15 @@ vi /opt/jupyterhub_venv/share/jupyter/nbconvert/templates/latex/base.tex.j2
 \usapackage{kotex}
 ```
 
+# JupyterHub upgrade
 
+1. install `requirements.txt` (`alembic`)
+
+2. `cd [PATH_TO_jupyterhub.sqlite]`
+
+3. `jupyterhub upgrade-db`
+
+4. `service restart`
 
 # References
 

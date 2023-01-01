@@ -11,8 +11,10 @@ jupyter_server
 jupyterlab
 nbconvert
 nbformat
+pandoc # pdf export
 notebook
 qtconsole
 traitlets
 # Matplotlib with jupyter notebook
 ipympl
+alembic # database migration
