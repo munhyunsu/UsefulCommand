@@ -40,3 +40,10 @@ datetime.datetime.fromtimestamp(1638972557)
 import datetime
 datetime.datetime.fromtimestamp(time.time(), tz=KST).isoformat()
 ```
+
+- ISO 8601 with `Z` to Epochtime (until Python 3.8 at least)
+
+```python
+import datetime
+datetime.datetime.fromisoformat('2023-01-23T01:00:00Z'.replace('Z', '+00:00'))
+```
