@@ -3,7 +3,7 @@
 ## Get window id
 
 ```bash
-wmctrl -l
+wmctrl -lG
 ```
 
 ## Change window position and size
