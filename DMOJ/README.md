@@ -300,3 +300,9 @@ cd Python-3.9.1
 apt install python3-dev python3-pip build-essential libseccomp-dev
 pip3 install dmoj
 ```
+
+## Caution
+
+- Chages `Online Judge` from 3.x to 4.x
+  - All version of `JAVA` merged to `JAVA` except `JAVA8`
+  - Effect: `java11` in runtime is not showing in runtime metrix
