@@ -14,6 +14,12 @@ v4l2loopback
 options v4l2loopback video_nr=10 card_label="Virtual Camera" exclusive_caps=1
 ```
 
+- take effect
+
+```bash
+sudo update-initramfs
+```
+
 # Source code
 
 - [Github](https://github.com/umlaeute/v4l2loopback)
