@@ -13,5 +13,14 @@
 # `nmcli`
 
 ```bash
-nmcli c show
+nmcli connection show
 ```
+
+## VPN Auto-reconnect
+
+```bash
+nmcli connection modify <Your VPN connection name> connection.autoconnect-retries 0
+nmcli connection modify <Your VPN connection name> vpn.persistent yes
+```
+
+- [Ref](https://askubuntu.com/questions/679059/auto-reconnect-to-vpn-on-disconnect)
