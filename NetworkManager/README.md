@@ -9,3 +9,9 @@
   esac
   ```
 
+
+# `nmcli`
+
+```bash
+nmcli c show
+```
