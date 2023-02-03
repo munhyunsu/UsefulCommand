@@ -8,6 +8,12 @@ HandleLidSwitchExternalPower=ignore
 HandleLidSwitchDocked=ignore
 ```
 
+- (Need?) `vi /etc/UPower/UPower.conf`
+
+```
+IgnoreLid=true
+```
+
 - `gsettings get org.gnome.settings-daemon.plugins.power`
 
 ```bash
