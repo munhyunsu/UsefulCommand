@@ -136,3 +136,13 @@ ssh IPADDRESS "arecord -f S16_LE -c 2 -r $BITRATE -B 10000" | mpv $GUI -
 - In startup application to user log-in
 
   - (LinuxMint) Startup application
+
+
+## Infinity `command` loop
+
+```bash
+while [ 1 ]; do COMMAND; test $? -gt 128 && break; done
+```
+
+- [StackExchange](https://unix.stackexchange.com/questions/42287/terminating-an-infinite-loop)
+
