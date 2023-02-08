@@ -1,3 +1,9 @@
+# Install pulse audio controler
+
+```bash
+apt install pavucontrol
+```
+
 # List default sink and source
 
 ```bash
