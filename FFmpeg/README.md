@@ -125,6 +125,12 @@ ffmpeg -i video1.mp4 -i video2.mp4 -c copy -map 0:v:0 -map 1:a:0 output.mp4
 ffmpeg -i video1.mp4 -i video2.mp4 -c copy -c:s copy -map 0:v:0 -map 1:a:0 -map 0:s:0 output.mp4
 ```
 
+## Merge with multiple tracks
+
+```bash
+ffmpeg -f concat -i f -map 0:v:0 -map 0:v:1 -map 0:a:0 -c:v copy -c:a aac o.mp4
+```
+
 
 ## Resize video
 
