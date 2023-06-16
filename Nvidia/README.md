@@ -100,6 +100,8 @@ vi /etc/environment
 - NVIDIA Developer account login needed
 
 ```bash
+#/usr/local/cuda-11.2/targets/x86_64-linux/include
+#/usr/local/cuda-11.2/targets/x86_64-linux/lib
 sudo cp cudnn-11.2-linux-x64-v8.1.1.33.tgz /usr/local/
 sudo tar -xvf cudnn-11.2-linux-x64-v8.1.1.33.tgz
 sudo rm cudnn-11.2-linux-x64-v8.1.1.33.tgz
@@ -117,3 +119,4 @@ sudo rm cudnn-11.2-linux-x64-v8.1.1.33.tgz
 
 - [TensorFlow Nvidia](https://www.tensorflow.org/install/gpu)
 - [Nvidia official documentation]()
+- https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html
