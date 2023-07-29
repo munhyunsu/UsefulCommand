@@ -146,3 +146,8 @@ while [ 1 ]; do COMMAND; test $? -gt 128 && break; done
 
 - [StackExchange](https://unix.stackexchange.com/questions/42287/terminating-an-infinite-loop)
 
+## Remove matched line using (`sed`)
+
+```bash
+sed -i '/^cd/d' FILENAME
+```
