@@ -39,4 +39,5 @@ g/REGEX/d
 
 # Syntax highlighting
 
+- [VIM Ployglot](https://github.com/sheerun/vim-polyglot)
 - [Dart](https://github.com/dart-lang/dart-vim-plugin)
