@@ -36,3 +36,7 @@ g/REGEX/d
 ```
 :%s/\s\+$//e
 ```
+
+# Syntax highlighting
+
+- [Dart](https://github.com/dart-lang/dart-vim-plugin)
