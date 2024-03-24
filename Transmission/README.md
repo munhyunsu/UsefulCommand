@@ -12,6 +12,8 @@ apt install build-essential automake autoconf libtool pkg-config intltool libcur
 
 ```bash
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="~/.local/share/transmission" ..
+make -j8
+make install
 ```
 
 # Reference
