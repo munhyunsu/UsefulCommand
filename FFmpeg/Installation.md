@@ -2,6 +2,7 @@
 
 - Update date: 2024-09-04
 - Target OS: Linux Mint 22 (based on Ubuntu 24.4)
+- Target ffmpeg version: 7.0.2
 
 ## Installation
 
