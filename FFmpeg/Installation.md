@@ -21,10 +21,14 @@ apt install nasm libx264-dev libx265-dev libnuma-dev libvpx-dev libfdk-aac-dev l
 export PKG_CONFIG_PATH="/opt/ffmpeg/lib/pkgconfig:${PKG_CONFIG_PATH}"
 ```
 
+#### Compile FFmpeg
+
+1. configure `FFmpeg`
 
 ```bash
 --enable-gpl --enable-nonfree --enable-libx264 --enable-libx265 --enable-libvpx --enable-libfdk-aac --enable-libopus --enable-libsvtav1 --enable-libdav1d --enable-libvmaf
 ```
+
 
 1. NASM
 
