@@ -18,6 +18,7 @@
 ```bash
 apt install autoconf automake build-essential cmake git libass-dev libfreetype-dev libgnutls28-dev libmp3lame-dev libsdl2-dev libtool libva-dev libvdpau-dev libvorbis-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev meson ninja-build pkg-config texinfo wget yasm zlib1g-dev libunistring-dev libaom-dev libdav1d-dev
 apt install nasm libx264-dev libx265-dev libnuma-dev libvpx-dev libfdk-aac-dev libopus-dev libsvtav1-dev libsvtav1enc-dev libsvtav1dec-dev libdav1d-dev
+export PATH="/opt/ffmpeg/bin:${PATH}"
 export PKG_CONFIG_PATH="/opt/ffmpeg/lib/pkgconfig:${PKG_CONFIG_PATH}"
 ```
 
