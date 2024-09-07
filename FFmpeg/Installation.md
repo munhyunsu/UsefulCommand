@@ -22,6 +22,25 @@ export PATH="/opt/ffmpeg/bin:${PATH}"
 export PKG_CONFIG_PATH="/opt/ffmpeg/lib/pkgconfig:${PKG_CONFIG_PATH}"
 ```
 
+2. Install thirdparty library
+
+```bash
+cd FFmpeg
+```
+
+- [NASM](https://www.nasm.us/pub/nasm/releasebuilds/)
+
+```bash
+wget https://www.nasm.us/pub/nasm/releasebuilds/2.16.02/nasm-2.16.02.tar.bz2
+tar xjvf nasm-2.16.02.tar.bz2
+cd nasm-2.16.02/
+./autogen.sh
+./configure --prefix="/opt/ffmpeg"
+make
+```
+
+
+
 #### Compile FFmpeg
 
 1. configure `FFmpeg`
