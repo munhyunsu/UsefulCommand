@@ -28,7 +28,7 @@ export PKG_CONFIG_PATH="/opt/ffmpeg/lib/pkgconfig:${PKG_CONFIG_PATH}"
 cd FFmpeg
 ```
 
-- [NASM](https://www.nasm.us/pub/nasm/releasebuilds/)
+- [NASM](https://www.nasm.us/pub/nasm/releasebuilds/): `-DENABLE_NASM=on` in libaom
 
 ```bash
 wget https://www.nasm.us/pub/nasm/releasebuilds/2.16.02/nasm-2.16.02.tar.bz2
@@ -39,6 +39,9 @@ cd nasm-2.16.02/
 make
 ```
 
+
+
+- [libx264] 
 
 
 #### Compile FFmpeg
