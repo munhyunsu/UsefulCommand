@@ -37,11 +37,19 @@ cd nasm-2.16.02/
 ./autogen.sh
 ./configure --prefix="/opt/ffmpeg"
 make
+sudo make install
 ```
 
+- [libx264]: `--enable-gpl --enable-libx264` in ffmpeg
 
-
-- [libx264] 
+```bash
+git -C x264 pull
+git clone --depth 1 https://code.videolan.org/videolan/x264.git
+cd x264/
+./configure --prefix="/opt/ffmpeg" --enable-static --enable-pic
+make
+sudo make install
+```
 
 
 #### Compile FFmpeg
