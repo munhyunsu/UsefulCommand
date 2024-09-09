@@ -40,7 +40,7 @@ make
 sudo make install
 ```
 
-- [libx264]: `--enable-gpl --enable-libx264` in ffmpeg
+- libx264: `--enable-gpl --enable-libx264` in ffmpeg
 
 ```bash
 git -C x264 pull
@@ -50,6 +50,31 @@ cd x264/
 make
 sudo make install
 ```
+
+- libx265: `--enable-gpl --enable-libx265` in ffmpeg
+
+```bash
+apt install libnuma-dev
+git -C x265_git pull
+git clone https://bitbucket.org/multicoreware/x265_git.git
+cd x265/build/linux/
+cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" -DENABLE_SHARED=off ../../source
+make
+sudo make install
+```
+
+- libvpx: `--enable-libvpx` in ffmpeg
+
+```bash
+git -C libvpx pull
+git clone --depth 1 https://chromium.googlesource.com/webm/libvpx.git
+cd libvpx
+./configure --prefix="/opt/ffmpeg" --disable-examples --disable-unit-tests --enable-vp9-highbitdepth --as=yasm
+make
+sudo make install
+```
+
+
 
 
 #### Compile FFmpeg
