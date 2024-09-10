@@ -74,6 +74,18 @@ make
 sudo make install
 ```
 
+- libfdk-aac: `--enable-gpl --enable-nonfree --enable-libfdk-aac` in ffmpeg
+
+```bash
+git -C fdk-aac pull
+git clone --depth 1 https://github.com/mstorsjo/fdk-aac
+cd fdk-aac
+autoreconf -fiv
+./configure --prefix="/opt/ffmpeg" --disable-shared
+make
+sudo make install
+```
+
 
 
 
