@@ -86,6 +86,18 @@ make
 sudo make install
 ```
 
+- libopus: `--enable-libopus` in ffmpeg
+
+```bash
+git -C opus pull
+git clone --depth 1 https://github.com/xiph/opus.git
+cd opus
+./autogen.sh
+./configure --prefix="/opt/ffmpeg" --disable-shared
+make
+sudo make install
+```
+
 
 
 
