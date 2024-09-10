@@ -98,6 +98,17 @@ make
 sudo make install
 ```
 
+- libaom: `--enable-libaom` in ffmpeg
+
+```bash
+git -C aom pull
+git clone --depth 1 https://aomedia.googlesource.com/aom
+mkdir -p aom/aom_build
+cd aom/aom_build
+cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/opt/ffmpeg" -DENABLE_TESTS=OFF -DENABLE_NASM=on ..
+make
+sudo make install
+```
 
 
 
