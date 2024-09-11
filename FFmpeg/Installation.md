@@ -110,6 +110,15 @@ make
 sudo make install
 ```
 
+- libsvtav1: `--enable-libsvtav1` in ffmpeg
+
+```bash
+git -C SVT-AV1 pull
+git clone https://gitlab.com/AOMediaCodec/SVT-AV1.git
+mkdir -p SVT-AV1/build
+cd SVT-AV1/build
+
+```
 
 
 #### Compile FFmpeg
