@@ -147,14 +147,22 @@ ninja install
 ```
 
 
-
 #### Compile FFmpeg
 
 1. configure `FFmpeg`
 
 ```bash
---enable-gpl --enable-nonfree --enable-libx264 --enable-libx265 --enable-libvpx --enable-libfdk-aac --enable-libopus --enable-libsvtav1 --enable-libdav1d --enable-libvmaf
+git -C ffmpeg pull
+git clone --depth 1 https://git.ffmpeg.org/ffmpeg.git
+cd ffmpeg
+./configure --prefix="/opt/ffmpeg" --pkg-config-flags="--static" --extra-cflags="-I/opt/ffmpeg/include" --extra-ldflags="-L/opt/ffmpeg/lib" --extra-libs="-lpthread -lm" --ld="g++" --bindir="/opt/ffmpeg/bin" --enable-gpl --enable-nonfree --enable-libx264 --enable-libx265 --enable-libvpx --enable-libfdk-aac --enable-libopus --enable-libsvtav1 --enable-libdav1d --enable-libvmaf --enable-gnutls --enable-libass --enable-libfreetype --enable-libmp3lame --enable-libvorbis
+make
+sudo make install
 ```
+
+
+
+
 
 
 1. NASM
