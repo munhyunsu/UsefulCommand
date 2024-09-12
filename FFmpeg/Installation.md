@@ -134,6 +134,19 @@ ninja
 sudo ninja install
 ```
 
+- [libvmaf](https://github.com/Netflix/vmaf/releases): `--enable-libvmaf` `--ld="g++"` in ffmpeg
+
+```bash
+wget -O vmaf-v3.0.0.tar.gz https://github.com/Netflix/vmaf/archive/refs/tags/v3.0.0.tar.gz
+tar xvf vmaf-v3.0.0.tar.gz
+mkdir -p vmaf-3.0.0/libvmaf/build
+cd vmaf-3.0.0/libvmaf/build
+meson setup -Denable_tests=false -Denable_docs=false --buildtype=release --default-library=static .. --prefix "/opt/ffmpeg" --bindir="/opt/ffmpeg/bin" --libdir="/opt/ffmpeg/lib"
+ninja
+ninja install
+```
+
+
 
 #### Compile FFmpeg
 
