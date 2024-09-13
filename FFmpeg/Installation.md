@@ -149,7 +149,7 @@ ninja install
 
 #### Compile FFmpeg
 
-1. configure `FFmpeg`
+- configure `FFmpeg`
 
 ```bash
 git -C ffmpeg pull
@@ -159,6 +159,14 @@ cd ffmpeg
 make
 sudo make install
 ```
+
+- Build infomation: Line 47 in `ffbuild/version.sh`
+
+```bash
+WHO="Hyunsu Mun (munhyunsu@gmail.com)"
+NEW_REVISION="#define FFMPEG_VERSION \"$version by $WHO\""
+```
+
 
 
 
