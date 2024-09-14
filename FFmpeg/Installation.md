@@ -167,8 +167,54 @@ WHO="Hyunsu Mun (munhyunsu@gmail.com)"
 NEW_REVISION="#define FFMPEG_VERSION \"$version by $WHO\""
 ```
 
+## MPV.io
+
+#### Install requred libraries
+
+```bash
+apt install libxpresent-dev
+export PATH="/opt/ffmpeg/bin:${PATH}"
+export PKG_CONFIG_PATH="/opt/ffmpeg/lib/pkgconfig:${PKG_CONFIG_PATH}"
+```
+
+- [libplacebo](https://github.com/haasn/libplacebo)
+
+```bash
+git -C libplacebo pull
+git clone --recursive https://code.videolan.org/videolan/libplacebo
+mkdir -p libplacebo/build
+cd libplacebo/build
+meson setup --prefix "/opt/ffmpeg" --libdir="/opt/ffmpeg/lib" -Ddefault_library=static -Dtests=false -Ddemos=false ..
+ninja
+sudo ninja install
+```
+
+- [libass]
+
+```
+git -C libass pull
+git clone https://github.com/libass/libass.git
+cd libass
+./autogen.sh
+./configure --prefix="/opt/ffmpeg" --disable-shared
+make
+sudo make install
+```
 
 
+#### Install MPV
+
+- MPV
+
+```bash
+git -C mpv pull
+git clone --depth 1 https://github.com/mpv-player/mpv.git
+mkdir -p mpv/build
+cd mpv/build
+meson setup --prefix "/opt/ffmpeg" -Dbuildtype=release ..
+ninja
+sudo ninja install
+```
 
 
 
