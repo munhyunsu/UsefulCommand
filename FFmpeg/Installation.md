@@ -201,6 +201,41 @@ make
 sudo make install
 ```
 
+- [liblua5.3](https://www.lua.org/ftp/lua-5.3.6.tar.gz)
+
+```bash
+wget https://www.lua.org/ftp/lua-5.2.4.tar.gz
+tar xvf lua-5.2.4.tar.gz
+cd lua-5.2.4
+make linux
+sudo make install INSTALL_TOP=/opt/ffmpeg
+```
+
+```
+cat > lua-5.2.pc << "EOF"
+V=5.2
+R=5.2.4
+
+prefix=/opt/ffmpeg
+INSTALL_BIN=${prefix}/bin
+INSTALL_INC=${prefix}/include
+INSTALL_LIB=${prefix}/lib
+INSTALL_MAN=${prefix}/share/man/man1
+INSTALL_LMOD=${prefix}/share/lua/${V}
+INSTALL_CMOD=${prefix}/lib/lua/${V}
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: Lua
+Description: An Extensible Extension Language
+Version: ${R}
+Requires:
+Libs: -L${libdir} -llua -lm -ldl
+Cflags: -I${includedir}
+EOF
+```
+
 
 #### Install MPV
 
