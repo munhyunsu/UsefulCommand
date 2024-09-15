@@ -2,6 +2,11 @@
 
 ## Installation
 
+## References
+
+- [Official Website](https://www.virtualbox.org/)
+- [Debian-based linux installation](https://www.virtualbox.org/wiki/Linux_Downloads)
+
 1. install virtualbox dkms (even with SecureBoot)
 ```bash
 apt install --reinstall virtualbox-dkms
