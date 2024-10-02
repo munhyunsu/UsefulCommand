@@ -184,3 +184,9 @@ vi /opt/jupyterhub_venv/share/jupyter/nbconvert/templates/latex/base.tex.j2
 # References
 
 - [About ipympl version](https://github.com/matplotlib/ipympl/issues/416)
+
+
+# Docker
+
+- [Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html)
+- [Jupyter Docker Stacks Trouble Shooting](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/troubleshooting.html)
