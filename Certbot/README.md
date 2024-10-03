@@ -1,32 +1,10 @@
 # Lets Encrypt
 
-## Install snap
-- Enable snap: comment all lines
-```bash
-sudo vi /etc/apt/preferences.d/nosnap.pref
-```
+# Install Certbot
+- Install Certbot using pip
 
-- Update snapd
-```bash
-sudo snap install core
-sudo snap refresh core
 ```
-
-## Install Certbot
-- Remove and install certbot
-```bash
-sudo apt remove certbot
-sudo snap install --classic certbot
-```
-
-- Link command
-```bash
-sudo ln -s /snap/bin/certbot /usr/bin/certbot
-```
-
-- Container with root
-```bash
-sudo snap set certbot trust-plugin-with-root=ok
+pip wheel certbot certbot-nginx certbot-dns-google
 ```
 
 ## Acquire certificate (with Google DNS)
@@ -70,6 +48,3 @@ scp -i PRIKEY /etc/letsencrypt.tar.gz ./
 nginx -s reload
 ```
 
-```
-pip wheel certbot certbot-nginx certbot-dns-google
-```
