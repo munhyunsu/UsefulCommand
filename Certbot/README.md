@@ -69,3 +69,7 @@ scp -i PRIKEY /etc/letsencrypt.tar.gz ./
 ```bash
 nginx -s reload
 ```
+
+```
+pip wheel certbot certbot-nginx certbot-dns-google
+```
