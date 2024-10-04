@@ -1,6 +1,6 @@
 # Lets Encrypt
 
-# Install Certbot
+## Install Certbot
 - Install Certbot using pip
 
 ```
