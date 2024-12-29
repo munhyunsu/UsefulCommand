@@ -192,5 +192,6 @@ vi /opt/jupyterhub_venv/share/jupyter/nbconvert/templates/latex/base.tex.j2
 - [Jupyter Docker Stacks Trouble Shooting](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/troubleshooting.html)
 
 ```bash
+docker pull jupyter/minimal-notebook
 docker run --interactive --tty --rm --publish 10000:8888 --volume "${PWD}":/home/jovyan/work --user root --env NB_UID=`id -u` --env NB_GID=`id -g` jupyter/minimal-notebook:latest
 ```
