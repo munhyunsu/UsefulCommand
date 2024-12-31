@@ -11,5 +11,7 @@ ocker run --interactive --tty --detach --name tftp --publish 69:69/udp --volume 
 1. Update system packages
 
 ```bash
-
+apt update
+apt dist-upgrade
 ```
+
