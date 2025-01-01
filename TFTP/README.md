@@ -15,3 +15,8 @@ apt update
 apt dist-upgrade
 ```
 
+2. Configure timezone
+
+```bash
+
+```
