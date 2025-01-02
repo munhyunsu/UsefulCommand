@@ -18,5 +18,9 @@ apt dist-upgrade
 2. Configure timezone
 
 ```bash
+```
 
+3. Install TFTP server
+
+```
 ```
