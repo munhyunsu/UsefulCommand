@@ -23,4 +23,6 @@ apt dist-upgrade
 3. Install TFTP server
 
 ```
+apt install tftp-hpa
 ```
+
